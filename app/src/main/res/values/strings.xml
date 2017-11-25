@@ -5,4 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="collie_device_admin_description">Ative para poder ter controle do bloqueio dos apps</string>
+    <string name="collie_device_admin_label">Collie</string>
 </resources>
