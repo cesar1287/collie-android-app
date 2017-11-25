@@ -8,4 +8,5 @@
 
     <string name="collie_device_admin_description">Ative para poder ter controle do bloqueio dos apps</string>
     <string name="collie_device_admin_label">Collie</string>
+    <string name="add_admin_extra_app_text">Ative para utilizar todos os recursos</string>
 </resources>
