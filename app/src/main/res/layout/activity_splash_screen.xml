@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comcesar1287.github.www.collie.SplashScreenActivity">
+    tools:context="comcesar1287.github.www.collie.SplashScreenActivity"
+    android:background="@color/bluePrimary">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="220dp"
+        android:src="@drawable/collie_image_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"/>
+
+</RelativeLayout>
