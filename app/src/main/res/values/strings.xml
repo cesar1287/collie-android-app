@@ -9,4 +9,13 @@
     <string name="collie_device_admin_description">Ative para poder ter controle do bloqueio dos apps</string>
     <string name="collie_device_admin_label">Collie</string>
     <string name="add_admin_extra_app_text">Ative para utilizar todos os recursos</string>
+
+    <string name="register_name_father">Nome do pai</string>
+    <string name="register_email_father">Email do pai</string>
+    <string name="register_name_son">Nome do filho</string>
+    <string name="register_age_son">Idade do filho</string>
+    <string name="register_password_father">Senha</string>
+    <string name="register_confirm_password_father">Confirmação de senha</string>
+    <string name="register_button_send">Finalizar Cadastro</string>
+
 </resources>

@@ -1,9 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comcesar1287.github.www.collie.RegisterActivity">
+    tools:context="comcesar1287.github.www.collie.RegisterActivity"
+    android:background="@color/bluePrimary">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/collie_image_logo"
+        android:layout_centerHorizontal="true"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/register_name_father"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        android:layout_below="@id/logo"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/register_edit_name_father"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_name_father"
+            android:inputType="textPersonName"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/register_email_father"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        android:layout_below="@id/register_name_father"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/register_edit_email_father"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_email_father"
+            android:inputType="textEmailAddress"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/register_name_son"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        android:layout_below="@id/register_email_father"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/register_edit_name_son"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_name_son"
+            android:inputType="textPersonName"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/register_age_son"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        android:layout_below="@id/register_name_son"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/register_edit_age_son"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_age_son"
+            android:inputType="number"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/register_password_father"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        android:layout_below="@id/register_age_son"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/register_edit_password_father"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_password_father"
+            android:inputType="numberPassword"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/register_confirm_passowrd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel"
+        android:layout_below="@id/register_password_father"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/register_edit_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/register_confirm_password_father"
+            android:inputType="numberPassword"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textAllCaps="false"
+        android:text="@string/register_button_send"/>
+
+</RelativeLayout>
