@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/register_age_son"
-            android:inputType="number"/>
+            android:inputType="numberDecimal"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -99,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/register_password_father"
-            android:inputType="numberPassword"/>
+            android:inputType="textPassword"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -117,7 +117,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/register_confirm_password_father"
-            android:inputType="numberPassword"/>
+            android:inputType="textPassword"/>
 
     </android.support.design.widget.TextInputLayout>
 
