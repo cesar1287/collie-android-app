@@ -1,4 +1,4 @@
-package comcesar1287.github.www.collie;
+package comcesar1287.github.www.collie.controller.admin;
 
 import android.app.admin.DeviceAdminReceiver;
 import android.content.Context;

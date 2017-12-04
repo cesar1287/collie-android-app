@@ -1,4 +1,4 @@
-package comcesar1287.github.www.collie;
+package comcesar1287.github.www.collie.view;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
@@ -16,6 +16,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import comcesar1287.github.www.collie.controller.admin.CollieAdminReceiver;
+import comcesar1287.github.www.collie.R;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -29,6 +35,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        verifyUserIsLogged();
+
         setContentView(R.layout.activity_main);
 
         initToolbar();
@@ -57,6 +66,16 @@ public class MainActivity extends AppCompatActivity
             }else{
                 //TODO
             }
+        }
+    }
+
+    private void verifyUserIsLogged() {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user == null) {
+            startActivity(new Intent(this, RegisterActivity.class));
+            finish();
         }
     }
 

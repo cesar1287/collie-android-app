@@ -12,10 +12,18 @@
 
     <string name="register_name_father">Nome do pai</string>
     <string name="register_email_father">Email do pai</string>
-    <string name="register_name_son">Nome do filho</string>
-    <string name="register_age_son">Idade do filho</string>
+    <string name="register_name_child">Nome do(a) filho(a)</string>
+    <string name="register_age_child">Idade do(a) filho(a)</string>
     <string name="register_password_father">Senha</string>
     <string name="register_confirm_password_father">Confirmação de senha</string>
     <string name="register_button_send">Finalizar Cadastro</string>
+    <string name="sign_up_user">Criando o usuário, por favor aguarde…</string>
+    <string name="successfully_registered">Usuário criado com sucesso.</string>
 
+    <string name="error_required_field">Campo obrigatório</string>
+    <string name="error_passwords_not_match">Senhas não conferem</string>
+    <string name="error_password_too_small">Sua senha precisa ter pelo menos 6 caracteres, digite novamente.</string>
+    <string name="error_invalid_email">Email inválido, digite novamente.</string>
+    <string name="error_failed_signin_email_exists">Falha ao entrar\n\nEsse e-mail já está sendo usado em nosso sistema.\nTente novamente com outro email.</string>
+    <string name="error_unknown_error">Erro desconhecido, tente novamente.</string>
 </resources>
