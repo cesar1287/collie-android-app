@@ -31,4 +31,8 @@
     <string name="category_register_btn_responsible">Aparelho do Responsável</string>
     <string name="category_register_btn_dependent">Aparelho do Dependente</string>
 
+    <string name="sign_with_email">Email</string>
+    <string name="sign_with_passord">Senha</string>
+    <string name="sign_with_btn_send">Entrar</string>
+
 </resources>

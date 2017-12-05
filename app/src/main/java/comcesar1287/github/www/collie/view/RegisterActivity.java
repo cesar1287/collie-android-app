@@ -73,6 +73,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         btRegister.setOnClickListener(this);
     }
 
+
     private void initToolbar() {
         ActionBar actionBar = getSupportActionBar();
 
