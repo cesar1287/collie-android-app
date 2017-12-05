@@ -26,4 +26,9 @@
     <string name="error_invalid_email">Email inválido, digite novamente.</string>
     <string name="error_failed_signin_email_exists">Falha ao entrar\n\nEsse e-mail já está sendo usado em nosso sistema.\nTente novamente com outro email.</string>
     <string name="error_unknown_error">Erro desconhecido, tente novamente.</string>
+
+    <string name="category_register_title">Seja bem vindo ao Collie, selecione a categoria que seu aparelho se encaixa?</string>
+    <string name="category_register_btn_responsible">Aparelho do Responsável</string>
+    <string name="category_register_btn_dependent">Aparelho do Dependente</string>
+
 </resources>
