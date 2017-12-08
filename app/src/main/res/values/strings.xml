@@ -37,4 +37,12 @@
     <string name="sign_with_btn_send">Entrar</string>
     <string name="processing_login">Processando login, por favor aguarde…</string>
 
+    <string name="forgot_password_title">Esqueceu a sua senha?</string>
+    <string name="forgot_password_subtitle">Insira abaixo o seu email para recuperá-la.</string>
+    <string name="forgot_password_email">Email</string>
+    <string name="forgot_password_confirm">Confirmar</string>
+    <string name="forgot_password_cancel">Cancelar</string>
+
+
+
 </resources>
