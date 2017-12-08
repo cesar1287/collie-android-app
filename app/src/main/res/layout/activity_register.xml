@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="comcesar1287.github.www.collie.view.RegisterActivity"
-    android:background="@color/colorPrimary"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp">
+    android:background="@color/colorPrimary">
 
     <ScrollView
         android:id="@+id/register_scrollview"
@@ -20,20 +18,53 @@
             android:focusable="true"
             android:focusableInTouchMode="true">
 
+            <RelativeLayout
+                android:id="@+id/register_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="75dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/collie_image_logo"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/register_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginRight="19dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/logo"
+                    android:text="@string/register_header"
+                    android:textSize="19sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
             <ImageView
-                android:id="@+id/logo"
-                android:layout_width="150dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="25dp"
-                android:src="@drawable/collie_image_logo"
-                android:layout_centerHorizontal="true"/>
+                android:id="@+id/register_image_triangle"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/collie_image_triangle"
+                android:layout_below="@id/register_header"
+                android:layout_marginTop="-5dp"
+                android:layout_marginBottom="15dp"
+                android:layout_centerHorizontal="true"
+                android:tint="@color/colorPrimaryDark"/>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/register_name_father"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/TextLabel"
-                android:layout_below="@id/logo"
+                android:layout_below="@id/register_image_triangle"
                 android:layout_marginLeft="19dp"
                 android:layout_marginRight="19dp">
 
@@ -141,7 +172,7 @@
                 android:layout_height="47dp"
                 android:layout_below="@id/register_confirm_passowrd"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="27dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="19dp"
                 android:layout_marginRight="19dp"

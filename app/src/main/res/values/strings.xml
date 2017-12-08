@@ -10,6 +10,7 @@
     <string name="collie_device_admin_label">Collie</string>
     <string name="add_admin_extra_app_text">Ative para utilizar todos os recursos</string>
 
+    <string name="register_header">Realize o seu cadastro</string>
     <string name="register_name_father">Nome do responsável</string>
     <string name="register_email_father">Email do responsável</string>
     <string name="register_name_child">Nome do(a) dependente</string>
