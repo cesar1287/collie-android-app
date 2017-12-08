@@ -4,88 +4,126 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="comcesar1287.github.www.collie.view.SignWithActivity"
-    android:background="@color/colorPrimary"
-    android:paddingLeft="29dp"
-    android:paddingRight="29dp">
+    android:background="@color/colorPrimary">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
+        <RelativeLayout
+            android:id="@+id/sign_with_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/sign_with_logo"
+                android:layout_width="75dp"
+                android:layout_height="55dp"
+                android:src="@drawable/collie_image_logo"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/sign_with_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/sign_with_logo"
+                android:text="@string/sign_with_btn_title"
+                android:textSize="19sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
         <ImageView
-            android:id="@+id/sign_with_logo"
-            android:layout_width="150dp"
-            android:layout_height="110dp"
-            android:src="@drawable/collie_image_logo"
-            android:layout_centerHorizontal="true"/>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/sign_with_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/sign_with_logo"
-            android:theme="@style/TextLabel"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/sign_with_edit_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/sign_with_email"
-                android:inputType="textEmailAddress"/>
-
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/sign_with_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/TextLabel"
-            android:layout_below="@id/sign_with_email"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp">
-
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/sign_with_edit_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/sign_with_passord"
-                android:inputType="textPassword"/>
-
-        </android.support.design.widget.TextInputLayout>
-
-        <Button
-            android:id="@+id/sign_with_btn_send"
-            android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="19dp"
-            android:layout_marginRight="19dp"
-            android:layout_below="@id/sign_with_password"
+            android:id="@+id/sign_with_image_triangle"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/collie_image_triangle"
+            android:layout_below="@id/sign_with_header"
+            android:layout_marginTop="-5dp"
             android:layout_centerHorizontal="true"
-            android:text="@string/sign_with_btn_send"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:background="@drawable/collie_button_rounded"/>
+            android:tint="@color/colorPrimaryDark"/>
 
+        <RelativeLayout
+            android:id="@+id/register_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:gravity="center"
+            android:focusableInTouchMode="true"
+            android:layout_below="@id/sign_with_image_triangle">
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/sign_with_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/sign_with_edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/sign_with_email"
+                    android:inputType="textEmailAddress"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/sign_with_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/TextLabel"
+                android:layout_below="@id/sign_with_email"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/sign_with_edit_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/sign_with_passord"
+                    android:inputType="textPassword"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/sign_with_btn_send"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:layout_below="@id/sign_with_password"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sign_with_btn_send"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:background="@drawable/collie_button_rounded"/>
+
+            <Button
+                android:id="@+id/sign_with_btn_recover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/sign_with_btn_send"
+                android:textAllCaps="false"
+                android:text="@string/sign_with_btn_forgat"
+                android:textColor="@color/white"
+                android:background="@null"/>
+
+        </RelativeLayout>
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/sign_with_btn_recover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="false"
-        android:text="Esqueci minha senha"
-        android:textColor="@color/white"
-        android:background="@null"/>
-
 </RelativeLayout>
