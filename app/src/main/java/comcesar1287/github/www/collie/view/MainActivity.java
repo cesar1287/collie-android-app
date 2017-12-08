@@ -25,6 +25,8 @@ import comcesar1287.github.www.collie.R;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private FirebaseAuth mAuth;
+
     private DevicePolicyManager mDPM;
 
     private ComponentName mDeviceAdmin;
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         FirebaseUser user = mAuth.getCurrentUser();
 
         if (user == null) {
-            startActivity(new Intent(this, RegisterActivity.class));
+            startActivity(new Intent(this, CategoryRegisterActivity.class));
             finish();
         }
     }
@@ -90,6 +92,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initComponent() {
+        mAuth = FirebaseAuth.getInstance();
+
         mDeviceAdmin = new ComponentName(this, CollieAdminReceiver.class);
 
         mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
@@ -160,7 +164,9 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-
+            mAuth.signOut();
+            startActivity(new Intent(this, CategoryRegisterActivity.class));
+            finish();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
