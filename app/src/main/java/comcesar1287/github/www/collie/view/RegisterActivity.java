@@ -52,6 +52,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, CategoryRegisterActivity.class));
+        finish();
+    }
+
+    @Override
     public void onClick(View view) {
         int id = view.getId();
 

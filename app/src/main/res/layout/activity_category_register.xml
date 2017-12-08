@@ -31,14 +31,15 @@
         android:id="@+id/btn_responsible"
         android:layout_width="230dp"
         android:layout_height="47dp"
-        android:layout_below="@id/category_text"
-        android:layout_marginTop="38dp"
+        android:layout_alignLeft="@+id/btn_dependent"
+        android:layout_alignStart="@+id/btn_dependent"
+        android:layout_below="@+id/category_text"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/collie_button_rounded"
         android:text="@string/category_register_btn_responsible"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:background="@drawable/collie_button_rounded"
-        android:layout_centerHorizontal="true"
-        android:textSize="15sp"/>
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/btn_dependent"
