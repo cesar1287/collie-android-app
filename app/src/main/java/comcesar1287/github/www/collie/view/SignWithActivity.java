@@ -50,7 +50,7 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
                 attemptLogin();
                 break;
             case R.id.sign_with_btn_recover:
-                //TODO
+                startActivity(new Intent(this, ForgotPasswordActivity.class));
                 break;
         }
     }
