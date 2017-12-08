@@ -7,10 +7,21 @@
     android:background="@color/colorPrimary">
 
     <ImageView
+        android:id="@+id/splash_screen_logo"
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:layout_marginTop="100dp"
         android:src="@drawable/collie_image_logo"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/splash_screen_greeting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:textSize="17sp"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

@@ -5,10 +5,18 @@ import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
+
+import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import comcesar1287.github.www.collie.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
+
+    TextView tvGreeting;
+    int hour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +29,41 @@ public class SplashScreenActivity extends AppCompatActivity {
             actionBar.hide();
         }
 
-        new Handler().postDelayed(new Runnable() {
+        startActivityMainDelay();
+
+        hourText();
+    }
+
+    private void startActivityMainDelay() {
+        // Show splash screen for 2 seconds
+        TimerTask task = new TimerTask() {
             @Override
             public void run() {
                 Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(i);
-                finish();
+                finish(); // kill current activity
             }
-        }, 3000);
+        };
+        new Timer().schedule(task, 2000);
+    }
+
+    public void hourText(){
+        tvGreeting = (TextView) findViewById(R.id.splash_screen_greeting);
+
+        Calendar c = Calendar.getInstance();
+        hour = c.get(Calendar.HOUR_OF_DAY);
+
+        if (hour>=5 && hour<12){
+            tvGreeting.setText("Bom dia, seja bem vindo!");
+        }
+
+        else if (hour>=12 && hour<18){
+            tvGreeting.setText("Boa tarde, seja bem vindo!");
+        }
+
+        else if(hour>=18){
+            tvGreeting.setText("Boa noite, seja bem vindo!");
+        }
+
     }
 }
