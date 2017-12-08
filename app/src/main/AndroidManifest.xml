@@ -46,10 +46,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.CategoryRegisterActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.ForgotPasswordActivity"
-            android:theme="@style/AppTheme.Dialog"></activity>
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.SetupScreenActivity"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>
