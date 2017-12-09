@@ -5,53 +5,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="comcesar1287.github.www.collie.view.CategoryRegisterActivity"
-    android:background="@color/colorPrimary"
-    android:padding="20dp">
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/category_register_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <ImageView
+            android:id="@+id/category_register_logo"
+            android:layout_width="75dp"
+            android:layout_height="55dp"
+            android:src="@drawable/collie_image_logo"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/category_register_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="19dp"
+            android:layout_marginRight="19dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/category_register_logo"
+            android:text="@string/category_register_title"
+            android:gravity="center"
+            android:textSize="19sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+    </RelativeLayout>
 
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="150dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/collie_image_logo"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:id="@+id/category_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
-        android:layout_marginTop="35dp"
-        android:text="@string/category_register_title"
-        android:textSize="29sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"/>
-
-    <Button
-        android:id="@+id/btn_responsible"
-        android:layout_width="230dp"
-        android:layout_height="47dp"
-        android:layout_alignLeft="@+id/btn_dependent"
-        android:layout_alignStart="@+id/btn_dependent"
-        android:layout_below="@+id/category_text"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/collie_button_rounded"
-        android:text="@string/category_register_btn_responsible"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/btn_dependent"
-        android:layout_width="230dp"
-        android:layout_height="47dp"
-        android:layout_below="@id/btn_responsible"
-        android:layout_marginTop="15dp"
-        android:text="@string/category_register_btn_dependent"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
+        android:id="@+id/category_register_image_triangle"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/collie_image_triangle"
+        android:layout_below="@id/category_register_header"
+        android:layout_marginTop="-5dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/collie_button_rounded"
-        android:textSize="15sp"/>
+        android:tint="@color/colorPrimaryDark"/>
+
+    <RelativeLayout
+        android:id="@+id/category_register_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/category_register_image_triangle"
+        android:gravity="center"
+        android:layout_marginBottom="150dp">
+
+        <Button
+            android:id="@+id/btn_responsible"
+            android:layout_width="230dp"
+            android:layout_height="47dp"
+            android:layout_alignLeft="@+id/btn_dependent"
+            android:layout_alignStart="@+id/btn_dependent"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/collie_button_rounded"
+            android:text="@string/category_register_btn_responsible"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_dependent"
+            android:layout_width="230dp"
+            android:layout_height="47dp"
+            android:layout_below="@id/btn_responsible"
+            android:layout_marginTop="15dp"
+            android:text="@string/category_register_btn_dependent"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/collie_button_rounded"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/category_register_image_footer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/collie_image_family"
+        android:tint="@color/white"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
