@@ -36,7 +36,7 @@
     <string name="sign_with_email">Email</string>
     <string name="sign_with_passord">Senha</string>
     <string name="sign_with_btn_send">Entrar</string>
-    <string name="sign_with_btn_title">Reaalize abaixo o seu login</string>
+    <string name="sign_with_btn_title">Realize abaixo o seu login</string>
     <string name="sign_with_btn_forgat">Esqueci minha senha</string>
     <string name="processing_login">Processando login, por favor aguarde…</string>
 
