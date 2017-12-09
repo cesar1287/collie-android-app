@@ -29,7 +29,7 @@
     <string name="error_unknown_error">Erro desconhecido, tente novamente.</string>
     <string name="error_user_password_incorrect">Usuário e/ou senha incorreto(s).</string>
 
-    <string name="category_register_title">Seja bem vindo ao Collie, selecione a categoria que seu aparelho se encaixa!</string>
+    <string name="category_register_title">Selecione a categoria correspondente ao aparelho</string>
     <string name="category_register_btn_responsible">Aparelho do Responsável</string>
     <string name="category_register_btn_dependent">Aparelho do Dependente</string>
 
@@ -45,6 +45,5 @@
     <string name="forgot_password_email">Email</string>
     <string name="forgot_password_confirm">Confirmar</string>
     <string name="forgot_password_cancel">Cancelar</string>
-
 
 </resources>

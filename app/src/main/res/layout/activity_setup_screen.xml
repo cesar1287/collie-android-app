@@ -3,6 +3,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="comcesar1287.github.www.collie.view.SetupScreenActivity">
+    tools:context="comcesar1287.github.www.collie.view.SetupScreenActivity"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/teste1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#EF5350"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bloqueio 1"
+            android:textColor="@color/white"
+            android:textSize="22sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/teste2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/teste1"
+        android:background="#E53935"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bloqueio 2"
+            android:textColor="@color/white"
+            android:textSize="22sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/teste3"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/teste2"
+        android:background="#C62828"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bloqueio 3"
+            android:textColor="@color/white"
+            android:textSize="22sp"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
