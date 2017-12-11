@@ -55,120 +55,141 @@
         android:layout_below="@id/register_image_triangle">
 
         <RelativeLayout
-            android:id="@+id/teste1"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:background="@drawable/colie_image_simple"
-            android:padding="5dp"
-            android:backgroundTintMode="screen"
-            android:backgroundTint="#7f8c8d">
+            android:id="@+id/setup_screen_view_simple"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/collie_button_rounded">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:background="@drawable/colie_image_simple"
+                android:padding="8dp"
+                android:backgroundTintMode="screen"
+                android:backgroundTint="#5095a5a6">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="5dp"
-                android:src="@drawable/collie_icon_interrogation"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/collie_icon_interrogation" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/collir_icon_category"
-                android:tint="@color/black_grey"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/collie_icon_category"
+                    android:tint="@color/black_grey"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Simples"
-                android:textColor="@color/white"
-                android:textSize="35sp"
-                android:textStyle="bold"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simples"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
 
+            </RelativeLayout>
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/teste2"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:layout_below="@id/teste1"
-            android:background="@drawable/collie_image_time"
-            android:padding="5dp"
-            android:gravity="center"
-            android:backgroundTintMode="screen"
-            android:backgroundTint="#7f8c8d">
+            android:id="@+id/setup_screen_view_time"
+            android:layout_margin="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/collie_button_rounded">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="5dp"
-                android:src="@drawable/collie_icon_interrogation"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:background="@drawable/collie_image_time"
+                android:padding="8dp"
+                android:gravity="center"
+                android:backgroundTintMode="screen"
+                android:backgroundTint="#5095a5a6">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/collir_icon_category"
-                android:tint="@color/black_grey"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/collie_icon_interrogation" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Por Tempo"
-                android:textColor="@color/white"
-                android:textSize="35sp"
-                android:textStyle="bold"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/collie_icon_category"
+                    android:tint="@color/black_grey" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Por Tempo"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/teste3"
-            android:layout_width="match_parent"
-            android:layout_height="115dp"
-            android:layout_below="@id/teste2"
-            android:background="@drawable/collie_image_points"
-            android:padding="5dp"
-            android:backgroundTintMode="screen"
-            android:backgroundTint="#7f8c8d">
+            android:id="@+id/setup_screen_view_points"
+            android:layout_margin="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:background="@drawable/collie_button_rounded"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:background="@drawable/collie_image_points"
+                android:padding="8dp"
+                android:backgroundTintMode="screen"
+                android:backgroundTint="#5095a5a6"
+                tools:ignore="UnusedAttribute">
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="5dp"
-                android:src="@drawable/collie_icon_interrogation"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/collie_icon_interrogation" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
-                android:src="@drawable/collir_icon_category"
-                android:tint="@color/black_grey"/>
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/collie_icon_category"
+                    android:tint="@color/black_grey"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Por Pontos"
-                android:textColor="@color/white"
-                android:textSize="35sp"
-                android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Por Pontos"
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    android:textStyle="bold"/>
 
+            </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
 
