@@ -49,11 +49,10 @@
     <string name="forgot_password_confirm">Confirmar</string>
     <string name="forgot_password_cancel">Cancelar</string>
 
-    <string name="setup_screen_title">Saiba como funciona clicando na interrogação ou selecione o
-        modo de bloqueio na seta.</string>
+    <string name="setup_screen_title">Defina o tipo de bloqueio.</string>
     <string name="setup_screen_simple">Simples</string>
-    <string name="setup_screen_time">Por Tempo</string>
-    <string name="setup_screen_points">Por Pontos</string>
+    <string name="setup_screen_time">Por tempo</string>
+    <string name="setup_screen_points">Por pontos</string>
 
 
     <string name="category_block_simple_title">Bloqueio Simples</string>
