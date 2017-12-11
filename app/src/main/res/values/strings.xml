@@ -6,7 +6,8 @@
 
     <string name="action_settings">Settings</string>
 
-    <string name="collie_device_admin_description">Ative para poder ter controle do bloqueio dos apps</string>
+    <string name="collie_device_admin_description">Ative para poder ter controle do bloqueio dos
+        apps</string>
     <string name="collie_device_admin_label">Collie</string>
     <string name="add_admin_extra_app_text">Ative para utilizar todos os recursos</string>
 
@@ -23,9 +24,11 @@
 
     <string name="error_required_field">Campo obrigatório</string>
     <string name="error_passwords_not_match">Senhas não conferem</string>
-    <string name="error_password_too_small">Sua senha precisa ter pelo menos 6 caracteres, digite novamente.</string>
+    <string name="error_password_too_small">Sua senha precisa ter pelo menos 6 caracteres, digite
+        novamente.</string>
     <string name="error_invalid_email">Email inválido, digite novamente.</string>
-    <string name="error_failed_signin_email_exists">Falha ao entrar\n\nEsse e-mail já está sendo usado em nosso sistema.\nTente novamente com outro email.</string>
+    <string name="error_failed_signin_email_exists">Falha ao entrar\n\nEsse e-mail já está sendo
+        usado em nosso sistema.\nTente novamente com outro email.</string>
     <string name="error_unknown_error">Erro desconhecido, tente novamente.</string>
     <string name="error_user_password_incorrect">Usuário e/ou senha incorreto(s).</string>
 
@@ -45,5 +48,62 @@
     <string name="forgot_password_email">Email</string>
     <string name="forgot_password_confirm">Confirmar</string>
     <string name="forgot_password_cancel">Cancelar</string>
+
+    <string name="setup_screen_title">Saiba como funciona clicando na interogação ? Ou seleciona o
+        seu modo de bloqueio na seta.</string>
+    <string name="setup_screen_simple">Simples</string>
+    <string name="setup_screen_time">Por Tempo</string>
+    <string name="setup_screen_points">Por Pontos</string>
+
+
+    <string name="category_block_simple_title">Bloqueio Simples</string>
+    <string name="category_block_simple_description1">Nessa categoria de bloqueio, o resposável determina
+        quanto tempo por dia o dependente poderá usar o celular, por exemplo:</string>
+    <string name="category_block_simple_description2">- Se  pai deseja que
+    o bloqueio seja noturno, neste caso o celular ficará bloqueado das 22 horas as 09 horas(Periodo
+        este que será escolhido pelo responsável).</string>
+    <string name="category_block_simple_description3">- Do mesmo modo o responsável poderá fazer um
+        bloqueio durante o perido de aula do dependente, também determinando o periodo. </string>
+    <string name="category_block_simple_description4">Independete do periodo de bloqueio as funções:
+        Alarme, Calculadora e Ligações não serão bloqueadas e o dependente poderá utilizar
+        normalmente</string>
+    <string name="category_block_simple_button_return">Voltar</string>
+
+    <string name="category_block_time_title">Bloqueio Por Tempo Limite</string>
+    <string name="category_block_time_description1">Nessa categoria de bloqueio, o resposável
+        determina quanto tempo o dependente irá usar o celular até que seja bloqueado, quando for
+        bloqueado aparecerá uma questão de múltipla escolha na tela com 20 segundos para ser
+        respondida, se a resposta estiver correta, o celular desbloqueia e começa a contagem
+        novamente para bloquear, se o dependente não acertar, outra pergunta irá aparecer e isso se
+        repetirá por 5 vezes até que ele acerte, caso ele não acerte nenhuma das 5 perguntas, o
+        aparelho ficará bloqueado por um perido de tempo determinado pelo responável, apos esse
+        periodo o celular será liberado e todo o ciclo irá se repetir.</string>
+    <string name="category_block_time_description2">Nessa opção o pai poderá também adicionar o bloqueio
+        noturno(Periodo da noite que ficará bloqueado) e o bloqueio escolar(Periodo do dia que
+        ficará bloqueado)</string>
+    <string name="category_block_time_description3">Independete do celular estar bloqueado ou não as
+        funções: Alarme, Calculadora e Ligações não serão bloqueadas e o dependente poderá utilizar
+        normalmente</string>
+    <string name="category_block_time_button_return">Voltar</string>
+
+    <string name="category_block_points_title">Bloqueio Por Pontos</string>
+    <string name="category_block_points_description1">Nessa categoria de bloqueio, o resposável determina
+        com quanto tempo o dependente inicia o dia por exemplo:
+        cada pergunta correta vale 5 pontos, cada ponto vale 1 minuto</string>
+    <string name="category_block_points_description2">- O dependente inicia o dia com 1 hora, após esse
+        tempo o mesmo deverá responder perguntas para ganhar mais minutos</string>
+    <string name="category_block_points_description3">As perguntas serão feitas e cada pergunta respondida
+        corretamente valerá 5 pontos, cada ponto 1 minuto, cada pergunta que ele pular vale -1
+        ponto, cada pergunta que ele errar vale -2 pontos, cada uma das perguntas terá 20 segundos
+        para ser respondidas, não sendo a mesma será considerada pulada e ai é -1 ponto, em seguida
+        aparecerá outra.</string>
+    <string name="category_block_points_description4">O dependente poderá acumular pontos para o dia
+        seguinte se quiser, o responável determina até quantas perguntas por dia o dependente
+        pode responder, quando atingir esse total não será possivel ganhar mais pontos e quando
+        esgotar o celular ficará bloqueado.</string>
+    <string name="category_block_points_description5">Independete do celular estar bloqueado ou não as
+        funções: Alarme, Calculadora e Ligações não serão bloqueadas e o dependente poderá utilizar
+        normalmente</string>
+    <string name="category_block_points_button_return">Voltar</string>
 
 </resources>

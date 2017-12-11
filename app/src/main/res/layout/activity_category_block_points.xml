@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".view.CategoryBlockActivity"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/category_block_points_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category_block_points_title"
+            android:layout_marginBottom="3dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:id="@+id/category_block_button_return"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:text="@string/category_block_points_button_return"
+                    android:background="@color/asbestos"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/category_block_points_description1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/category_block_points_description1"
+                        android:textSize="15sp"
+                        android:textColor="@color/black_grey"/>
+
+                    <TextView
+                        android:id="@+id/category_block_points_description2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/category_block_points_description1"
+                        android:text="@string/category_block_points_description2"
+                        android:textSize="15sp"
+                        android:textColor="@color/black_grey"/>
+
+
+                    <TextView
+                        android:id="@+id/category_block_points_description3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/category_block_points_description2"
+                        android:text="@string/category_block_points_description3"
+                        android:textSize="15sp"
+                        android:textColor="@color/black_grey"/>
+
+                    <TextView
+                        android:id="@+id/category_block_points_description4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/category_block_points_description3"
+                        android:text="@string/category_block_points_description4"
+                        android:textSize="15sp"
+                        android:textColor="@color/black_grey"/>
+
+                    <TextView
+                        android:id="@+id/category_block_points_description5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/category_block_points_description4"
+                        android:text="@string/category_block_points_description5"
+                        android:textSize="15sp"
+                        android:textColor="@color/black_grey"/>
+                </RelativeLayout>
+            </ScrollView>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>
