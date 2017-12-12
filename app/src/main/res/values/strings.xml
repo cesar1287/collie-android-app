@@ -55,8 +55,8 @@
     <string name="setup_screen_points">Por pontos</string>
 
 
-    <string name="category_block_simple_title">Bloqueio Simples</string>
-    <string name="category_block_simple_description1">Nessa categoria de bloqueio, o resposável determina
+    <string name="category_block_simple_title">Bloqueio simples</string>
+    <string name="category_block_simple_description1">Nessa categoria de bloqueio, o responsável determina
         quanto tempo por dia o dependente poderá usar o celular, por exemplo:</string>
     <string name="category_block_simple_description2">- Se  o responsável deseja que
     o bloqueio seja noturno, neste caso o celular ficará bloqueado das 22 horas as 09 horas(período
@@ -69,7 +69,7 @@
         utilizar normalmente</string>
     <string name="category_block_simple_button_return">Voltar</string>
 
-    <string name="category_block_time_title">Bloqueio Por Tempo Limite</string>
+    <string name="category_block_time_title">Bloqueio por tempo limite</string>
     <string name="category_block_time_description1">Nessa categoria de bloqueio, o resposável
         determina quanto tempo o dependente irá usar o celular até que seja bloqueado, quando for
         bloqueado aparecerá uma questão de múltipla escolha na tela com 20 segundos para ser
@@ -86,7 +86,7 @@
         normalmente</string>
     <string name="category_block_time_button_return">Voltar</string>
 
-    <string name="category_block_points_title">Bloqueio Por Pontos</string>
+    <string name="category_block_points_title">Bloqueio por pontos</string>
     <string name="category_block_points_description1">Nessa categoria de bloqueio, o resposável
         determina com quanto tempo o dependente inicia o dia por exemplo:</string>
     <string name="category_block_points_description2">- O dependente inicia o dia com 1 hora, após
