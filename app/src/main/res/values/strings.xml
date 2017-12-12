@@ -65,7 +65,7 @@
         bloqueio durante o período de aula do dependente, também determinando o intervalo de
         tempo.</string>
     <string name="category_block_simple_description4">Independente do período de bloqueio as
-        funções: Alarme, Calculadora e Ligações não serão bloqueadas e o dependente poderá
+        funções: Alarme, Calculadora e Ligação, não serão bloqueadas e o dependente poderá
         utilizar normalmente</string>
     <string name="category_block_simple_button_return">Voltar</string>
 
@@ -82,7 +82,7 @@
         bloqueio noturno(Período da noite que ficará bloqueado) e o bloqueio escolar(Período do
         dia que ficará bloqueado)</string>
     <string name="category_block_time_description3">Independete do celular estar bloqueado ou não as
-        funções: Alarme, Calculadora e Ligações não serão bloqueadas e o dependente poderá utilizar
+        funções: Alarme, Calculadora e Ligação, não serão bloqueadas e o dependente poderá utilizar
         normalmente</string>
     <string name="category_block_time_button_return">Voltar</string>
 
@@ -101,7 +101,7 @@
         pode responder, quando atingir esse total não será possivel ganhar mais pontos e quando
         esgotar o celular ficará bloqueado.</string>
     <string name="category_block_points_description5">Independete do celular estar bloqueado ou não 
-        as funções: Alarme, Calculadora e Ligações não serão bloqueadas e o dependente poderá 
+        as funções: Alarme, Calculadora e Ligação, não serão bloqueadas e o dependente poderá
         utilizar normalmente</string>
     <string name="category_block_points_button_return">Voltar</string>
 
