@@ -21,6 +21,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import comcesar1287.github.www.collie.R;
 
@@ -31,6 +36,8 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
     private FirebaseAuth mAuth;
 
     private ProgressDialog dialog;
+
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +77,8 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initComponents() {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         mAuth = FirebaseAuth.getInstance();
         Utils.init(getApplication());
 
@@ -144,8 +153,28 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
                         // signed in user can be handled in the listener.
                         dialog.dismiss();
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(SignWithActivity.this, MainActivity.class));
-                            finish();
+                            mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.child("users")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .child("block")
+                                            .exists()) {
+                                        startActivity(new Intent(SignWithActivity.this, MainActivity.class));
+                                        finish();
+                                    } else {
+                                        startActivity(new Intent(SignWithActivity.this, SetupScreenActivity.class));
+                                        finish();
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+                                    Toast.makeText(SignWithActivity.this,
+                                            getResources().getString(R.string.error_unknown_error),
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            });
                         }
                     }
                 });
