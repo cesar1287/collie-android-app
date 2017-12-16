@@ -200,7 +200,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             if (user != null) {
                                 FirebaseHelper.writeNewUser(mDatabase, mAuth.getCurrentUser().getUid(), nameFather, nameChild, ageChild);
                                 Toast.makeText(RegisterActivity.this, getString(R.string.successfully_registered), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                                startActivity(new Intent(RegisterActivity.this, SetupScreenActivity.class));
                                 finish();
                             }
                         }
