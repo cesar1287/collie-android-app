@@ -9,9 +9,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import comcesar1287.github.www.collie.R;
 
 public class SetupScreenActivity extends AppCompatActivity implements View.OnClickListener{
+
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +72,8 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initComponents() {
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+
         ImageView btSetupScreenExplanationSimple = findViewById(R.id.setup_screen_explanation_simple);
         btSetupScreenExplanationSimple.setOnClickListener(this);
 
@@ -85,13 +93,13 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
         btSetupScreenSelectPoints.setOnClickListener(this);
     }
 
-    private void typeBlockDialog(String type) {
+    private void typeBlockDialog(final String type) {
         // Use the Builder class for convenient dialog construction
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Tem certeza que deseja escolher o bloqueio " + type+ "?")
                 .setPositiveButton(R.string.setup_screen_dialog_yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        doSelectTypeBlock();
+                        doSelectTypeBlock(type);
                     }
                 })
                 .setNegativeButton(R.string.setup_screen_dialog_cancel, new DialogInterface.OnClickListener() {
@@ -105,6 +113,13 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
         builder.show();
     }
 
-    private void doSelectTypeBlock() {
+    private void doSelectTypeBlock(String type) {
+        mDatabase.child("users")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child("block")
+                .setValue(type);
+
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 }
