@@ -50,10 +50,12 @@
     <string name="forgot_password_cancel">Cancelar</string>
 
     <string name="setup_screen_title">Defina o tipo de bloqueio.</string>
+    <string name="setup_screen_block">Bloqueio</string>
     <string name="setup_screen_simple">Simples</string>
     <string name="setup_screen_time">Por tempo</string>
     <string name="setup_screen_points">Por pontos</string>
-
+    <string name="setup_screen_dialog_yes">Sim</string>
+    <string name="setup_screen_dialog_cancel">Cancelar</string>
 
     <string name="category_block_simple_title">Bloqueio simples</string>
     <string name="category_block_simple_description1">Nessa categoria de bloqueio, o responsável determina
@@ -105,5 +107,7 @@
         utilizar normalmente</string>
     <string name="category_block_points_button_return">Voltar</string>
 
-
+    <string name="splash_good_morning">Bom dia, seja bem vindo!</string>
+    <string name="splash_good_afternoon">Boa tarde, seja bem vindo!</string>
+    <string name="splash_good_evening">Boa noite, seja bem vindo!</string>
 </resources>

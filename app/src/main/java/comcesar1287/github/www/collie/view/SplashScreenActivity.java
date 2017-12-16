@@ -38,7 +38,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
+                Intent i = new Intent(SplashScreenActivity.this, SetupScreenActivity.class);
                 startActivity(i);
                 finish(); // kill current activity
             }
@@ -47,21 +47,21 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     public void hourText(){
-        tvGreeting = (TextView) findViewById(R.id.splash_screen_greeting);
+        tvGreeting = findViewById(R.id.splash_screen_greeting);
 
         Calendar c = Calendar.getInstance();
         hour = c.get(Calendar.HOUR_OF_DAY);
 
         if (hour>=5 && hour<12){
-            tvGreeting.setText("Bom dia, seja bem vindo!");
+            tvGreeting.setText(R.string.splash_good_morning);
         }
 
         else if (hour>=12 && hour<18){
-            tvGreeting.setText("Boa tarde, seja bem vindo!");
+            tvGreeting.setText(R.string.splash_good_afternoon);
         }
 
         else if(hour>=18){
-            tvGreeting.setText("Boa noite, seja bem vindo!");
+            tvGreeting.setText(R.string.splash_good_evening);
         }
 
     }
