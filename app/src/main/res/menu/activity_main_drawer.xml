@@ -5,33 +5,42 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_screem_main"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:title="@string/lateral_menu_main_screen" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_edit_profile"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="@string/lateral_menu_edit_profile" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_edit_config"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="@string/lateral_menu_edit_config" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_change_block"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/lateral_menu_change_block" />
+        <item
+            android:id="@+id/nav_list_reports"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="@string/lateral_menu_list_reports" />
+
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/lateral_menu_exit" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Aplicativo">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_who_are_you"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="@string/lateral_menu_who_are_you" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_contact_us"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="@string/lateral_menu_list_contact_us" />
         </menu>
     </item>
 

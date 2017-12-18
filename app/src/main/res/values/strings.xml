@@ -134,5 +134,15 @@
 
     <string name="question_button_confirm">Confirmar</string>
     <string name="question_button_jump">Pular</string>
+    
+    <string name="lateral_menu_main_screen">Tela Principal</string>
+    <string name="lateral_menu_edit_profile">Editar Meu Perfil</string>
+    <string name="lateral_menu_edit_config">Editar Bloqueio Atual</string>
+    <string name="lateral_menu_change_block">Alterar Bloqueio</string>
+    <string name="lateral_menu_list_reports">Relatórios</string>
+    <string name="lateral_menu_exit">Sair</string>
+    <string name="lateral_menu_who_are_you">Quem Somos</string>
+    <string name="lateral_menu_list_contact_us">Fale Conosco</string>
+
 
 </resources>
