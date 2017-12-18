@@ -131,4 +131,8 @@
     <string name="splash_good_morning">Bom dia, seja bem vindo!</string>
     <string name="splash_good_afternoon">Boa tarde, seja bem vindo!</string>
     <string name="splash_good_evening">Boa noite, seja bem vindo!</string>
+
+    <string name="question_button_confirm">Confirmar</string>
+    <string name="question_button_jump">Pular</string>
+
 </resources>

@@ -25,7 +25,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true"
-                android:text="20"
                 android:textSize="15sp"
                 android:textColor="@color/black_grey"
                 android:textStyle="bold"/>
@@ -167,7 +166,7 @@
                 android:layout_width="135dp"
                 android:layout_height="35dp"
                 android:layout_marginRight="5dp"
-                android:text="confirmar"
+                android:text="@string/question_button_confirm"
                 android:background="@color/colorPrimary"
                 android:textColor="@color/white"
                 tools:ignore="RtlHardcoded" />
@@ -176,7 +175,7 @@
                 android:id="@+id/question_button_jump"
                 android:layout_width="135dp"
                 android:layout_height="35dp"
-                android:text="pular"
+                android:text="@string/question_button_jump"
                 android:background="@color/asbestos"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/white"
