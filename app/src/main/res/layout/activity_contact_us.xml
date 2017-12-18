@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".view.ForgotPasswordActivity"
+    android:padding="15dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="harmonytech.praagora.view.ContactUsActivity">
+
+            <TextView
+                android:id="@+id/contact_us_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/contact_us_title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/contac_us_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/contact_us_title"
+                android:theme="@style/TextLabelForWhite"
+                android:hint="@string/contact_us_name"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="8dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/contac_us_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contac_us_name"
+                android:theme="@style/TextLabelForWhite"
+                android:hint="@string/contact_us_phone"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="8dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/contac_us_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contac_us_phone"
+                android:theme="@style/TextLabelForWhite"
+                android:hint="@string/contact_us_city"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="8dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/contact_us_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contac_us_city"
+                android:theme="@style/TextLabelForWhite"
+                android:hint="@string/contact_us_message"
+                tools:layout_editor_absoluteY="0dp"
+                tools:layout_editor_absoluteX="8dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/contact_us_message"
+                android:layout_marginTop="29dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <Button
+                    android:id="@+id/contact_us_send"
+                    android:layout_width="125dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/contact_us_send"
+                    android:background="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:onClick="enviarEmail"
+                    tools:ignore="OnClick" />
+
+                <Button
+                    android:id="@+id/contact_us_cancel"
+                    android:layout_width="125dp"
+                    android:layout_height="35dp"
+                    android:text="@string/contact_us_cancel"
+                    android:background="@color/asbestos"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/white"
+                    android:layout_alignParentEnd="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</FrameLayout>

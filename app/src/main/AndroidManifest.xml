@@ -59,6 +59,9 @@
         <activity
             android:name=".view.QuestionsActivity"
             android:theme="@style/AppTheme.Dialog"></activity>
+        <activity
+            android:name=".view.ContactUsActivity"
+            android:theme="@style/AppTheme.Dialog"/>
     </application>
 
 </manifest>

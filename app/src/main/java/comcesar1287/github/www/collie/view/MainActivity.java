@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_who_are_you) {
 
         } else if (id == R.id.nav_contact_us) {
-
+            startActivity(new Intent(this, ContactUsActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

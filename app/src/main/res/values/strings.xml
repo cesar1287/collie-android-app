@@ -144,5 +144,14 @@
     <string name="lateral_menu_who_are_you">Quem Somos</string>
     <string name="lateral_menu_list_contact_us">Fale Conosco</string>
 
+    <string name="contact_us_title">Fale Conosco</string>
+    <string name="contact_us_name">Nome</string>
+    <string name="contact_us_phone">Telefone</string>
+    <string name="contact_us_city">Cidade</string>
+    <string name="contact_us_message">Menssagem</string>
+    <string name="contact_us_send">Enviar</string>
+    <string name="contact_us_cancel">Cancelar</string>
+
+
 
 </resources>
