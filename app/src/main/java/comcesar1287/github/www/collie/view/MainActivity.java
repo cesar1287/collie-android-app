@@ -156,9 +156,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_screem_main) {
 
         } else if (id == R.id.nav_edit_profile) {
-            mAuth.signOut();
-            startActivity(new Intent(this, CategoryRegisterActivity.class));
-            finish();
+
         } else if (id == R.id.nav_edit_config) {
 
         } else if (id == R.id.nav_change_block) {
