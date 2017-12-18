@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/main_image_alert"
                 android:layout_toEndOf="@id/main_image_alert"
-                android:text="Bloqueio não selecionado."
+                android:text="@string/main_title_alert"
                 android:textSize="17sp"
                 android:textColor="@color/white"/>
 
@@ -63,7 +63,7 @@
                 android:layout_toRightOf="@id/main_image_alert"
                 android:layout_toEndOf="@id/main_image_alert"
                 android:layout_below="@id/main_title_alert"
-                android:text="Acesse o menu lateral para selecionar."
+                android:text="@string/main_subtitle_alert"
                 android:textSize="13sp"
                 android:textColor="@color/white" />
 
