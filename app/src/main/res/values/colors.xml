@@ -8,4 +8,5 @@
     <color name="white">#ffffff</color>
     <color name="black_grey">#212121</color>
     <color name="asbestos">#7f8c8d</color>
+    <color name="red_alert">#e74c3c</color>
 </resources>

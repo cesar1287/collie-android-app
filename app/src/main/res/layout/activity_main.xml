@@ -21,5 +21,54 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/collie_rounded"
+            android:backgroundTint="@color/red_alert"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/main_image_alert"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/collie_icon_closed"
+                android:tint="@color/white"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/main_title_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/main_image_alert"
+                android:layout_toEndOf="@id/main_image_alert"
+                android:text="Bloqueio não selecionado."
+                android:textSize="17sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/main_subtitle_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/main_image_alert"
+                android:layout_toEndOf="@id/main_image_alert"
+                android:layout_below="@id/main_title_alert"
+                android:text="Acesse o menu lateral para selecionar."
+                android:textSize="13sp"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </android.support.v4.widget.DrawerLayout>
