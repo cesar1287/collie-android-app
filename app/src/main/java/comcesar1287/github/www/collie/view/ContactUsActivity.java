@@ -14,7 +14,7 @@ import comcesar1287.github.www.collie.R;
 
 public class ContactUsActivity extends AppCompatActivity implements View.OnClickListener{
 
-    TextInputLayout nome, telefone, cidade, mensagem;
+    TextInputLayout nome, cidade, mensagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,6 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
     private void initComponents() {
         Utils.init(getApplication());
         nome = (TextInputLayout)findViewById(R.id.contac_us_name);
-        telefone = (TextInputLayout)findViewById(R.id.contac_us_phone);
         cidade = (TextInputLayout)findViewById(R.id.contac_us_city);
         mensagem = (TextInputLayout)findViewById(R.id.contact_us_message);
 
@@ -54,13 +53,12 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
     }
 
     public void attemptLogin(){
-        String valNome, valTelefone, valCidade, valMensagem;
+        String valNome, valCidade, valMensagem;
 
         boolean allFieldsFilled = true;
         boolean allFilledRight = true;
 
         valNome = nome.getEditText().getText().toString();
-        valTelefone = telefone.getEditText().getText().toString();
         valCidade = cidade.getEditText().getText().toString();
         valMensagem = mensagem.getEditText().getText().toString();
 
@@ -69,14 +67,6 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
             nome.setError("Campo obrigatório");
         }else{
             nome.setErrorEnabled(false);
-        }
-
-        if(valTelefone.equals("")){
-            allFieldsFilled = false;
-            allFilledRight = false;
-            telefone.setError("Campo obrigatório");
-        }else{
-            telefone.setErrorEnabled(false);
         }
 
         if(valCidade.equals("")){
@@ -93,16 +83,6 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
             mensagem.setErrorEnabled(false);
         }
 
-
-        if(allFieldsFilled) {
-            if (valTelefone.length() < 14) {
-                allFilledRight = false;
-                telefone.setError("Telefone inválido");
-            } else {
-                telefone.setErrorEnabled(false);
-            }
-        }
-
         if(allFieldsFilled && allFilledRight) {
             messageEmail();
             finish();
@@ -111,19 +91,17 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
 
     public StringBuilder messageEmail(){
         String nomeRemetente = nome.getEditText().getText().toString();
-        String telefoneRemetente = telefone.getEditText().getText().toString();
         String cidadeRementente = cidade.getEditText().getText().toString();
         String mensagemRemetente = mensagem.getEditText().getText().toString();
 
         StringBuilder sb = new StringBuilder();
         sb.append("Nome: ").append(nomeRemetente).append("\n");
-        sb.append("Telefone: ").append(telefoneRemetente).append("\n");
         sb.append("Cidade: ").append(cidadeRementente).append("\n");
         sb.append("\n\n\n");
         sb.append("Mensagem: ").append(mensagemRemetente).append("\n");
 
         Intent email = new Intent(Intent.ACTION_SEND);
-        email.putExtra(Intent.EXTRA_EMAIL, new String[] {"contato.collie@gmail.com"});
+        email.putExtra(Intent.EXTRA_EMAIL, new String[] {"islane.junior@gmail.com"});
         email.putExtra(Intent.EXTRA_SUBJECT, "Fale Conosco - TagYou");
         email.putExtra(Intent.EXTRA_TEXT, sb.toString());
         email.setType("plain/text");

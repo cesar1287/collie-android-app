@@ -28,8 +28,7 @@
         <item
             android:id="@+id/nav_exit"
             android:icon="@drawable/collie_icon_exit"
-            android:title="@string/lateral_menu_exit"
-            />
+            android:title="@string/lateral_menu_exit"/>
     </group>
 
     <item android:title="Aplicativo">
