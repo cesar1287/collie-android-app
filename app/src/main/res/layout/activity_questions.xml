@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".view.ForgotPasswordActivity"
+    android:padding="15dp">
+
+    <RelativeLayout
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/questions_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Responda a seguinte pergunta"
+            android:textColor="@color/colorPrimary"
+            android:textSize="17sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/question_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questions_title"
+            android:text="Qual o ano do descobrimento do Brasil"
+            android:textSize="14sp"
+            android:textColor="@color/black_grey"/>
+
+        <RelativeLayout
+            android:id="@+id/question_iten1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:layout_below="@id/question_question">
+            <RadioButton
+                android:id="@+id/question_select_iten1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/question_text_iten1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/question_select_iten1"
+                android:layout_toEndOf="@id/question_select_iten1"
+                android:text="1500"
+                android:textSize="13sp"
+                android:textColor="@color/black_grey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/question_iten2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_iten1">
+            <RadioButton
+                android:id="@+id/question_select_iten2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/question_text_iten2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/question_select_iten2"
+                android:layout_toEndOf="@id/question_select_iten2"
+                android:text="1550"
+                android:textSize="13sp"
+                android:textColor="@color/black_grey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/question_iten3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_iten2">
+            <RadioButton
+                android:id="@+id/question_select_iten3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/question_text_iten3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/question_select_iten3"
+                android:layout_toEndOf="@id/question_select_iten3"
+                android:text="1700"
+                android:textSize="13sp"
+                android:textColor="@color/black_grey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/question_iten4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_iten3">
+            <RadioButton
+                android:id="@+id/question_select_iten4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/question_text_iten4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/question_select_iten4"
+                android:layout_toEndOf="@id/question_select_iten4"
+                android:text="1875"
+                android:textSize="13sp"
+                android:textColor="@color/black_grey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/question_iten5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_iten4">
+            <RadioButton
+                android:id="@+id/question_select_iten5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/question_text_iten5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/question_select_iten5"
+                android:layout_toEndOf="@id/question_select_iten5"
+                android:text="1900"
+                android:textSize="13sp"
+                android:textColor="@color/black_grey" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_iten5"
+            android:layout_marginTop="29dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <Button
+                android:id="@+id/question_button_confirm"
+                android:layout_width="135dp"
+                android:layout_height="35dp"
+                android:layout_marginRight="5dp"
+                android:text="confirmar"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                tools:ignore="RtlHardcoded" />
+
+            <Button
+                android:id="@+id/question_button_jump"
+                android:layout_width="135dp"
+                android:layout_height="35dp"
+                android:text="pular"
+                android:background="@color/asbestos"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

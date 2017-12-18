@@ -52,11 +52,13 @@
             android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.SetupScreenActivity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".view.CategoryBlockActivity"
             android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.QuestionsActivity"
+            android:theme="@style/AppTheme.Dialog"></activity>
     </application>
 
 </manifest>
