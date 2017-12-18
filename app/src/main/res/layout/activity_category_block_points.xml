@@ -63,42 +63,6 @@
                         android:textSize="15sp"
                         android:textColor="@color/black_grey"/>
 
-                    <TextView
-                        android:id="@+id/category_block_points_description2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/category_block_points_description1"
-                        android:text="@string/category_block_points_description2"
-                        android:textSize="15sp"
-                        android:textColor="@color/black_grey"/>
-
-
-                    <TextView
-                        android:id="@+id/category_block_points_description3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/category_block_points_description2"
-                        android:text="@string/category_block_points_description3"
-                        android:textSize="15sp"
-                        android:textColor="@color/black_grey"/>
-
-                    <TextView
-                        android:id="@+id/category_block_points_description4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/category_block_points_description3"
-                        android:text="@string/category_block_points_description4"
-                        android:textSize="15sp"
-                        android:textColor="@color/black_grey"/>
-
-                    <TextView
-                        android:id="@+id/category_block_points_description5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/category_block_points_description4"
-                        android:text="@string/category_block_points_description5"
-                        android:textSize="15sp"
-                        android:textColor="@color/black_grey"/>
                 </RelativeLayout>
             </ScrollView>
         </RelativeLayout>

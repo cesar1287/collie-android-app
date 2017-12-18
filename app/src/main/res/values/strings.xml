@@ -58,53 +58,74 @@
     <string name="setup_screen_dialog_cancel">Cancelar</string>
 
     <string name="category_block_simple_title">Bloqueio simples</string>
-    <string name="category_block_simple_description1">Nessa categoria de bloqueio, o responsável determina
-        quanto tempo por dia o dependente poderá usar o celular, por exemplo:</string>
-    <string name="category_block_simple_description2">- Se  o responsável deseja que
-    o bloqueio seja noturno, neste caso o celular ficará bloqueado das 22 horas as 09 horas(período
-        este que será escolhido pelo responsável).</string>
-    <string name="category_block_simple_description3">- Do mesmo modo o responsável poderá fazer um
-        bloqueio durante o período de aula do dependente, também determinando o intervalo de
-        tempo.</string>
-    <string name="category_block_simple_description4">Independente do período de bloqueio as
-        funções: Alarme, Calculadora e Ligação, não serão bloqueadas e o dependente poderá
-        utilizar normalmente</string>
+    <string name="category_block_simple_description1">Nessa categoria de bloqueio, o responsável
+        determina quais os períodos do dia que o dependente poderá utilizar o celular,
+        por exemplo: \n\n
+
+        Se  o responsável deseja que o bloqueio seja noturno, neste caso o celular ficará bloqueado
+        das 22 horas as 09 horas(período este que será escolhido pelo responsável).\n\n
+
+        Do mesmo modo o responsável poderá fazer um bloqueio durante o período de aula do
+        dependente, período de tempo esse, que também será determinado pelo responsável.\n\n
+
+        As funções: Alarme, Calculadora e ligação não serão bloqueadas e o dependente poderá
+        utilizar normalmente.
+    </string>
     <string name="category_block_simple_button_return">Voltar</string>
 
     <string name="category_block_time_title">Bloqueio por tempo limite</string>
-    <string name="category_block_time_description1">Nessa categoria de bloqueio, o resposável
-        determina quanto tempo o dependente irá usar o celular até que seja bloqueado, quando for
-        bloqueado aparecerá uma questão de múltipla escolha na tela com 20 segundos para ser
-        respondida, se a resposta estiver correta, o celular desbloqueia e começa a contagem
-        novamente para bloquear, se o dependente não acertar, outra pergunta irá aparecer e isso se
-        repetirá por 5 vezes até que ele acerte, caso ele não acerte nenhuma das 5 perguntas, o
-        aparelho ficará bloqueado por um perido de tempo determinado pelo responável, após esse
-        período o celular será liberado e todo o ciclo irá se repetir.</string>
-    <string name="category_block_time_description2">Nessa opção o reponsável poderá também adicionar o
-        bloqueio noturno(Período da noite que ficará bloqueado) e o bloqueio escolar(Período do
-        dia que ficará bloqueado)</string>
-    <string name="category_block_time_description3">Independete do celular estar bloqueado ou não as
-        funções: Alarme, Calculadora e Ligação, não serão bloqueadas e o dependente poderá utilizar
-        normalmente</string>
+    <string name="category_block_time_description1">Nessa categoria de bloqueio, o responsável
+        determina quanto tempo o dependente irá usar o celular até que seja bloqueado,
+        por exemplo:\n\n
+
+        O responsável definiu que o dependente poderá usar o celular por um tempo determinado,
+        após esse tempo acabar o celular será bloqueado e aparecerá uma questão de múltipla escolha
+        na tela com 20 segundos para ser respondida, se a resposta estiver correta, o celular
+        desbloqueia e começa a contagem novamente para bloquear, se o dependente não acertar,
+        outra pergunta irá aparecer e isso se repetirá por 5 vezes até que ele acerte, caso ele
+        não acerte nenhuma das 5 perguntas, o aparelho ficará bloqueado por um período de tempo
+        determinado pelo responsável, após esse período o celular será liberado e todo o ciclo
+        irá se repetir.\n\n
+
+        As funções: Alarme, Calculadora e ligação não serão bloqueadas e o dependente poderá
+        utilizar normalmente.\n\n
+
+        Bloqueio noturno, bloqueio escolar e bônus por tarefas estão disponíveis também nesta
+        categoria.\n\n
+
+        O responsável receberá ao final de cada dia um relatório de desempenho do dependente.
+    </string>
     <string name="category_block_time_button_return">Voltar</string>
 
     <string name="category_block_points_title">Bloqueio por pontos</string>
-    <string name="category_block_points_description1">Nessa categoria de bloqueio, o resposável
-        determina com quanto tempo o dependente inicia o dia por exemplo:</string>
-    <string name="category_block_points_description2">- O dependente inicia o dia com 1 hora, após
-        esse tempo o mesmo deverá responder perguntas para ganhar mais minutos</string>
-    <string name="category_block_points_description3">As perguntas serão feitas e cada pergunta
-        respondida corretamente valerá 5 pontos, cada ponto 1 minuto, cada pergunta que ele pular
-        vale -1 ponto, cada pergunta que ele errar vale -2 pontos, cada uma das perguntas terá 20
-        segundos para ser respondidas, não sendo a mesma será considerada pulada e ai é -1 ponto,
-        em seguida aparecerá outra.</string>
-    <string name="category_block_points_description4">O dependente poderá acumular pontos para o dia
-        seguinte se quiser, o responável determina até quantas perguntas por dia o dependente
-        pode responder, quando atingir esse total não será possivel ganhar mais pontos e quando
-        esgotar o celular ficará bloqueado.</string>
-    <string name="category_block_points_description5">Independete do celular estar bloqueado ou não 
-        as funções: Alarme, Calculadora e Ligação, não serão bloqueadas e o dependente poderá
-        utilizar normalmente</string>
+    <string name="category_block_points_description1">Nesta categoria de bloqueio o responsável
+        determina com quanto tempo de uso o dependente inicia o dia, por exemplo:\n\n
+
+        O dependente inicia o dia com 1 hora de uso liberado, após esgotar esse tempo ele terá
+        que responder corretamente questões de multiplas escolhas para ganhar pontos, cada ponto
+        equivale a um minuto de uso.\n\n
+
+        Perguntas respondidas corretamente = +5 pontos\n\n
+
+        Pergunta que pular = -1 ponto\n\n
+
+        Pergunta que errar = -2 pontos\n\n
+
+        Cada pergunta tera 20 segundos para ser respondida.\n\n
+
+        Os pontos são acumulativos.\n\n
+
+        O responsavel podera limitar o número de perguntas por dia.\n\n
+
+        As funções: Alarme, Calculadora e ligação não serão bloqueadas e o dependente poderá
+        utilizar normalmente.\n\n
+
+        Bloqueio noturno, bloqueio escolar e bônus por tarefas estão disponiveis também nesta
+        categoria.\n\n
+
+        O responsável receberá ao final de cada dia um relatório de desempenho do dependente.</string>
+
+
     <string name="category_block_points_button_return">Voltar</string>
 
     <string name="splash_good_morning">Bom dia, seja bem vindo!</string>
