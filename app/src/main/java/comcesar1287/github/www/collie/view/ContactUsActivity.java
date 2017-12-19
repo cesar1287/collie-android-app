@@ -11,7 +11,6 @@ import com.blankj.utilcode.util.Utils;
 
 import comcesar1287.github.www.collie.R;
 
-
 public class ContactUsActivity extends AppCompatActivity implements View.OnClickListener{
 
     TextInputLayout nome, cidade, mensagem;
@@ -22,7 +21,6 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_contact_us);
 
         initComponents();
-
     }
 
     @Override
@@ -41,9 +39,9 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
 
     private void initComponents() {
         Utils.init(getApplication());
-        nome = (TextInputLayout)findViewById(R.id.contac_us_name);
-        cidade = (TextInputLayout)findViewById(R.id.contac_us_city);
-        mensagem = (TextInputLayout)findViewById(R.id.contact_us_message);
+        nome = findViewById(R.id.contac_us_name);
+        cidade = findViewById(R.id.contac_us_city);
+        mensagem = findViewById(R.id.contact_us_message);
 
         Button btSend = findViewById(R.id.contact_us_send);
         btSend.setOnClickListener(this);
@@ -102,12 +100,11 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
 
         Intent email = new Intent(Intent.ACTION_SEND);
         email.putExtra(Intent.EXTRA_EMAIL, new String[] {"islane.junior@gmail.com"});
-        email.putExtra(Intent.EXTRA_SUBJECT, "Fale Conosco - TagYou");
+        email.putExtra(Intent.EXTRA_SUBJECT, "Fale Conosco - Collie");
         email.putExtra(Intent.EXTRA_TEXT, sb.toString());
         email.setType("plain/text");
         startActivity(Intent.createChooser(email, "Enviando Email..."));
 
         return sb;
     }
-
 }

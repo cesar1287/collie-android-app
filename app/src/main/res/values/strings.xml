@@ -152,9 +152,8 @@
     <string name="contact_us_send">Enviar</string>
     <string name="contact_us_cancel">Cancelar</string>
 
-    <string name="main_title_alert">Bloqueio não selecionado!</string>
-    <string name="main_subtitle_alert">Acesse o menu lateral para selecionar</string>
-
-
-
+    <string name="main_title_alert">Bloqueio não configurado!</string>
+    <string name="main_subtitle_alert">Acesse o menu lateral para configurar</string>
+    <string name="main_dialog_yes">Sim</string>
+    <string name="main_dialog_cancel">Cancelar</string>
 </resources>

@@ -1,8 +1,10 @@
 package comcesar1287.github.www.collie.view;
 
+import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity
     protected void onResume() {
         super.onResume();
         if(mDPM!=null) {
-            Toast.makeText(this, String.valueOf(mDPM.isAdminActive(mDeviceAdmin)), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, String.valueOf(mDPM.isAdminActive(mDeviceAdmin)), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -125,24 +127,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -156,11 +140,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_edit_config) {
 
         } else if (id == R.id.nav_change_block) {
-
+            startActivity(new Intent(this, SetupScreenActivity.class));
         } else if (id == R.id.nav_list_reports) {
 
         } else if (id == R.id.nav_exit) {
-
+            signOut();
         } else if (id == R.id.nav_who_are_you) {
 
         } else if (id == R.id.nav_contact_us) {
@@ -170,5 +154,27 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void signOut() {
+        // Use the Builder class for convenient dialog construction
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Tem certeza que deseja sair?")
+                .setPositiveButton(R.string.main_dialog_yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        mAuth.signOut();
+                        startActivity(new Intent(MainActivity.this, CategoryRegisterActivity.class));
+                        finish();
+                    }
+                })
+                .setNegativeButton(R.string.main_dialog_cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                        dialog.dismiss();
+                    }
+                });
+        // Create the AlertDialog object and return it
+        builder.create();
+        builder.show();
     }
 }
