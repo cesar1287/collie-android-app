@@ -52,16 +52,19 @@
             android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.SetupScreenActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.CategoryBlockActivity"
             android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.QuestionsActivity"
-            android:theme="@style/AppTheme.Dialog"></activity>
+            android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.ContactUsActivity"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:theme="@style/AppTheme.Dialog" />
+        <activity android:name=".view.ConfigBlockSimpleActivity" />
+        <activity android:name=".view.ConfigBlockTimeActivity" />
+        <activity android:name=".view.ConfigBlockPointsActivity"></activity>
     </application>
 
 </manifest>
