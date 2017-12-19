@@ -54,15 +54,10 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         if (hour>=5 && hour<12){
             tvGreeting.setText(R.string.splash_good_morning);
-        }
-
-        else if (hour>=12 && hour<18){
+        }else if (hour>=12 && hour<18){
             tvGreeting.setText(R.string.splash_good_afternoon);
-        }
-
-        else if(hour>=18){
+        }else if(hour>=18){
             tvGreeting.setText(R.string.splash_good_evening);
         }
-
     }
 }
