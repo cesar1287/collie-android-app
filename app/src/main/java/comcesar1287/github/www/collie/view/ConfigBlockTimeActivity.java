@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import comcesar1287.github.www.collie.R;
 
-public class ConfigBlockTimeActivity extends AppCompatActivity implements View.OnClickListener{
+public class ConfigBlockTimeActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class ConfigBlockTimeActivity extends AppCompatActivity implements View.O
     public void onClick(View view) {
         int id = view.getId();
 
-        switch (id){
+        switch (id) {
             case R.id.config_time_button_send:
                 Toast.makeText(this, "Configuração de bloqueio registrado com sucesso", Toast.LENGTH_SHORT).show();
                 finish();
@@ -40,3 +40,4 @@ public class ConfigBlockTimeActivity extends AppCompatActivity implements View.O
         Button btCancel = findViewById(R.id.config_time_button_cancel);
         btCancel.setOnClickListener(this);
     }
+}
