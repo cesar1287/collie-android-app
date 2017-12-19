@@ -14,20 +14,28 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import comcesar1287.github.www.collie.controller.admin.CollieAdminReceiver;
 import comcesar1287.github.www.collie.R;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     private DevicePolicyManager mDPM;
 
@@ -35,6 +43,9 @@ public class MainActivity extends AppCompatActivity
 
     private Toolbar toolbar;
     private final static int REQUEST_CODE_ENABLE_ADMIN = 1;
+
+    private ImageView ivMainImageAlert;
+    private RelativeLayout rlMainAlert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +67,39 @@ public class MainActivity extends AppCompatActivity
         super.onResume();
         if(mDPM!=null) {
             //Toast.makeText(this, String.valueOf(mDPM.isAdminActive(mDeviceAdmin)), Toast.LENGTH_SHORT).show();
+        }
+
+        verifyIfUserCompletedRegister();
+    }
+
+    private void verifyIfUserCompletedRegister() {
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child("config")
+                        .child(mAuth.getCurrentUser().getUid())
+                        .exists()) {
+                    rlMainAlert.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(MainActivity.this,
+                        getResources().getString(R.string.error_unknown_error),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id = view.getId();
+
+        switch (id){
+            case R.id.main_image_alert:
+                rlMainAlert.setVisibility(View.GONE);
+                break;
         }
     }
 
@@ -95,10 +139,15 @@ public class MainActivity extends AppCompatActivity
 
     private void initComponent() {
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         mDeviceAdmin = new ComponentName(this, CollieAdminReceiver.class);
 
         mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
+
+        ivMainImageAlert = findViewById(R.id.main_image_alert);
+        ivMainImageAlert.setOnClickListener(this);
+        rlMainAlert = findViewById(R.id.main_alert);
     }
 
     private void initDrawer() {
