@@ -45,11 +45,12 @@
             android:id="@+id/config_time_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bloqueio Por Tempo"
+            android:text="@string/config_block_time_title"
             android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:layout_marginBottom="5dp"
             android:textSize="19sp"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary" />
 
 
         <ScrollView
@@ -67,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="Tempo limite antes do bloqueio"
+                    android:text="@string/config_block_time_subtitle"
                     android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginBottom="5dp"
@@ -85,9 +86,10 @@
                     android:padding="10dp">
 
                     <EditText
+                        android:id="@+id/config_block_time_no_block"
                         android:layout_width="wrap_content"
                         android:layout_height="35dp"
-                        android:hint="Tempo antes do bloqueio?"
+                        android:hint="@string/config_block_time_hint"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:layout_centerInParent="true"

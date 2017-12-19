@@ -168,6 +168,9 @@
     <string name="config_block_simple_title3">Periodo noturno</string>
     <string name="config_block_simple_time_initial">Tempo inicial</string>
     <string name="config_block_simple_time_final">Tempo Final</string>
+    <string name="config_block_time_title">Bloqueio Por Tempo</string>
+    <string name="config_block_time_subtitle">Tempo limite antes do bloqueio</string>
+    <string name="config_block_time_hint">Tempo limite antes do bloqueio</string>
 
     <string name="config_block_confirm">Confirmar</string>
     <string name="config_block_cancel">Cancelar</string>
