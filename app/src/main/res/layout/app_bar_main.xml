@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,6 +7,7 @@
     tools:context="comcesar1287.github.www.collie.view.MainActivity">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -20,4 +21,174 @@
 
     </android.support.design.widget.AppBarLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_toolbar">
+
+        <RelativeLayout
+            android:id="@+id/main_gif_security"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:background="@color/blue_gif_security">
+            <pl.droidsonroids.gif.GifImageView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:src="@drawable/collie_gif_security"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/main_gif_security"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_margin="20dp">
+            <RelativeLayout
+                android:id="@+id/main_reports"
+                android:layout_width="109dp"
+                android:layout_height="109dp"
+                android:background="@drawable/collie_rounded_line">
+                <ImageView
+                    android:id="@+id/main_icon1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/collie_icon_big_reports"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:tint="@color/colorAccent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_icon1"
+                    android:text="@string/main_reports"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/main_schedule"
+                android:layout_width="109dp"
+                android:layout_height="109dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/collie_rounded_line">
+                <ImageView
+                    android:id="@+id/main_icon2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/collie_icon_big_schedule"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:tint="@color/colorAccent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_icon2"
+                    android:text="@string/main_schedule"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/main_tasks"
+                android:layout_width="109dp"
+                android:layout_height="109dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/collie_rounded_line">
+                <ImageView
+                    android:id="@+id/main_icon3"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/collie_icon_big_tasks"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:tint="@color/colorAccent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_icon3"
+                    android:text="@string/main_tasks"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/main_localization"
+                android:layout_width="109dp"
+                android:layout_height="109dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/collie_rounded_line"
+                android:layout_alignParentEnd="true">
+                <ImageView
+                    android:id="@+id/main_icon4"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/collie_icon_big_localization"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:tint="@color/colorAccent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_icon4"
+                    android:text="@string/main_localization"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/collie_rounded"
+            android:backgroundTint="@color/red_alert"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/main_image_alert"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/collie_icon_closed"
+                android:tint="@color/white"
+                tools:ignore="RtlHardcoded" />
+
+            <TextView
+                android:id="@+id/main_title_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/main_image_alert"
+                android:layout_toEndOf="@id/main_image_alert"
+                android:text="@string/main_title_alert"
+                android:textSize="17sp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/main_subtitle_alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/main_image_alert"
+                android:layout_toEndOf="@id/main_image_alert"
+                android:layout_below="@id/main_title_alert"
+                android:text="@string/main_subtitle_alert"
+                android:textSize="13sp"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
