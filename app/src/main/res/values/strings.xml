@@ -168,7 +168,8 @@
     <string name="config_block_simple_title3">Periodo noturno</string>
     <string name="config_block_simple_time_initial">Tempo inicial</string>
     <string name="config_block_simple_time_final">Tempo Final</string>
-    <string name="config_block_simple_confirm">Confirmar</string>
-    <string name="config_block_simple_cancel">Cancelar</string>
+
+    <string name="config_block_confirm">Confirmar</string>
+    <string name="config_block_cancel">Cancelar</string>
 
 </resources>
