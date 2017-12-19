@@ -162,7 +162,7 @@
     <string name="main_localization">Localização</string>
 
     <string name="config_block_simple_title">Bloqueio Simples</string>
-    <string name="config_block_simple_subtitle">Selecione o período de bloqueio</string>
+    <string name="config_block_simple_subtitle">Período de bloqueio</string>
     <string name="config_block_simple_title1">Período de aula</string>
     <string name="config_block_simple_title2">Período de tarefas</string>
     <string name="config_block_simple_title3">Periodo noturno</string>
