@@ -160,4 +160,15 @@
     <string name="main_schedule">Agenda</string>
     <string name="main_tasks">Tarefas</string>
     <string name="main_localization">Localização</string>
+
+    <string name="config_block_simple_title">Bloqueio Simples</string>
+    <string name="config_block_simple_subtitle">Selecione o período de bloqueio</string>
+    <string name="config_block_simple_title1">Período de aula</string>
+    <string name="config_block_simple_title2">Período de tarefas</string>
+    <string name="config_block_simple_title3">Periodo noturno</string>
+    <string name="config_block_simple_time_initial">Tempo inicial</string>
+    <string name="config_block_simple_time_final">Tempo Final</string>
+    <string name="config_block_simple_confirm">Confirmar</string>
+    <string name="config_block_simple_cancel">Cancelar</string>
+
 </resources>

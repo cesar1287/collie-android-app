@@ -62,9 +62,15 @@
         <activity
             android:name=".view.ContactUsActivity"
             android:theme="@style/AppTheme.Dialog" />
-        <activity android:name=".view.ConfigBlockSimpleActivity" />
-        <activity android:name=".view.ConfigBlockTimeActivity" />
-        <activity android:name=".view.ConfigBlockPointsActivity"></activity>
+        <activity
+            android:name=".view.ConfigBlockSimpleActivity"
+            android:theme="@style/AppTheme.Dialog"/>
+        <activity
+            android:name=".view.ConfigBlockTimeActivity"
+            android:theme="@style/AppTheme.Dialog"/>
+        <activity
+            android:name=".view.ConfigBlockPointsActivity"
+            android:theme="@style/AppTheme.Dialog"></activity>
     </application>
 
 </manifest>
