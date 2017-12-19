@@ -22,7 +22,7 @@
             android:layout_alignParentBottom="true">
             <Button
                 android:id="@+id/config_points_button_send"
-                android:layout_width="150dp"
+                android:layout_width="144dp"
                 android:layout_height="35dp"
                 android:layout_marginRight="5dp"
                 android:text="@string/config_block_confirm"
@@ -32,7 +32,7 @@
 
             <Button
                 android:id="@+id/config_points_button_cancel"
-                android:layout_width="150dp"
+                android:layout_width="144dp"
                 android:layout_height="35dp"
                 android:text="@string/config_block_cancel"
                 android:background="@color/asbestos"
