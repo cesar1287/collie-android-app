@@ -30,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import comcesar1287.github.www.collie.controller.admin.CollieAdminReceiver;
 import comcesar1287.github.www.collie.R;
+import comcesar1287.github.www.collie.controller.data.SharedPref;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -100,6 +101,18 @@ public class MainActivity extends AppCompatActivity
             case R.id.main_image_alert:
                 rlMainAlert.setVisibility(View.GONE);
                 break;
+            case R.id.main_alert:
+                SharedPref sharedPref = new SharedPref(this);
+                String type = sharedPref.getTypeBlock();
+
+                if(getString(R.string.setup_screen_simple).equals(type)){
+                    startActivity(new Intent(this, ConfigBlockSimpleActivity.class));
+                }else if(getString(R.string.setup_screen_points).equals(type)){
+                    startActivity(new Intent(this, ConfigBlockPointsActivity.class));
+                }else if(getString(R.string.setup_screen_time).equals(type)){
+                    startActivity(new Intent(this, ConfigBlockTimeActivity.class));
+                }
+                break;
         }
     }
 
@@ -148,6 +161,7 @@ public class MainActivity extends AppCompatActivity
         ivMainImageAlert = findViewById(R.id.main_image_alert);
         ivMainImageAlert.setOnClickListener(this);
         rlMainAlert = findViewById(R.id.main_alert);
+        rlMainAlert.setOnClickListener(this);
     }
 
     private void initDrawer() {
@@ -187,9 +201,19 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_edit_profile) {
 
         } else if (id == R.id.nav_edit_config) {
+            SharedPref sharedPref = new SharedPref(this);
+            String type = sharedPref.getTypeBlock();
 
+            if(getString(R.string.setup_screen_simple).equals(type)){
+                startActivity(new Intent(this, ConfigBlockSimpleActivity.class));
+            }else if(getString(R.string.setup_screen_points).equals(type)){
+                startActivity(new Intent(this, ConfigBlockPointsActivity.class));
+            }else if(getString(R.string.setup_screen_time).equals(type)){
+                startActivity(new Intent(this, ConfigBlockTimeActivity.class));
+            }
         } else if (id == R.id.nav_change_block) {
             startActivity(new Intent(this, SetupScreenActivity.class));
+            finish();
         } else if (id == R.id.nav_list_reports) {
 
         } else if (id == R.id.nav_exit) {

@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import comcesar1287.github.www.collie.R;
+import comcesar1287.github.www.collie.controller.data.SharedPref;
 
 public class SignWithActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -160,6 +161,11 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
                                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                             .child("block")
                                             .exists()) {
+                                        SharedPref sharedPref = new SharedPref(SignWithActivity.this);
+                                        sharedPref.setTypeBlock((String) dataSnapshot.child("users")
+                                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                .child("block").getValue());
+
                                         startActivity(new Intent(SignWithActivity.this, MainActivity.class));
                                         finish();
                                     } else {

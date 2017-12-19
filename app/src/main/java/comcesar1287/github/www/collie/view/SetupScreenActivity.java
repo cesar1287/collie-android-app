@@ -14,6 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import comcesar1287.github.www.collie.R;
+import comcesar1287.github.www.collie.controller.data.SharedPref;
 
 public class SetupScreenActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -118,6 +119,9 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .child("block")
                 .setValue(type);
+
+        SharedPref sharedPref = new SharedPref(this);
+        sharedPref.setTypeBlock(type);
 
         startActivity(new Intent(this, MainActivity.class));
         finish();
