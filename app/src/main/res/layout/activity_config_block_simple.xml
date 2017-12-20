@@ -15,176 +15,12 @@
         android:layout_height="wrap_content"
         tools:context="comcesar1287.github.www.collie.view.ConfigBlockSimpleActivity">
 
-        <TextView
-            android:id="@+id/config_simple_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/config_block_simple_title"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="5dp"
-            android:textSize="19sp"
-            android:textColor="@color/colorPrimary"/>
-
-        <TextView
-            android:id="@+id/config_simple_subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/config_simple_title"
-            android:text="@string/config_block_simple_subtitle"
-            android:layout_marginLeft="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginBottom="5dp"
-            android:textSize="16sp"
-            android:textColor="@color/black_grey"/>
-
-        <RelativeLayout
-            android:id="@+id/config_block_simple_1"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="4dp"
-            android:layout_below="@id/config_simple_subtitle"
-            android:background="@drawable/collie_rounded_line"
-            android:padding="10dp">
-
-            <CheckBox
-                android:id="@+id/config_simple_cb1"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="7dp"/>
-
-            <TextView
-                android:id="@+id/config_simple_title1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="7dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:text="@string/config_block_simple_title1"
-                android:textColor="@color/black_grey"
-                android:textSize="15sp"
-                android:layout_toRightOf="@id/config_simple_cb1"
-                android:layout_toEndOf="@id/config_simple_cb1" />
-
-            <Button
-                android:id="@+id/config_simple_initial_hour1"
-                android:layout_width="140dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/config_simple_title1"
-                android:text="@string/config_block_simple_time_initial"/>
-
-            <Button
-                android:id="@+id/config_simple_final_hour1"
-                android:layout_width="140dp"
-                android:layout_height="40dp"
-                android:layout_toRightOf="@id/config_simple_initial_hour1"
-                android:layout_toEndOf="@id/config_simple_initial_hour1"
-                android:layout_below="@id/config_simple_title1"
-                android:text="@string/config_block_simple_time_final" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/config_block_simple_2"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/config_block_simple_1"
-            android:background="@drawable/collie_rounded_line"
-            android:padding="10dp">
-
-            <CheckBox
-                android:id="@+id/config_simple_cb2"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="7dp"/>
-
-            <TextView
-                android:id="@+id/config_simple_title2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="7dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:text="@string/config_block_simple_title2"
-                android:textColor="@color/black_grey"
-                android:textSize="15sp"
-                android:layout_toRightOf="@id/config_simple_cb2"
-                android:layout_toEndOf="@id/config_simple_cb2" />
-
-            <Button
-                android:id="@+id/config_simple_initial_hour2"
-                android:layout_width="140dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/config_simple_title2"
-                android:text="@string/config_block_simple_time_initial"/>
-
-            <Button
-                android:id="@+id/config_simple_final_hour2"
-                android:layout_width="140dp"
-                android:layout_height="40dp"
-                android:layout_toRightOf="@id/config_simple_initial_hour2"
-                android:layout_toEndOf="@id/config_simple_initial_hour2"
-                android:layout_below="@id/config_simple_title2"
-                android:text="@string/config_block_simple_time_final" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/config_block_simple_3"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/config_block_simple_2"
-            android:background="@drawable/collie_rounded_line"
-            android:padding="10dp">
-
-            <CheckBox
-                android:id="@+id/config_simple_cb3"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginBottom="7dp"/>
-
-            <TextView
-                android:id="@+id/config_simple_title3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="7dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:text="@string/config_block_simple_title3"
-                android:textColor="@color/black_grey"
-                android:textSize="15sp"
-                android:layout_toRightOf="@id/config_simple_cb3"
-                android:layout_toEndOf="@id/config_simple_cb3" />
-
-            <Button
-                android:id="@+id/config_simple_initial_hour3"
-                android:layout_width="140dp"
-                android:layout_height="40dp"
-                android:layout_below="@id/config_simple_title3"
-                android:text="@string/config_block_simple_time_initial"/>
-
-            <Button
-                android:id="@+id/config_simple_final_hour3"
-                android:layout_width="140dp"
-                android:layout_height="40dp"
-                android:layout_toRightOf="@id/config_simple_initial_hour3"
-                android:layout_toEndOf="@id/config_simple_initial_hour3"
-                android:layout_below="@id/config_simple_title3"
-                android:text="@string/config_block_simple_time_final" />
-        </RelativeLayout>
-
         <RelativeLayout
             android:layout_width="300dp"
             android:layout_height="35dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:layout_below="@id/config_block_simple_3">
+            android:layout_alignParentBottom="true">
             <Button
                 android:id="@+id/config_simple_button_send"
                 android:layout_width="144dp"
@@ -206,5 +42,262 @@
                 android:layout_alignParentEnd="true" />
         </RelativeLayout>
 
+        <TextView
+            android:id="@+id/config_simple_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/config_block_simple_title"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="19sp"
+            android:textColor="@color/colorPrimary"
+            tools:ignore="RtlHardcoded" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="55dp"
+            android:layout_below="@id/config_simple_title"
+            android:layout_marginTop="10dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/config_simple_subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/config_block_simple_subtitle"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black_grey"/>
+
+                <RelativeLayout
+                    android:id="@+id/config_block_simple_1"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@id/config_simple_subtitle"
+                    android:background="@drawable/collie_rounded_line"
+                    android:padding="10dp">
+
+                    <CheckBox
+                        android:id="@+id/config_simple_cb1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="7dp"/>
+
+                    <TextView
+                        android:id="@+id/config_simple_title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/config_block_simple_title1"
+                        android:textColor="@color/black_grey"
+                        android:textSize="15sp"
+                        android:layout_toRightOf="@id/config_simple_cb1"
+                        android:layout_toEndOf="@id/config_simple_cb1" />
+
+                    <Button
+                        android:id="@+id/config_simple_initial_hour1"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/config_simple_title1"
+                        android:text="@string/config_block_simple_time_initial"/>
+
+                    <Button
+                        android:id="@+id/config_simple_final_hour1"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@id/config_simple_initial_hour1"
+                        android:layout_toEndOf="@id/config_simple_initial_hour1"
+                        android:layout_below="@id/config_simple_title1"
+                        android:text="@string/config_block_simple_time_final" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/config_block_simple_2"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/config_block_simple_1"
+                    android:background="@drawable/collie_rounded_line"
+                    android:padding="10dp">
+
+                    <CheckBox
+                        android:id="@+id/config_simple_cb2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="7dp"/>
+
+                    <TextView
+                        android:id="@+id/config_simple_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/config_block_simple_title2"
+                        android:textColor="@color/black_grey"
+                        android:textSize="15sp"
+                        android:layout_toRightOf="@id/config_simple_cb2"
+                        android:layout_toEndOf="@id/config_simple_cb2" />
+
+                    <Button
+                        android:id="@+id/config_simple_initial_hour2"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/config_simple_title2"
+                        android:text="@string/config_block_simple_time_initial"/>
+
+                    <Button
+                        android:id="@+id/config_simple_final_hour2"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@id/config_simple_initial_hour2"
+                        android:layout_toEndOf="@id/config_simple_initial_hour2"
+                        android:layout_below="@id/config_simple_title2"
+                        android:text="@string/config_block_simple_time_final" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/config_block_simple_3"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/config_block_simple_2"
+                    android:background="@drawable/collie_rounded_line"
+                    android:padding="10dp">
+
+                    <CheckBox
+                        android:id="@+id/config_simple_cb3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginBottom="7dp"/>
+
+                    <TextView
+                        android:id="@+id/config_simple_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="7dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/config_block_simple_title3"
+                        android:textColor="@color/black_grey"
+                        android:textSize="15sp"
+                        android:layout_toRightOf="@id/config_simple_cb3"
+                        android:layout_toEndOf="@id/config_simple_cb3" />
+
+                    <Button
+                        android:id="@+id/config_simple_initial_hour3"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@id/config_simple_title3"
+                        android:text="@string/config_block_simple_time_initial"/>
+
+                    <Button
+                        android:id="@+id/config_simple_final_hour3"
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_toRightOf="@id/config_simple_initial_hour3"
+                        android:layout_toEndOf="@id/config_simple_initial_hour3"
+                        android:layout_below="@id/config_simple_title3"
+                        android:text="@string/config_block_simple_time_final" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/config_simple_subtitle1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/config_block_simple_3"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/config_block_simple_subtitle2"
+                    android:textColor="@color/black_grey"
+                    android:textSize="16sp"/>
+                <RelativeLayout
+                    android:id="@+id/config_block_simple_task1"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@id/config_simple_subtitle1"
+                    android:background="@drawable/collie_rounded_line"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/config_block_simple_name_task1"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@drawable/collie_rounded_line"
+                        android:hint="@string/config_block_simple_time_name_task"
+                        android:inputType="text"
+                        android:gravity="center" />
+
+                    <EditText
+                        android:id="@+id/config_block_simple_bonus_task1"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/collie_rounded_line"
+                        android:layout_below="@id/config_block_simple_name_task1"
+                        android:hint="@string/config_block_simple_time_bonus_task"
+                        android:inputType="time"
+                        android:gravity="center"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/config_simple_subtitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/config_block_simple_task1"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/config_block_simple_subtitle3"
+                    android:textColor="@color/black_grey"
+                    android:textSize="16sp"/>
+                <RelativeLayout
+                    android:id="@+id/config_block_simple_task2"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@id/config_simple_subtitle2"
+                    android:background="@drawable/collie_rounded_line"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/config_block_simple_name_task2"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@drawable/collie_rounded_line"
+                        android:hint="@string/config_block_simple_time_name_task"
+                        android:inputType="text"
+                        android:gravity="center"/>
+
+                    <EditText
+                        android:id="@+id/config_block_simple_bonus_task2"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginTop="7dp"
+                        android:background="@drawable/collie_rounded_line"
+                        android:layout_below="@id/config_block_simple_name_task2"
+                        android:hint="@string/config_block_simple_time_bonus_task"
+                        android:inputType="time"
+                        android:gravity="center"/>
+                </RelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
     </RelativeLayout>
 </FrameLayout>
