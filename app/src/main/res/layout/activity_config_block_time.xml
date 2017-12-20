@@ -99,11 +99,48 @@
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/config_time_subtitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/config_block_time_1"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/config_block_time_subtitle1"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/black_grey"/>
+
+                <RelativeLayout
+                    android:id="@+id/config_block_time_2"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/config_time_subtitle2"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/collie_rounded_line"
+                    android:padding="10dp">
+
+                    <EditText
+                        android:id="@+id/config_block_time_no_hit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:hint="@string/config_block_time_hint1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:background="@color/white"/>
+                </RelativeLayout>
+
+                <TextView
                     android:id="@+id/config_simple_subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@id/config_block_time_1"
+                    android:layout_below="@id/config_block_time_2"
                     android:text="@string/config_block_simple_subtitle"
                     android:layout_marginLeft="5dp"
                     android:layout_marginStart="5dp"

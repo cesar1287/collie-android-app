@@ -171,6 +171,8 @@
     <string name="config_block_time_title">Bloqueio Por Tempo</string>
     <string name="config_block_time_subtitle">Tempo limite antes do bloqueio</string>
     <string name="config_block_time_hint">Tempo limite antes do bloqueio</string>
+    <string name="config_block_time_subtitle1">Tempo de bloqueio em caso de erro</string>
+    <string name="config_block_time_hint1">Tempo de bloqueio, se errar</string>
     <string name="config_block_point_title">Bloqueio Por Pontos</string>
     <string name="config_block_point_subtitle">Limite de perguntas</string>
     <string name="config_block_point_hint">Máximo de perguntas por dia</string>
