@@ -155,7 +155,8 @@
             android:layout_centerHorizontal="true"
             android:background="@drawable/collie_rounded"
             android:backgroundTint="@color/red_alert"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/main_image_alert"

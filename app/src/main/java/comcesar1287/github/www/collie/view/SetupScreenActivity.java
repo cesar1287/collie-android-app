@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -20,6 +21,8 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
 
     private DatabaseReference mDatabase;
 
+    private SharedPref sharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,12 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
 
         initToolbar();
         initComponents();
+    }
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     @Override
@@ -52,13 +61,25 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
                 startActivity(intent);
                 break;
             case R.id.setup_screen_select_simple:
-                typeBlockDialog(getString(R.string.setup_screen_simple));
+                if(!sharedPref.getTypeBlock().equals(getString(R.string.setup_screen_simple))){
+                    typeBlockDialog(getString(R.string.setup_screen_simple));
+                }else{
+                    Toast.makeText(this, "Esse já é seu tipo de bloqueio", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.setup_screen_select_time:
-                typeBlockDialog(getString(R.string.setup_screen_time));
+                if(!sharedPref.getTypeBlock().equals(getString(R.string.setup_screen_time))) {
+                    typeBlockDialog(getString(R.string.setup_screen_time));
+                }else{
+                    Toast.makeText(this, "Esse já é seu tipo de bloqueio", Toast.LENGTH_SHORT).show();
+                }
                 break;
             case R.id.setup_screen_select_points:
-                typeBlockDialog(getString(R.string.setup_screen_points));
+                if(!sharedPref.getTypeBlock().equals(getString(R.string.setup_screen_points))) {
+                    typeBlockDialog(getString(R.string.setup_screen_points));
+                }else{
+                    Toast.makeText(this, "Esse já é seu tipo de bloqueio", Toast.LENGTH_SHORT).show();
+                }
                 break;
 
         }
@@ -92,6 +113,8 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
 
         ImageView btSetupScreenSelectPoints = findViewById(R.id.setup_screen_select_points);
         btSetupScreenSelectPoints.setOnClickListener(this);
+
+        sharedPref = new SharedPref(this);
     }
 
     private void typeBlockDialog(final String type) {
@@ -120,7 +143,10 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
                 .child("block")
                 .setValue(type);
 
-        SharedPref sharedPref = new SharedPref(this);
+        mDatabase.child("config")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .removeValue();
+
         sharedPref.setTypeBlock(type);
 
         startActivity(new Intent(this, MainActivity.class));

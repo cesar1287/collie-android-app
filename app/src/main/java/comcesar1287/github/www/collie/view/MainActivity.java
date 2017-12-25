@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private final static int REQUEST_CODE_ENABLE_ADMIN = 1;
 
-    private ImageView ivMainImageAlert;
     private RelativeLayout rlMainAlert;
 
     @Override
@@ -77,9 +76,11 @@ public class MainActivity extends AppCompatActivity
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child("config")
+                if (!dataSnapshot.child("config")
                         .child(mAuth.getCurrentUser().getUid())
                         .exists()) {
+                    rlMainAlert.setVisibility(View.VISIBLE);
+                }else{
                     rlMainAlert.setVisibility(View.GONE);
                 }
             }
@@ -158,7 +159,7 @@ public class MainActivity extends AppCompatActivity
 
         mDPM = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
 
-        ivMainImageAlert = findViewById(R.id.main_image_alert);
+        ImageView ivMainImageAlert = findViewById(R.id.main_image_alert);
         ivMainImageAlert.setOnClickListener(this);
         rlMainAlert = findViewById(R.id.main_alert);
         rlMainAlert.setOnClickListener(this);
