@@ -189,4 +189,14 @@
     <string name="actionbar_indication_block_simple">Collie - Bloqueio Simples</string>
     <string name="actionbar_indication_block_points">Collie - Bloqueio por Pontos</string>
     <string name="actionbar_indication_block_time">Collie - Bloqueio por Tempo</string>
+
+    <string name="add_schedule_title">Agenda</string>
+    <string name="add_schedule_subtitle">Adicione uma nova atividade</string>
+    <string name="add_schedule_date">Data</string>
+    <string name="add_schedule_time">Hora</string>
+    <string name="add_schedule_name">Nome da atividade</string>
+    <string name="add_schedule_description">Descrição de até 100 caracteres</string>
+    <string name="add_schedule_add">Adicionar</string>
+    <string name="add_schedule_cancel">Cancelar</string>
+
 </resources>

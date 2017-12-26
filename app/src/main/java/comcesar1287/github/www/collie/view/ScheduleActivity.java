@@ -1,5 +1,6 @@
 package comcesar1287.github.www.collie.view;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -31,6 +32,7 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
 
     private void initComponent() {
         plusScheduler = (ImageView)findViewById(R.id.schedule_button_plus);
+        plusScheduler.setOnClickListener(this);
     }
 
 
@@ -40,7 +42,7 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
 
         switch (id) {
             case R.id.schedule_button_plus:
-
+                startActivity(new Intent(this, AddScheduleActivity.class));
                 break;
         }
     }

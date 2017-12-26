@@ -72,8 +72,11 @@
             android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.ScheduleActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".view.MainActivity"></activity>
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.AddScheduleActivity"
+            android:theme="@style/AppTheme.Dialog"/>
     </application>
 
 </manifest>
