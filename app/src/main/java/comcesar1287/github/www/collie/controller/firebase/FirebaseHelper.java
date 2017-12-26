@@ -19,9 +19,9 @@ public class FirebaseHelper {
     }
 
     public static void writeNewConfigBlock(DatabaseReference mDatabase, String userId, String type,
-                                    String options) {
+                                    String options, String nameTask1, String bonusTask1, String nameTask2, String bonusTask2) {
 
-        Block block = new Block(type, options);
+        Block block = new Block(type, options, nameTask1, bonusTask1, nameTask2, bonusTask2);
 
         mDatabase.child(FIREBASE_DATABASE_CONFIG).child(userId).setValue(block);
     }

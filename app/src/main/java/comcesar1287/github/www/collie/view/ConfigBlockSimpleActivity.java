@@ -3,9 +3,11 @@ package comcesar1287.github.www.collie.view;
 import android.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,12 +19,15 @@ import java.util.Date;
 import comcesar1287.github.www.collie.R;
 import comcesar1287.github.www.collie.controller.firebase.FirebaseHelper;
 import comcesar1287.github.www.collie.controller.fragment.TimePickerFragment;
+import comcesar1287.github.www.collie.controller.util.Utility;
 
 public class ConfigBlockSimpleActivity extends AppCompatActivity implements View.OnClickListener{
 
     private CheckBox cbClass, cbTask, cbNight;
 
     private Button btClassInitialHour, btClassFinalHour, btTaskInitialHour, btTaskFinalHour, btNightInitialHour, btNightFinalHour;
+
+    private EditText etTask1Name, etTask1Bonus, etTask2Name, etTask2Bonus;
 
     private FirebaseAuth mAuth;
 
@@ -144,6 +149,16 @@ public class ConfigBlockSimpleActivity extends AppCompatActivity implements View
 
         btNightFinalHour = findViewById(R.id.config_simple_final_hour_night);
         btNightFinalHour.setOnClickListener(this);
+
+        etTask1Name = findViewById(R.id.config_block_simple_name_task1);
+        etTask1Bonus = findViewById(R.id.config_block_simple_bonus_task1);
+        TextWatcher bonusMask1 = Utility.insertMask(getResources().getString(R.string.hour_mask), etTask1Bonus);
+        etTask1Bonus.addTextChangedListener(bonusMask1);
+
+        etTask2Name = findViewById(R.id.config_block_simple_name_task2);
+        etTask2Bonus = findViewById(R.id.config_block_simple_bonus_task2);
+        TextWatcher bonusMask2 = Utility.insertMask(getResources().getString(R.string.hour_mask), etTask2Bonus);
+        etTask2Bonus.addTextChangedListener(bonusMask2);
     }
 
     private void initFirebase() {
@@ -179,6 +194,18 @@ public class ConfigBlockSimpleActivity extends AppCompatActivity implements View
                     allFieldsFilled = false;
                     Toast.makeText(this, "É necessário preencher o horário de início e fim do bloqueio, no período noturno", Toast.LENGTH_LONG).show();
                 }
+            }
+
+            if((!etTask1Name.getText().toString().equals("") && etTask1Bonus.getText().toString().equals("")) ||
+                    (etTask1Name.getText().toString().equals("") && !etTask1Bonus.getText().toString().equals(""))){
+                allFieldsFilled = false;
+                Toast.makeText(this, "Preencha a descrição da tarefa 1 completamente ou a deixe vazia", Toast.LENGTH_SHORT).show();
+            }
+
+            if((!etTask2Name.getText().toString().equals("") && etTask2Bonus.getText().toString().equals("")) ||
+                    (etTask2Name.getText().toString().equals("") && !etTask2Bonus.getText().toString().equals(""))){
+                allFieldsFilled = false;
+                Toast.makeText(this, "Preencha a descrição da tarefa 2 completamente ou a deixe vazia", Toast.LENGTH_SHORT).show();
             }
 
             if(allFieldsFilled){
@@ -238,6 +265,20 @@ public class ConfigBlockSimpleActivity extends AppCompatActivity implements View
                     }
                 }
 
+                if(!etTask1Bonus.getText().toString().equals("")){
+                    if(etTask1Bonus.length()!=9){
+                        allFieldsFilledCorrectly = false;
+                        Toast.makeText(this, "Preencha corretamente o tempo de bônus da tarefa 1", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                if(!etTask2Bonus.getText().toString().equals("")){
+                    if(etTask2Bonus.length()!=9){
+                        allFieldsFilledCorrectly = false;
+                        Toast.makeText(this, "Preencha corretamente o tempo de bônus da tarefa 2", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
                 if(allFieldsFilledCorrectly) {
                     String type = getString(R.string.setup_screen_simple);
                     StringBuilder options = new StringBuilder();
@@ -266,9 +307,17 @@ public class ConfigBlockSimpleActivity extends AppCompatActivity implements View
                     }
                     options.append(";");
 
-                    FirebaseHelper.writeNewConfigBlock(mDatabase, mAuth.getCurrentUser().getUid(), type, options.toString());
-                    Toast.makeText(this, "Configuração de bloqueio registrado com sucesso", Toast.LENGTH_SHORT).show();
-                    finish();
+                    if(mAuth.getCurrentUser()!=null) {
+                        String uid = mAuth.getCurrentUser().getUid();
+                        String nameTask1 = etTask1Name.getText().toString();
+                        String bonusTask1 = etTask1Bonus.getText().toString();
+                        String nameTask2 = etTask2Name.getText().toString();
+                        String bonusTask2 = etTask2Bonus.getText().toString();
+
+                        FirebaseHelper.writeNewConfigBlock(mDatabase, uid, type, options.toString(), nameTask1, bonusTask1, nameTask2, bonusTask2);
+                        Toast.makeText(this, "Configuração de bloqueio registrado com sucesso", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
             }
         }

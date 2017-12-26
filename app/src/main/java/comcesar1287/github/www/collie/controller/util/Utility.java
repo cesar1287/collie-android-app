@@ -1,4 +1,4 @@
-package comcesar1287.github.salaoon.controller.util;
+package comcesar1287.github.www.collie.controller.util;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -113,7 +113,8 @@ public class Utility {
     private static String unmask(String s) {
         return s.replaceAll("[.]", "").replaceAll("[-]", "")
                 .replaceAll("[/]", "").replaceAll("[(]", "")
-                .replaceAll("[)]", "");
+                .replaceAll("[)]", "").replaceAll("[:]", "")
+                .replaceAll("[h]", "").replaceAll("[min]", "");
     }
 
     public static void callPhone(Activity activity, String phone){

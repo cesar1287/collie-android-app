@@ -169,8 +169,8 @@
     <string name="config_block_simple_title3">Periodo noturno</string>
     <string name="config_block_simple_time_initial">Tempo inicial</string>
     <string name="config_block_simple_time_final">Tempo Final</string>
-    <string name="config_block_simple_subtitle2">Design tarefa 1(Opcional)</string>
-    <string name="config_block_simple_subtitle3">Design tarefa 2(Opcional)</string>
+    <string name="config_block_simple_subtitle2">Descreva a tarefa 1(Opcional)</string>
+    <string name="config_block_simple_subtitle3">Descreva a tarefa 2(Opcional)</string>
     <string name="config_block_simple_time_name_task">Nome da tarefa</string>
     <string name="config_block_simple_time_bonus_task">Tempo de bônus</string>
     <string name="config_block_time_title">Bloqueio Por Tempo</string>
@@ -183,4 +183,6 @@
     <string name="config_block_point_hint">Máximo de perguntas por dia</string>
     <string name="config_block_confirm">Confirmar</string>
     <string name="config_block_cancel">Cancelar</string>
+
+    <string name="hour_mask">##h:##min</string>
 </resources>
