@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity
         initComponent();
 
         checkIfAdminIsActive();
+
     }
 
     @Override
@@ -179,6 +180,8 @@ public class MainActivity extends AppCompatActivity
     private void initToolbar() {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        indicationTipeBlock();
     }
 
     @Override
@@ -228,6 +231,19 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void indicationTipeBlock(){
+        SharedPref sharedPref = new SharedPref(this);
+        String type = sharedPref.getTypeBlock();
+
+        if(getString(R.string.setup_screen_simple).equals(type)){
+            setTitle(R.string.actionbar_indication_block_simple);
+        }else if(getString(R.string.setup_screen_points).equals(type)){
+            setTitle(R.string.actionbar_indication_block_points);
+        }else if(getString(R.string.setup_screen_time).equals(type)){
+            setTitle(R.string.actionbar_indication_block_time);
+        }
     }
 
     private void signOut() {

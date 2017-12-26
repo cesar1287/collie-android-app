@@ -183,4 +183,9 @@
     <string name="config_block_point_hint">Máximo de perguntas por dia</string>
     <string name="config_block_confirm">Confirmar</string>
     <string name="config_block_cancel">Cancelar</string>
+
+    <string name="actionbar_indication_block_simple">Collie - Bloqueio Simples</string>
+    <string name="actionbar_indication_block_points">Collie - Bloqueio Simples</string>
+    <string name="actionbar_indication_block_time">Collie - Bloqueio Simples</string>
+
 </resources>
