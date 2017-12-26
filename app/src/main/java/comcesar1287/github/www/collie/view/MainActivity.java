@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         verifyIfUserCompletedRegister();
+        indicationTypeBlock();
     }
 
     private void verifyIfUserCompletedRegister() {
@@ -181,7 +182,7 @@ public class MainActivity extends AppCompatActivity
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        indicationTipeBlock();
+        indicationTypeBlock();
     }
 
     @Override
@@ -233,7 +234,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void indicationTipeBlock(){
+    private void indicationTypeBlock(){
         SharedPref sharedPref = new SharedPref(this);
         String type = sharedPref.getTypeBlock();
 
