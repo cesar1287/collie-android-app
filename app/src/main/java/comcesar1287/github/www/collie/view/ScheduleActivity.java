@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import comcesar1287.github.www.collie.R;
 
@@ -22,7 +23,6 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
 
         initToolbar();
         initComponent();
-
     }
 
     private void initToolbar() {
@@ -33,6 +33,7 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
     private void initComponent() {
         plusScheduler = (ImageView)findViewById(R.id.schedule_button_plus);
         plusScheduler.setOnClickListener(this);
+
     }
 
 
@@ -46,4 +47,6 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
                 break;
         }
     }
+
+
 }

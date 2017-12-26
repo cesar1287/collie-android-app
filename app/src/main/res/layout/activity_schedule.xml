@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context="comcesar1287.github.www.collie.view.ScheduleActivity">
 
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        app:mcv_showOtherDates="all"
+        app:mcv_selectionColor="@color/colorAccent"/>
+
     <ImageView
         android:id="@+id/schedule_button_plus"
         android:layout_width="50dp"
