@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
             case R.id.main_reports:
+                startActivity(new Intent(this, ReportsActivity.class));
                 break;
             case R.id.main_schedule:
                 startActivity(new Intent(this, ScheduleActivity.class));
