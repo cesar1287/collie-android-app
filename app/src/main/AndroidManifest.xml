@@ -63,13 +63,17 @@
             android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.ConfigBlockSimpleActivity"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.ConfigBlockTimeActivity"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.ConfigBlockPointsActivity"
-            android:theme="@style/AppTheme.Dialog"></activity>
+            android:theme="@style/AppTheme.Dialog" />
+        <activity
+            android:name=".view.ScheduleActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".view.MainActivity"></activity>
     </application>
 
 </manifest>

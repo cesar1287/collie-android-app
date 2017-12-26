@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
     private Toolbar toolbar;
     private final static int REQUEST_CODE_ENABLE_ADMIN = 1;
 
-    private RelativeLayout rlMainAlert;
+    private RelativeLayout rlMainAlert, reports, schedule, tasks, localization;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +116,15 @@ public class MainActivity extends AppCompatActivity
                     startActivity(new Intent(this, ConfigBlockTimeActivity.class));
                 }
                 break;
+            case R.id.main_reports:
+                break;
+            case R.id.main_schedule:
+                startActivity(new Intent(this, ScheduleActivity.class));
+                break;
+            case R.id.main_tasks:
+                break;
+            case R.id.main_localization:
+                break;
         }
     }
 
@@ -165,6 +174,15 @@ public class MainActivity extends AppCompatActivity
         ivMainImageAlert.setOnClickListener(this);
         rlMainAlert = findViewById(R.id.main_alert);
         rlMainAlert.setOnClickListener(this);
+
+        reports = (RelativeLayout) findViewById(R.id.main_reports);
+        reports.setOnClickListener(this);
+        schedule = (RelativeLayout) findViewById(R.id.main_schedule);
+        schedule.setOnClickListener(this);
+        tasks = (RelativeLayout) findViewById(R.id.main_tasks);
+        tasks.setOnClickListener(this);
+        localization = (RelativeLayout) findViewById(R.id.main_localization);
+        localization.setOnClickListener(this);
     }
 
     private void initDrawer() {
