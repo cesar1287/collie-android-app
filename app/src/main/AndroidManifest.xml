@@ -103,6 +103,10 @@
         <activity
             android:name=".view.MapsActivity"
             android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.TasksActivity"
+            android:parentActivityName=".view.MainActivity"
             android:screenOrientation="portrait"/>
     </application>
 
