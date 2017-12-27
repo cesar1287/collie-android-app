@@ -199,4 +199,6 @@
     <string name="add_schedule_add">Adicionar</string>
     <string name="add_schedule_cancel">Cancelar</string>
 
+    <string name="maps_address_title">O atual endereço do dependente é:</string>
+
 </resources>

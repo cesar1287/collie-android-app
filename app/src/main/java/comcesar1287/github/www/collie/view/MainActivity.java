@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.main_tasks:
                 break;
             case R.id.main_localization:
+                startActivity(new Intent(this, MapsActivity.class));
                 break;
         }
     }

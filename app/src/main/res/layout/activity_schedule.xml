@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:agendaCalendar="http://schemas.android.com/apk/res-auto"
     tools:context="comcesar1287.github.www.collie.view.ScheduleActivity">
 
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/calendarView"
+    <com.github.tibolte.agendacalendarview.AgendaCalendarView
+        android:id="@+id/agenda_calendar_view"
         android:layout_width="match_parent"
-        android:layout_height="370dp"
-        app:mcv_showOtherDates="all"
-        app:mcv_selectionColor="@color/colorAccent"/>
+        android:layout_height="match_parent"
+        agendaCalendar:agendaCurrentDayTextColor="@color/theme_primary"
+        agendaCalendar:calendarColor="@color/theme_primary"
+        agendaCalendar:calendarCurrentDayTextColor="@color/calendar_text_current_day"
+        agendaCalendar:calendarDayTextColor="@color/theme_text_icons"
+        agendaCalendar:calendarHeaderColor="@color/theme_primary_dark"
+        agendaCalendar:calendarPastDayTextColor="@color/theme_light_primary"
+        agendaCalendar:fabColor="@color/theme_accent" />
 
     <ImageView
         android:id="@+id/schedule_button_plus"
