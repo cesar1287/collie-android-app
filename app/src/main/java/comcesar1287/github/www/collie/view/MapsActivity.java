@@ -1,8 +1,15 @@
 package comcesar1287.github.www.collie.view;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.WindowManager;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -19,7 +26,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private Toolbar toolbar;
 
+    ActionBar actionBar;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +39,17 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        initToolbar();
+        editActionBar();
+
     }
 
-    private void initToolbar() {
-        toolbar = findViewById(R.id.toolbar);
-        setTitle("Localização");
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void editActionBar(){
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION, WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setTitle("Localização");
     }
-
 
     /**
      * Manipulates the map once available.
