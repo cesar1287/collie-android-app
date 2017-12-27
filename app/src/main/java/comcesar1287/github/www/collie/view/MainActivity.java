@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(this, ScheduleActivity.class));
                 break;
             case R.id.main_tasks:
+                startActivity(new Intent(this, TasksActivity.class));
                 break;
             case R.id.main_localization:
                 startActivity(new Intent(this, MapsActivity.class));
