@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Collie.iml" filepath="$PROJECT_DIR$/Collie.iml" />
+      <module fileurl="file://C:\Users\CACOMP\Desktop\New folder\cesar\collie-android-app\Collie.iml" filepath="C:\Users\CACOMP\Desktop\New folder\cesar\collie-android-app\Collie.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\CACOMP\Desktop\New folder\cesar\collie-android-app\app\app.iml" filepath="C:\Users\CACOMP\Desktop\New folder\cesar\collie-android-app\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/collie-android-app.iml" filepath="$PROJECT_DIR$/collie-android-app.iml" />
+      <module fileurl="file://C:\Users\CACOMP\Desktop\New folder\cesar\collie-android-app\collie-android-app.iml" filepath="C:\Users\CACOMP\Desktop\New folder\cesar\collie-android-app\collie-android-app.iml" />
       <module fileurl="file://C:\Users\Cesar\Documents\Github\Collie\collie-android-app.iml" filepath="C:\Users\Cesar\Documents\Github\Collie\collie-android-app.iml" />
     </modules>
   </component>
