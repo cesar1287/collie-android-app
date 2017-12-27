@@ -184,7 +184,8 @@
                         android:layout_width="140dp"
                         android:layout_height="40dp"
                         android:layout_below="@id/config_simple_title1"
-                        android:text="@string/config_block_simple_time_initial"/>
+                        android:text="@string/config_block_simple_time_initial"
+                        android:enabled="false"/>
 
                     <Button
                         android:id="@+id/config_simple_final_hour1"
@@ -193,7 +194,8 @@
                         android:layout_toRightOf="@id/config_simple_initial_hour1"
                         android:layout_toEndOf="@id/config_simple_initial_hour1"
                         android:layout_below="@id/config_simple_title1"
-                        android:text="@string/config_block_simple_time_final" />
+                        android:text="@string/config_block_simple_time_final"
+                        android:enabled="false"/>
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -231,7 +233,8 @@
                         android:layout_width="140dp"
                         android:layout_height="40dp"
                         android:layout_below="@id/config_simple_title2"
-                        android:text="@string/config_block_simple_time_initial"/>
+                        android:text="@string/config_block_simple_time_initial"
+                        android:enabled="false"/>
 
                     <Button
                         android:id="@+id/config_simple_final_hour2"
@@ -240,7 +243,8 @@
                         android:layout_toRightOf="@id/config_simple_initial_hour2"
                         android:layout_toEndOf="@id/config_simple_initial_hour2"
                         android:layout_below="@id/config_simple_title2"
-                        android:text="@string/config_block_simple_time_final" />
+                        android:text="@string/config_block_simple_time_final"
+                        android:enabled="false" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -278,7 +282,8 @@
                         android:layout_width="140dp"
                         android:layout_height="40dp"
                         android:layout_below="@id/config_simple_title3"
-                        android:text="@string/config_block_simple_time_initial"/>
+                        android:text="@string/config_block_simple_time_initial"
+                        android:enabled="false"/>
 
                     <Button
                         android:id="@+id/config_simple_final_hour3"
@@ -287,7 +292,8 @@
                         android:layout_toRightOf="@id/config_simple_initial_hour3"
                         android:layout_toEndOf="@id/config_simple_initial_hour3"
                         android:layout_below="@id/config_simple_title3"
-                        android:text="@string/config_block_simple_time_final" />
+                        android:text="@string/config_block_simple_time_final"
+                        android:enabled="false" />
                 </RelativeLayout>
             </RelativeLayout>
         </ScrollView>
