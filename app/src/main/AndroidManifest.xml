@@ -110,7 +110,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.CompletedPeriodActivity"
-            android:theme="@style/AppTheme.Dialog">
+            android:theme="@style/AppTheme.Dialog"></activity>
+        <activity
+            android:name=".view.InstructionSlideActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
