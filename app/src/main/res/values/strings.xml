@@ -208,8 +208,8 @@
         o nosso plano mensal e nós ajude a manter e melhorar cada dia mais essa ferramenta,
         e é claro, continue usufruindo sem limites de todos os nosso benefícios.
     </string>
-    <string name="completed_period_subtitle2">Valor</string>
-    <string name="completed_period_value">R$: 04,99</string>
+    <string name="completed_period_subtitle2">Valor Mensal</string>
+    <string name="completed_period_value">R$: 4,99</string>
     <string name="completed_period_button_buy">Assinar Agora</string>
 
     <string name="instruction_slide_one_title">Seja Bem Vindo!</string>
