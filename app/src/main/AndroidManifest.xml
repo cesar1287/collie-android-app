@@ -107,7 +107,11 @@
         <activity
             android:name=".view.TasksActivity"
             android:parentActivityName=".view.MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".view.CompletedPeriodActivity"
+            android:theme="@style/AppTheme.Dialog">
+        </activity>
     </application>
 
 </manifest>

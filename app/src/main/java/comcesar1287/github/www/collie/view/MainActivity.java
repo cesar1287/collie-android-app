@@ -242,6 +242,8 @@ public class MainActivity extends AppCompatActivity
             finish();
         } else if (id == R.id.nav_list_reports) {
 
+        } else if (id == R.id.nav_access_for_life) {
+            startActivity(new Intent(this, CompletedPeriodActivity.class));
         } else if (id == R.id.nav_exit) {
             signOut();
         } else if (id == R.id.nav_who_are_you) {

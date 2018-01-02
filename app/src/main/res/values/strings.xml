@@ -140,6 +140,7 @@
     <string name="lateral_menu_edit_config">Configuração de Bloqueio</string>
     <string name="lateral_menu_change_block">Alterar Bloqueio</string>
     <string name="lateral_menu_list_reports">Relatórios</string>
+    <string name="lateral_menu_access_for_life">Assine Agora</string>
     <string name="lateral_menu_exit">Sair</string>
     <string name="lateral_menu_who_are_you">Quem Somos</string>
     <string name="lateral_menu_list_contact_us">Fale Conosco</string>
@@ -200,5 +201,15 @@
     <string name="add_schedule_cancel">Cancelar</string>
 
     <string name="maps_address_title">O atual endereço do dependente é:</string>
+
+    <string name="completed_period_title">Período Grátis Expirado</string>
+    <string name="completed_period_subtitle1">Durante 7 dias você usufruiu de todos os nossos
+        benefícios de forma totalmente grátis, agora é a hora de você nos ajudar, adquira já
+        o nosso plano mensal e nós ajude a manter e melhorar cada dia mais essa ferramenta,
+        e é claro, continue usufruindo sem limites de todos os nosso benefícios.
+    </string>
+    <string name="completed_period_subtitle2">Valor</string>
+    <string name="completed_period_value">R$: 04,99</string>
+    <string name="completed_period_button_buy">Assinar Agora</string>
 
 </resources>

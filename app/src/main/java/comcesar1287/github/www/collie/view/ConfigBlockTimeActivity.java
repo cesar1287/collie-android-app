@@ -267,17 +267,17 @@ public class ConfigBlockTimeActivity extends AppCompatActivity implements View.O
                 }
                 options.append(";");
 
-                if(mAuth.getCurrentUser()!=null) {
-                    String uid = mAuth.getCurrentUser().getUid();
-                    String nameTask1 = etTask1Name.getText().toString();
-                    String bonusTask1 = etTask1Bonus.getText().toString();
-                    String nameTask2 = etTask2Name.getText().toString();
-                    String bonusTask2 = etTask2Bonus.getText().toString();
-
-                    FirebaseHelper.writeNewConfigBlock(mDatabase, uid, type, options.toString(), nameTask1, bonusTask1, nameTask2, bonusTask2);
-                    Toast.makeText(this, "Configuração de bloqueio registrado com sucesso", Toast.LENGTH_SHORT).show();
-                    finish();
-                }
+//                if(mAuth.getCurrentUser()!=null) {
+//                    String uid = mAuth.getCurrentUser().getUid();
+//                    String nameTask1 = etTask1Name.getText().toString();
+//                    String bonusTask1 = etTask1Bonus.getText().toString();
+//                    String nameTask2 = etTask2Name.getText().toString();
+//                    String bonusTask2 = etTask2Bonus.getText().toString();
+//
+//                    FirebaseHelper.writeNewConfigBlock(mDatabase, uid, type, options.toString(), nameTask1, bonusTask1, nameTask2, bonusTask2);
+//                    Toast.makeText(this, "Configuração de bloqueio registrado com sucesso", Toast.LENGTH_SHORT).show();
+//                    finish();
+//                }
                 Toast.makeText(this, "Configuração de bloqueio registrado com sucesso", Toast.LENGTH_SHORT).show();
                 finish();
             }

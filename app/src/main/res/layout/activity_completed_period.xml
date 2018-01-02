@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".view.ForgotPasswordActivity"
+    android:padding="15dp">
+
+    <RelativeLayout
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/completed_period_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Período Grátis Expirado"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/completed_period_subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/completed_period_title"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:gravity="center"
+            android:text="@string/completed_period_subtitle1"
+            android:textSize="13sp"
+            android:textColor="@color/black_grey"/>
+
+        <TextView
+            android:id="@+id/completed_period_subtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/completed_period_subtitle1"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/completed_period_subtitle2"
+            android:textSize="21sp"
+            android:textColor="@color/black_grey"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/completed_period_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/completed_period_subtitle2"
+            android:layout_centerHorizontal="true"
+            android:text="@string/completed_period_value"
+            android:textSize="21sp"
+            android:textColor="@color/black_grey"
+            android:textStyle="bold"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/completed_period_value"
+            android:layout_marginTop="29dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <Button
+                android:id="@+id/completed_period_button_buy"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/completed_period_button_buy"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                tools:ignore="RtlHardcoded" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
