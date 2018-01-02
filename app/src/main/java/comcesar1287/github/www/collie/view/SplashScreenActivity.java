@@ -22,15 +22,19 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        initToolbar();
+
+        startActivityMainDelay();
+
+        hourText();
+    }
+
+    private void initToolbar() {
         ActionBar actionBar = getSupportActionBar();
 
         if(actionBar!=null) {
             actionBar.hide();
         }
-
-        startActivityMainDelay();
-
-        hourText();
     }
 
     private void startActivityMainDelay() {
