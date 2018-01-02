@@ -11,7 +11,7 @@ public class InstructionSlideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.instruction_slide_one);
+        setContentView(R.layout.instruction_slide_two);
 
         initToolbar();
     }

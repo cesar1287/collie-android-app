@@ -9,8 +9,8 @@
         android:id="@+id/instrution_slide_one_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
-        android:text="Seja Bem Vindo!"
+        android:layout_marginTop="100dp"
+        android:text="@string/instruction_slide_one_title"
         android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="@color/black_grey"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/instrution_slide_one_title"
-        android:text="Veja como é simples utilizar o Collie"
+        android:text="@string/instruction_slide_one_subtitle"
         android:textSize="17sp"
         android:textColor="@color/black_grey"
         android:layout_centerHorizontal="true"/>
@@ -45,7 +45,7 @@
             android:id="@+id/instrution_slide_button_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pular"
+            android:text="@string/instruction_slide_one_button_jump"
             android:textSize="15sp"
             android:background="@null"/>
         <Button
@@ -53,9 +53,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="Próximo"
+            android:layout_alignParentEnd="true"
+            android:text="@string/instruction_slide_one_button_next"
             android:textSize="15sp"
-            android:background="@null"/>
+            android:background="@null" />
     </RelativeLayout>
 
 </RelativeLayout>

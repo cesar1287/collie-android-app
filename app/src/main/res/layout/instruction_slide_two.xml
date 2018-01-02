@@ -6,28 +6,31 @@
     tools:context="comcesar1287.github.www.collie.view.ScheduleActivity">
 
     <TextView
-        android:id="@+id/instrution_one_title"
+        android:id="@+id/instrution_slide_two_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:text="Seja Bem Vindo!"
-        android:textSize="22sp"
+        android:layout_marginTop="100dp"
+        android:text="@string/instruction_slide_two_title"
+        android:textSize="28sp"
         android:textStyle="bold"
         android:textColor="@color/black_grey"
         android:layout_centerHorizontal="true"/>
 
     <TextView
-        android:id="@+id/instrution_one_subtitle1"
+        android:id="@+id/instrution_slide_two_subtitle1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/instrution_one_title"
-        android:text="Veja como é simples utilizar o Collie"
+        android:layout_below="@id/instrution_slide_two_title"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/instruction_slide_two_subtitle"
         android:textSize="17sp"
         android:textColor="@color/black_grey"
+        android:gravity="center"
         android:layout_centerHorizontal="true"/>
 
     <ImageView
-        android:id="@+id/instrution_one_logo"
+        android:id="@+id/instrution_slide_two_logo"
         android:layout_width="190dp"
         android:layout_height="100dp"
         android:layout_marginBottom="125dp"
@@ -37,23 +40,26 @@
         android:tint="@color/colorPrimary"/>
 
     <RelativeLayout
-        android:id="@+id/instrution_one_buttons"
+        android:id="@+id/instrution_slide_two_buttons"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentBottom="true">
         <Button
+            android:id="@+id/instrution_slide_two_button_previous"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pular"
+            android:text="@string/instruction_slide_two_button_previous"
             android:textSize="15sp"
             android:background="@null"/>
         <Button
+            android:id="@+id/instrution_slide_two_button_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="Próximo"
+            android:layout_alignParentEnd="true"
+            android:text="@string/instruction_slide_two_button_next"
             android:textSize="15sp"
-            android:background="@null"/>
+            android:background="@null" />
     </RelativeLayout>
 
 </RelativeLayout>
