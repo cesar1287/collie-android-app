@@ -9,7 +9,7 @@
         android:id="@+id/instrution_slide_three_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:text="@string/instruction_slide_three_title"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -31,13 +31,12 @@
 
     <ImageView
         android:id="@+id/instrution_slide_three_logo"
-        android:layout_width="190dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="125dp"
+        android:layout_width="170dp"
+        android:layout_height="220dp"
+        android:layout_marginBottom="100dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/collie_image_logo"
-        android:tint="@color/colorPrimary"/>
+        android:src="@drawable/collie_image_instruction_config"/>
 
     <RelativeLayout
         android:id="@+id/instrution_slide_three_buttons"
