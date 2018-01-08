@@ -59,6 +59,50 @@
             android:text="@string/instruction_slide_two_button_next"
             android:textSize="15sp"
             android:background="@null" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+            <RelativeLayout
+                android:id="@+id/circle1"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:background="@drawable/collie_circle">
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/circle2"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@id/circle1"
+                android:layout_toEndOf="@id/circle1"
+                android:background="@drawable/collie_circle"
+                android:backgroundTint="@color/colorPrimary"
+                tools:ignore="UnusedAttribute">
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/circle3"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@id/circle2"
+                android:layout_toEndOf="@id/circle2"
+                android:background="@drawable/collie_circle">
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/circle4"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_toRightOf="@id/circle3"
+                android:layout_toEndOf="@id/circle3"
+                android:background="@drawable/collie_circle">
+            </RelativeLayout>
+        </RelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>
