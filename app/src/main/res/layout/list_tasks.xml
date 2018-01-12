@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+
+    <TextView
+        android:id="@+id/tasks_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpar o quarto"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_grey"/>
+
+    <TextView
+        android:id="@+id/tasks_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10/02/2018"
+        android:layout_below="@id/tasks_name"/>
+
+    <TextView
+        android:id="@+id/tasks_status_make"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tasks_list_make"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tasks_status_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tasks_list_done"
+        android:textColor="@color/green"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tasks_status_not_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tasks_list_not_done"
+        android:textColor="@color/red_alert"
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

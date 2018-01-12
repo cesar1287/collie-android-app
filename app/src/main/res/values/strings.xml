@@ -238,4 +238,9 @@
     <string name="instruction_slide_four_button_previous">Anterior</string>
     <string name="instruction_slide_four_button_continues">Continuar</string>
 
+    <string name="tasks_list_make">Fazer</string>
+    <string name="tasks_list_done">Feito</string>
+    <string name="tasks_list_not_done">Não Feito</string>
+
+
 </resources>
