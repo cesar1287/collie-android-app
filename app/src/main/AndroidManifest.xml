@@ -110,11 +110,13 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.CompletedPeriodActivity"
-            android:theme="@style/AppTheme.Dialog"></activity>
+            android:theme="@style/AppTheme.Dialog"/>
         <activity
             android:name=".view.InstructionSlideActivity"
             android:screenOrientation="portrait">
         </activity>
+
+        <receiver android:enabled="true" android:name=".controller.receiver.StartLockReceiver" />
     </application>
 
 </manifest>

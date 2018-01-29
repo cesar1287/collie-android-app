@@ -47,9 +47,13 @@ public class MainActivity extends AppCompatActivity
 
     private RelativeLayout rlMainAlert, reports, schedule, tasks, localization;
 
+    private SharedPref sharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        sharedPref = new SharedPref(this);
 
         verifyUserIsLogged();
 
@@ -152,6 +156,10 @@ public class MainActivity extends AppCompatActivity
         if (user == null) {
             startActivity(new Intent(this, CategoryRegisterActivity.class));
             finish();
+        }else{
+            if(sharedPref.isFirstExecute()){
+                startActivity(new Intent(this, InstructionSlideActivity.class));
+            }
         }
     }
 

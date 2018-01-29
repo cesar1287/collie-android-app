@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import comcesar1287.github.www.collie.R;
+import comcesar1287.github.www.collie.controller.data.SharedPref;
 
 public class InstructionSlideActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -18,6 +19,9 @@ public class InstructionSlideActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.instruction_slide_one);
+
+        SharedPref sharedPref = new SharedPref(this);
+        sharedPref.setFirstExecute();
 
         initToolbar();
 
@@ -98,7 +102,7 @@ public class InstructionSlideActivity extends AppCompatActivity implements View.
                 initComponentThree();
                 break;
             case R.id.instrution_slide_four_button_continues:
-                startActivity(new Intent(this, MainActivity.class));
+                finish();
                 break;
         }
     }
