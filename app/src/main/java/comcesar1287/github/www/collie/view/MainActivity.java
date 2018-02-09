@@ -6,9 +6,12 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -35,6 +38,7 @@ import comcesar1287.github.www.collie.controller.data.SharedPref;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
+    private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
@@ -48,6 +52,8 @@ public class MainActivity extends AppCompatActivity
     private RelativeLayout rlMainAlert, reports, schedule, tasks, localization;
 
     private SharedPref sharedPref;
+
+    private Boolean mLocationPermissionGranted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,6 +106,24 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    private void getLocationPermission() {
+    /*
+     * Request location permission, so that we can get the location of the
+     * device. The result of the permission request is handled by a callback,
+     * onRequestPermissionsResult.
+     */
+        if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
+                android.Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            mLocationPermissionGranted = true;
+            startActivity(new Intent(this, MapsActivity.class));
+        } else {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
+        }
+    }
+
     @Override
     public void onClick(View view) {
         int id = view.getId();
@@ -130,7 +154,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(this, TasksActivity.class));
                 break;
             case R.id.main_localization:
-                startActivity(new Intent(this, MapsActivity.class));
+                getLocationPermission();
                 break;
         }
     }
@@ -145,6 +169,25 @@ public class MainActivity extends AppCompatActivity
                 //mostrar uma msg bonitinha falando que precisa ativar
             }else{
                 //TODO
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String permissions[],
+                                           @NonNull int[] grantResults) {
+        mLocationPermissionGranted = false;
+        switch (requestCode) {
+            case PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    mLocationPermissionGranted = true;
+                    startActivity(new Intent(this, MapsActivity.class));
+                }else{
+                    Toast.makeText(this, "É necessário dar permissão para a localição para acessar essa opção", Toast.LENGTH_LONG).show();
+                }
             }
         }
     }
