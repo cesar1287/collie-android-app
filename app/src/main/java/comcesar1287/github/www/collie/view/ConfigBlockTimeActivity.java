@@ -1,6 +1,10 @@
 package comcesar1287.github.www.collie.view;
 
+import android.app.AlarmManager;
 import android.app.DialogFragment;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextWatcher;
@@ -10,11 +14,13 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import comcesar1287.github.www.collie.R;
 import comcesar1287.github.www.collie.controller.firebase.FirebaseHelper;
 import comcesar1287.github.www.collie.controller.fragment.TimePickerFragment;
+import comcesar1287.github.www.collie.controller.receiver.StartLockReceiver;
 import comcesar1287.github.www.collie.controller.util.Utility;
 
 public class ConfigBlockTimeActivity extends AppCompatActivity implements View.OnClickListener {
@@ -248,6 +254,20 @@ public class ConfigBlockTimeActivity extends AppCompatActivity implements View.O
                     options.append(btClassInitialHour.getText());
                     options.append(",");
                     options.append(btClassFinalHour.getText());
+
+                    AlarmManager alarmMgrClass = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                    Intent intentClass = new Intent(this, StartLockReceiver.class);
+                    PendingIntent alarmIntentClass = PendingIntent.getBroadcast(this, 0, intentClass, 0);
+
+                    // Set the alarm to start at 8:30 a.m.
+                    Calendar calendarClass = Calendar.getInstance();
+                    calendarClass.setTimeInMillis(System.currentTimeMillis());
+
+                    String hourClass[] = btClassInitialHour.getText().toString().split(":");
+                    calendarClass.set(Calendar.HOUR_OF_DAY, Integer.parseInt(hourClass[0]));
+                    calendarClass.set(Calendar.MINUTE, Integer.parseInt(hourClass[1]));
+
+                    alarmMgrClass.set(AlarmManager.RTC_WAKEUP, calendarClass.getTimeInMillis(), alarmIntentClass);
                 }
                 options.append(";");
                 if(cbTask.isChecked()) {
@@ -256,6 +276,23 @@ public class ConfigBlockTimeActivity extends AppCompatActivity implements View.O
                     options.append(btTaskInitialHour.getText());
                     options.append(",");
                     options.append(btTaskFinalHour.getText());
+
+                    //TASK
+                    AlarmManager alarmMgrTask = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                    Intent intentTask = new Intent(this, StartLockReceiver.class);
+                    PendingIntent alarmIntentTask = PendingIntent.getBroadcast(this, 1, intentTask, 0);
+
+                    // Set the alarm to start at 8:30 a.m.
+                    Calendar calendarTask = Calendar.getInstance();
+                    calendarTask.setTimeInMillis(System.currentTimeMillis());
+
+                    String hourTask[] = btTaskInitialHour.getText().toString().split(":");
+                    calendarTask.set(Calendar.HOUR_OF_DAY, Integer.parseInt(hourTask[0]));
+                    calendarTask.set(Calendar.MINUTE, Integer.parseInt(hourTask[1]));
+
+                    // setRepeating() lets you specify a precise custom interval--in this case,
+                    // 20 minutes.
+                    alarmMgrTask.set(AlarmManager.RTC_WAKEUP, calendarTask.getTimeInMillis(), alarmIntentTask);
                 }
                 options.append(";");
                 if(cbNight.isChecked()) {
@@ -264,6 +301,23 @@ public class ConfigBlockTimeActivity extends AppCompatActivity implements View.O
                     options.append(btNightInitialHour.getText());
                     options.append(",");
                     options.append(btNightFinalHour.getText());
+
+                    //NIGHT
+                    AlarmManager alarmMgrNight = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                    Intent intentNight = new Intent(this, StartLockReceiver.class);
+                    PendingIntent alarmIntentNight = PendingIntent.getBroadcast(this, 2, intentNight, 0);
+
+                    // Set the alarm to start at 8:30 a.m.
+                    Calendar calendarNight = Calendar.getInstance();
+                    calendarNight.setTimeInMillis(System.currentTimeMillis());
+
+                    String hourNight[] = btNightInitialHour.getText().toString().split(":");
+                    calendarNight.set(Calendar.HOUR_OF_DAY, Integer.parseInt(hourNight[0]));
+                    calendarNight.set(Calendar.MINUTE, Integer.parseInt(hourNight[1]));
+
+                    // setRepeating() lets you specify a precise custom interval--in this case,
+                    // 20 minutes.
+                    alarmMgrNight.set(AlarmManager.RTC_WAKEUP, calendarNight.getTimeInMillis(), alarmIntentNight);
                 }
                 options.append(";");
 
