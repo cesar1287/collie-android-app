@@ -2,8 +2,12 @@ package comcesar1287.github.www.collie;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import comcesar1287.github.www.collie.controller.domain.Atividade;
 
@@ -49,5 +53,29 @@ public class CollieDAO extends SQLiteOpenHelper{
         cv.put("concluida", -1);
 
         return getWritableDatabase().insert(TABELA_ATIVIDADE, null, cv);
+    }
+
+    public List<Atividade> getListaAtividades() {
+
+        final List<Atividade> atividades = new ArrayList<>();
+        String sql = "SELECT * FROM " + TABELA_ATIVIDADE + " where id_usuario = ?";
+        String args[] = new String[]{String.valueOf(1)};
+        final Cursor c = getReadableDatabase().rawQuery(sql, args);
+
+        while(c.moveToNext()){
+            Atividade atividade = new Atividade();
+            atividade.setId(c.getInt(c.getColumnIndex("id")));
+            atividade.setId_usuario(c.getInt(c.getColumnIndex("id_usuario")));
+            atividade.setNome(c.getString(c.getColumnIndex("nome")));
+            atividade.setDescricao(c.getString(c.getColumnIndex("descricao")));
+            atividade.setConcluida(c.getInt(c.getColumnIndex("concluida")));
+
+            String dataHora = c.getString(c.getColumnIndex("data"));
+            atividade.setData(dataHora);
+
+            atividades.add(atividade);
+        }
+        c.close();
+        return atividades;
     }
 }

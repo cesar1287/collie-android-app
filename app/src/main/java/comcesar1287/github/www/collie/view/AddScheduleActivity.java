@@ -106,6 +106,7 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
         if(allFieldsFilled){
             CollieDAO collieDAO = new CollieDAO(this);
             Atividade atividade = new Atividade();
+            atividade.setId_usuario(1);
             atividade.setNome(name);
             atividade.setDescricao(description);
             atividade.setData(date);
@@ -113,7 +114,6 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
             collieDAO.insert(atividade);
             collieDAO.close();
             finish();
-
         }
     }
 }

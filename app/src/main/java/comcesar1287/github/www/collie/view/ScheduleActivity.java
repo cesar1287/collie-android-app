@@ -15,23 +15,57 @@ import com.github.tibolte.agendacalendarview.models.BaseCalendarEvent;
 import com.github.tibolte.agendacalendarview.models.CalendarEvent;
 import com.github.tibolte.agendacalendarview.models.DayItem;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import comcesar1287.github.www.collie.CollieDAO;
 import comcesar1287.github.www.collie.R;
+import comcesar1287.github.www.collie.controller.domain.Atividade;
 
 public class ScheduleActivity extends AppCompatActivity implements View.OnClickListener, CalendarPickerController{
 
     private static final String LOG_TAG = ScheduleActivity.class.getSimpleName();
+    private List<CalendarEvent> eventList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
         initToolbar();
-        initComponent();
+        try {
+            initComponent();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // minimum and maximum date of our calendar
+        // 2 month behind, one year ahead, example: March 2015 <-> May 2015 <-> May 2016
+        Calendar minDate = Calendar.getInstance();
+        Calendar maxDate = Calendar.getInstance();
+
+        minDate.add(Calendar.MONTH, -2);
+        minDate.set(Calendar.DAY_OF_MONTH, 1);
+        maxDate.add(Calendar.YEAR, 1);
+
+        eventList = new ArrayList<>();
+        try {
+            mockList(eventList);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        AgendaCalendarView mAgendaCalendarView = findViewById(R.id.agenda_calendar_view);
+        mAgendaCalendarView.init(eventList, minDate, maxDate, Locale.getDefault(), this);
     }
 
     @Override
@@ -49,7 +83,7 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
         setTitle("Agenda");
     }
 
-    private void initComponent() {
+    private void initComponent() throws ParseException {
         ImageView plusScheduler = findViewById(R.id.schedule_button_plus);
         plusScheduler.setOnClickListener(this);
 
@@ -62,14 +96,34 @@ public class ScheduleActivity extends AppCompatActivity implements View.OnClickL
         minDate.set(Calendar.DAY_OF_MONTH, 1);
         maxDate.add(Calendar.YEAR, 1);
 
-        List<CalendarEvent> eventList = new ArrayList<>();
+        eventList = new ArrayList<>();
         mockList(eventList);
 
         AgendaCalendarView mAgendaCalendarView = findViewById(R.id.agenda_calendar_view);
         mAgendaCalendarView.init(eventList, minDate, maxDate, Locale.getDefault(), this);
     }
 
-    private void mockList(List<CalendarEvent> eventList) {
+    private void mockList(List<CalendarEvent> eventList) throws ParseException {
+
+        CollieDAO collieDAO = new CollieDAO(this);
+        List<Atividade> atividades = collieDAO.getListaAtividades();
+
+        for(Atividade atividade: atividades){
+            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy",Locale.US);
+            Date data = formato.parse(atividade.getData());
+
+            Log.i("Data", data.toString());
+            Log.i("Data da Atividade", atividade.getData());
+
+            Calendar startTime = Calendar.getInstance();
+            Calendar endTime = Calendar.getInstance();
+            startTime.setTime(data);
+            endTime.setTime(data);
+
+            BaseCalendarEvent event = new BaseCalendarEvent(atividade.getDescricao(), "", atividade.getNome(),
+                    ContextCompat.getColor(this, R.color.blue_selected), startTime, endTime, true);
+            eventList.add(event);
+        }
 //        Calendar startTime1 = Calendar.getInstance();
 //        Calendar endTime1 = Calendar.getInstance();
 //        endTime1.add(Calendar.MONTH, 1);
