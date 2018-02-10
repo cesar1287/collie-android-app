@@ -229,13 +229,13 @@ public class MainActivity extends AppCompatActivity
         rlMainAlert = findViewById(R.id.main_alert);
         rlMainAlert.setOnClickListener(this);
 
-        reports = (RelativeLayout) findViewById(R.id.main_reports);
+        reports = findViewById(R.id.main_reports);
         reports.setOnClickListener(this);
-        schedule = (RelativeLayout) findViewById(R.id.main_schedule);
+        schedule = findViewById(R.id.main_schedule);
         schedule.setOnClickListener(this);
-        tasks = (RelativeLayout) findViewById(R.id.main_tasks);
+        tasks = findViewById(R.id.main_tasks);
         tasks.setOnClickListener(this);
-        localization = (RelativeLayout) findViewById(R.id.main_localization);
+        localization = findViewById(R.id.main_localization);
         localization.setOnClickListener(this);
     }
 
@@ -292,7 +292,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(this, SetupScreenActivity.class));
             finish();
         } else if (id == R.id.nav_list_reports) {
-
+            startActivity(new Intent(this, ReportsActivity.class));
         } else if (id == R.id.nav_access_for_life) {
             startActivity(new Intent(this, CompletedPeriodActivity.class));
         } else if (id == R.id.nav_exit) {

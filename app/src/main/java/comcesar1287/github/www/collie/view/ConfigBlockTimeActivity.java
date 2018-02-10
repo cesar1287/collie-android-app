@@ -125,11 +125,6 @@ public class ConfigBlockTimeActivity extends AppCompatActivity implements View.O
         TextWatcher timeBeforeMask = Utility.insertMask(getResources().getString(R.string.hour_mask), etTimeBeforeBlock);
         etTimeBeforeBlock.addTextChangedListener(timeBeforeMask);
 
-        etTimeError = findViewById(R.id.config_block_time_no_hit);
-        etTimeError.setOnClickListener(this);
-        TextWatcher timeErrorMask = Utility.insertMask(getResources().getString(R.string.hour_mask), etTimeError);
-        etTimeError.addTextChangedListener(timeErrorMask);
-
         cbClass = findViewById(R.id.config_simple_cb1);
         cbClass.setOnClickListener(this);
 
@@ -165,11 +160,6 @@ public class ConfigBlockTimeActivity extends AppCompatActivity implements View.O
         if(etTimeBeforeBlock.getText().toString().equals("")){
             allFieldsFilled = false;
             Toast.makeText(this, "Obrigatório preenchimento do tempo limite antes do bloqueio", Toast.LENGTH_LONG).show();
-        }
-
-        if(etTimeError.getText().toString().equals("")){
-            allFieldsFilled = false;
-            Toast.makeText(this, "Obrigatório preenchimento do tempo de bloqueio em caso de erro", Toast.LENGTH_LONG).show();
         }
 
         if(allFieldsFilled){
