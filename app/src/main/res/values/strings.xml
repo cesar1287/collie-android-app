@@ -180,6 +180,8 @@
     <string name="config_block_time_subtitle1">Tempo de bloqueio em caso de erro</string>
     <string name="config_block_time_hint1">Tempo de bloqueio, se errar</string>
     <string name="config_block_point_title">Bloqueio Por Pontos</string>
+    <string name="config_block_point_subtitle1">Tempo inicial</string>
+    <string name="config_block_point_hint1">Com quanto tempo iniciará o dia</string>
     <string name="config_block_point_subtitle">Limite de perguntas</string>
     <string name="config_block_point_hint">Máximo de perguntas por dia</string>
     <string name="config_block_confirm">Confirmar</string>
