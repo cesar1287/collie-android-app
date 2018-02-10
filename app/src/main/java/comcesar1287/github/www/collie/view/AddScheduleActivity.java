@@ -9,9 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.blankj.utilcode.util.Utils;
-
-import comcesar1287.github.www.collie.CollieDAO;
+import comcesar1287.github.www.collie.model.CollieDAO;
 import comcesar1287.github.www.collie.R;
 import comcesar1287.github.www.collie.controller.domain.Atividade;
 import comcesar1287.github.www.collie.controller.fragment.DatePickerFragment;

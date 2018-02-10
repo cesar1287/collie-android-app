@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,7 +22,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import comcesar1287.github.www.collie.CollieDAO;
+import comcesar1287.github.www.collie.model.CollieDAO;
 import comcesar1287.github.www.collie.R;
 import comcesar1287.github.www.collie.controller.domain.Atividade;
 
