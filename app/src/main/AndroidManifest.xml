@@ -45,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.RegisterActivity"
+            android:name=".view.RegisterEditActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".view.SignWithActivity"

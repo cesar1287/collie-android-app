@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,10 +24,11 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import comcesar1287.github.www.collie.controller.data.SharedPref;
 import comcesar1287.github.www.collie.controller.firebase.FirebaseHelper;
 import comcesar1287.github.www.collie.R;
 
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
+public class RegisterEditActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextInputLayout etNameFather, etEmailFather, etNameChild, etAgeChild, etPassword, etConfirmPassword;
 
@@ -41,10 +43,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private String nameChild;
     private String ageChild;
 
+    private Boolean edit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        edit = getIntent().getBooleanExtra("edit", false);
 
         initToolbar();
         initComponents();
@@ -53,8 +59,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this, CategoryRegisterActivity.class));
-        finish();
+        if(!edit) {
+            startActivity(new Intent(this, CategoryRegisterActivity.class));
+            finish();
+        }else{
+            finish();
+        }
     }
 
     @Override
@@ -77,6 +87,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         etConfirmPassword = findViewById(R.id.register_confirm_passowrd);
         Button btRegister = findViewById(R.id.register_finish_registration);
         btRegister.setOnClickListener(this);
+
+        TextView registerTitle = findViewById(R.id.register_title);
+        if(edit){
+            registerTitle.setText("Edite seu cadastro");
+            btRegister.setText("Salvar edição");
+            SharedPref sharedPref = new SharedPref(this);
+            etNameFather.getEditText().setText(sharedPref.getNameFather());
+            etEmailFather.getEditText().setText(sharedPref.getEmailFather());
+            etNameChild.getEditText().setText(sharedPref.getNameChild());
+            etAgeChild.getEditText().setText(sharedPref.getAgeChild());
+        }
     }
 
 
@@ -184,7 +205,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             etEmailFather.getEditText().setText("");
                             etEmailFather.requestFocus();
                         } else {
-                            Toast.makeText(RegisterActivity.this,
+                            Toast.makeText(RegisterEditActivity.this,
                                     getResources().getString(R.string.error_unknown_error),
                                     Toast.LENGTH_SHORT).show();
                         }
@@ -199,8 +220,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
                             if (user != null) {
                                 FirebaseHelper.writeNewUser(mDatabase, mAuth.getCurrentUser().getUid(), nameFather, nameChild, ageChild);
-                                Toast.makeText(RegisterActivity.this, getString(R.string.successfully_registered), Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(RegisterActivity.this, SetupScreenActivity.class));
+                                Toast.makeText(RegisterEditActivity.this, getString(R.string.successfully_registered), Toast.LENGTH_SHORT).show();
+                                SharedPref sharedPref = new SharedPref(RegisterEditActivity.this);
+                                sharedPref.setNameFather(nameFather);
+                                sharedPref.setEmailFather(user.getEmail());
+                                sharedPref.setNameChild(nameChild);
+                                sharedPref.setAgeChild(ageChild);
+                                startActivity(new Intent(RegisterEditActivity.this, SetupScreenActivity.class));
                                 finish();
                             }
                         }

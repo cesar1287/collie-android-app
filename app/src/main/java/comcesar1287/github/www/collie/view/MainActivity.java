@@ -276,7 +276,9 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_screem_main) {
 
         } else if (id == R.id.nav_edit_profile) {
-
+            Intent intent = new Intent(this, RegisterEditActivity.class);
+            intent.putExtra("edit", true);
+            startActivity(intent);
         } else if (id == R.id.nav_edit_config) {
             SharedPref sharedPref = new SharedPref(this);
             String type = sharedPref.getTypeBlock();

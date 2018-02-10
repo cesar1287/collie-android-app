@@ -30,7 +30,7 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
                 finish();
                 break;
             case R.id.btn_dependent:
-                startActivity(new Intent(this, RegisterActivity.class));
+                startActivity(new Intent(this, RegisterEditActivity.class));
                 finish();
                 break;
         }
