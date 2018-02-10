@@ -15,7 +15,7 @@ import comcesar1287.github.www.collie.R;
 import comcesar1287.github.www.collie.controller.domain.Atividade;
 import comcesar1287.github.www.collie.model.CollieDAO;
 
-public class ReportsActivity extends AppCompatActivity implements View.OnClickListener{
+public class ReportsActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +42,5 @@ public class ReportsActivity extends AppCompatActivity implements View.OnClickLi
         ArrayAdapter<Atividade> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, atividadeList);
 
         listViewReports.setAdapter(adapter);
-    }
-
-
-    @Override
-    public void onClick(View view) {
-        int id = view.getId();
-
-        switch (id) {
-
-        }
     }
 }

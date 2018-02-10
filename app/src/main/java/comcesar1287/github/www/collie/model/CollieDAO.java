@@ -6,15 +6,18 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import comcesar1287.github.www.collie.controller.domain.Atividade;
 
 public class CollieDAO extends SQLiteOpenHelper{
 
     private static final String DATABASE = "db_collie";
-    private static final int VERSAO = 1;
+    private static final int VERSAO = 2;
     private static final String TABELA_ATIVIDADE = "Atividade";
 
 
@@ -60,6 +63,33 @@ public class CollieDAO extends SQLiteOpenHelper{
         final List<Atividade> atividades = new ArrayList<>();
         String sql = "SELECT * FROM " + TABELA_ATIVIDADE + " where id_usuario = ?";
         String args[] = new String[]{String.valueOf(1)};
+        final Cursor c = getReadableDatabase().rawQuery(sql, args);
+
+        while(c.moveToNext()){
+            Atividade atividade = new Atividade();
+            atividade.setId(c.getInt(c.getColumnIndex("id")));
+            atividade.setId_usuario(c.getInt(c.getColumnIndex("id_usuario")));
+            atividade.setNome(c.getString(c.getColumnIndex("nome")));
+            atividade.setDescricao(c.getString(c.getColumnIndex("descricao")));
+            atividade.setConcluida(c.getInt(c.getColumnIndex("concluida")));
+
+            String dataHora = c.getString(c.getColumnIndex("data"));
+            atividade.setData(dataHora);
+
+            atividades.add(atividade);
+        }
+        c.close();
+        return atividades;
+    }
+
+    public List<Atividade> getListaAtividadesDiaria() {
+
+        SimpleDateFormat dateFormatted = new SimpleDateFormat("dd/MM/yyyy", Locale.ROOT);
+        String formatted = dateFormatted.format(Calendar.getInstance().getTime());
+
+        final List<Atividade> atividades = new ArrayList<>();
+        String sql = "SELECT * FROM " + TABELA_ATIVIDADE + " where id_usuario = ? and data = ?";
+        String args[] = new String[]{String.valueOf(1), formatted};
         final Cursor c = getReadableDatabase().rawQuery(sql, args);
 
         while(c.moveToNext()){
