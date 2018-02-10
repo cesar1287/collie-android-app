@@ -68,6 +68,6 @@ public class Atividade implements Serializable{
 
     @Override
     public String toString() {
-        return descricao;
+        return nome + "\n" +descricao + "\n" + data;
     }
 }

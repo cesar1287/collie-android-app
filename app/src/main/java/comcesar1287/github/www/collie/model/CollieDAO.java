@@ -1,4 +1,4 @@
-package comcesar1287.github.www.collie;
+package comcesar1287.github.www.collie.model;
 
 import android.content.ContentValues;
 import android.content.Context;
