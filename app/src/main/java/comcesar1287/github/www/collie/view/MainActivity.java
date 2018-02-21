@@ -17,6 +17,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity
 
     private Boolean mLocationPermissionGranted;
 
+    NavigationView navigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +73,27 @@ public class MainActivity extends AppCompatActivity
         initComponent();
 
         checkIfAdminIsActive();
+
+        invibleForDependent();
+
+    }
+
+    private void invibleForResponsible(){
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu nav_Menu = navigationView.getMenu();
+        nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
+        nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
+    }
+
+    private void invibleForDependent(){
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu nav_Menu = navigationView.getMenu();
+        nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
+        nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
+        nav_Menu.findItem(R.id.nav_exit).setVisible(false);
+        nav_Menu.findItem(R.id.nav_contact_us).setVisible(false);
+        nav_Menu.findItem(R.id.nav_edit_profile).setVisible(false);
+        nav_Menu.findItem(R.id.nav_access_for_life).setVisible(false);
 
     }
 
@@ -295,6 +319,8 @@ public class MainActivity extends AppCompatActivity
             finish();
         } else if (id == R.id.nav_list_reports) {
             startActivity(new Intent(this, ReportsActivity.class));
+        } else if (id == R.id.nav_list_task) {
+            startActivity(new Intent(this, TasksActivity.class));
         } else if (id == R.id.nav_access_for_life) {
             startActivity(new Intent(this, CompletedPeriodActivity.class));
         } else if (id == R.id.nav_exit) {
@@ -344,4 +370,5 @@ public class MainActivity extends AppCompatActivity
         builder.create();
         builder.show();
     }
+
 }

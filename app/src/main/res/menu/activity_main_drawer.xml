@@ -26,6 +26,11 @@
             android:title="@string/lateral_menu_list_reports" />
 
         <item
+            android:id="@+id/nav_list_task"
+            android:icon="@drawable/collie_icon_big_tasks"
+            android:title="@string/lateral_menu_list_task" />
+
+        <item
             android:id="@+id/nav_access_for_life"
             android:icon="@drawable/collie_icon_payment"
             android:title="@string/lateral_menu_access_for_life" />

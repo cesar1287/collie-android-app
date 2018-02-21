@@ -33,6 +33,7 @@
     <string name="error_user_password_incorrect">Usuário e/ou senha incorreto(s).</string>
 
     <string name="category_register_title">Selecione a categoria correspondente ao aparelho</string>
+    <string name="category_register_btn_register">Cadastrar Aparelho</string>
     <string name="category_register_btn_responsible">Aparelho do Responsável</string>
     <string name="category_register_btn_dependent">Aparelho do Dependente</string>
 
@@ -140,6 +141,7 @@
     <string name="lateral_menu_edit_config">Configuração de Bloqueio</string>
     <string name="lateral_menu_change_block">Alterar Bloqueio</string>
     <string name="lateral_menu_list_reports">Relatórios</string>
+    <string name="lateral_menu_list_task">Tarefas</string>
     <string name="lateral_menu_access_for_life">Assine Agora</string>
     <string name="lateral_menu_exit">Sair</string>
     <string name="lateral_menu_who_are_you">Quem Somos</string>

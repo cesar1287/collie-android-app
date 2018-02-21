@@ -25,12 +25,16 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
         int id = view.getId();
 
         switch (id){
+            case R.id.btn_register:
+                startActivity(new Intent(this, RegisterEditActivity.class));
+                finish();
+                break;
             case R.id.btn_responsible:
                 startActivity(new Intent(this, SignWithActivity.class));
                 finish();
                 break;
             case R.id.btn_dependent:
-                startActivity(new Intent(this, RegisterEditActivity.class));
+                startActivity(new Intent(this, MainActivity.class));
                 finish();
                 break;
         }
@@ -45,6 +49,8 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
     }
 
     private void initComponent() {
+        Button btRegister = findViewById(R.id.btn_register);
+        btRegister.setOnClickListener(this);
         Button btResponsible = findViewById(R.id.btn_responsible);
         btResponsible.setOnClickListener(this);
         Button btDependent = findViewById(R.id.btn_dependent);
