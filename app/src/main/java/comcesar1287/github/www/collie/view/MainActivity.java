@@ -72,28 +72,6 @@ public class MainActivity extends AppCompatActivity
         initDrawer();
         initComponent();
 
-        checkIfAdminIsActive();
-
-        invibleForDependent();
-
-    }
-
-    private void invibleForResponsible(){
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        Menu nav_Menu = navigationView.getMenu();
-        nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
-        nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
-    }
-
-    private void invibleForDependent(){
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
-        Menu nav_Menu = navigationView.getMenu();
-        nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
-        nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
-        nav_Menu.findItem(R.id.nav_exit).setVisible(false);
-        nav_Menu.findItem(R.id.nav_contact_us).setVisible(false);
-        nav_Menu.findItem(R.id.nav_edit_profile).setVisible(false);
-        nav_Menu.findItem(R.id.nav_access_for_life).setVisible(false);
 
     }
 
@@ -370,5 +348,34 @@ public class MainActivity extends AppCompatActivity
         builder.create();
         builder.show();
     }
+
+    private void invibleForResponsible(){
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu nav_Menu = navigationView.getMenu();
+        nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
+        nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
+    }
+
+    private void invibleForDependent(){
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Menu nav_Menu = navigationView.getMenu();
+        nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
+        nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
+        nav_Menu.findItem(R.id.nav_exit).setVisible(false);
+        nav_Menu.findItem(R.id.nav_contact_us).setVisible(false);
+        nav_Menu.findItem(R.id.nav_edit_profile).setVisible(false);
+        nav_Menu.findItem(R.id.nav_access_for_life).setVisible(false);
+    }
+
+//    private void teste(){
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null) {
+//            String value = extras.getString("key");
+//
+//            if(value.equals("teste")){
+//                invibleForDependent();
+//            }
+//        }
+//    }
 
 }

@@ -166,7 +166,9 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .child("block").getValue());
 
-                                        startActivity(new Intent(SignWithActivity.this, MainActivity.class));
+                                        Intent i = new Intent(SignWithActivity.this, MainActivity.class);
+                                        i.putExtra("key", "teste");
+                                        startActivity(i);
                                         finish();
                                     } else {
                                         startActivity(new Intent(SignWithActivity.this, SetupScreenActivity.class));
