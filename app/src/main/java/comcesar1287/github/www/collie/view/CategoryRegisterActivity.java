@@ -24,13 +24,17 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
     public void onClick(View view) {
         int id = view.getId();
 
+        Intent i;
+
         switch (id){
             case R.id.btn_register:
                 startActivity(new Intent(this, RegisterEditActivity.class));
                 finish();
                 break;
             case R.id.btn_responsible:
-                startActivity(new Intent(this, SignWithActivity.class));
+                i = new Intent(this, SignWithActivity.class);
+                i.putExtra("key", "responsible");
+                startActivity(i);
                 finish();
                 break;
             case R.id.btn_dependent:

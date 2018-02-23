@@ -43,6 +43,7 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
+                //i.putExtra("key", "responsible");
                 startActivity(i);
                 finish(); // kill current activity
             }

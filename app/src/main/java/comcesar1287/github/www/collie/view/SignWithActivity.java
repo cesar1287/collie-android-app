@@ -167,11 +167,14 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
                                                 .child("block").getValue());
 
                                         Intent i = new Intent(SignWithActivity.this, MainActivity.class);
-                                        i.putExtra("key", "teste");
+                                        i.putExtra("key", msg());
                                         startActivity(i);
                                         finish();
+
                                     } else {
-                                        startActivity(new Intent(SignWithActivity.this, SetupScreenActivity.class));
+                                        Intent i = new Intent(SignWithActivity.this, SetupScreenActivity.class);
+                                        i.putExtra("key", msg());
+                                        startActivity(i);
                                         finish();
                                     }
                                 }
@@ -186,5 +189,14 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
                         }
                     }
                 });
+    }
+
+    public String msg(){
+        String user;
+
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("key");
+
+        return user;
     }
 }

@@ -34,7 +34,8 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this, MainActivity.class));
+        Intent i = new Intent(SetupScreenActivity.this, MainActivity.class);
+        startActivity(i);
         finish();
     }
 
@@ -149,7 +150,9 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
 
         sharedPref.setTypeBlock(type);
 
-        startActivity(new Intent(this, MainActivity.class));
+        Intent i = new Intent(SetupScreenActivity.this, MainActivity.class);
+        startActivity(i);
         finish();
     }
+
 }

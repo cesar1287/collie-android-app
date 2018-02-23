@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity
         initDrawer();
         initComponent();
 
+        blockUser();
 
     }
 
@@ -205,8 +206,10 @@ public class MainActivity extends AppCompatActivity
             if(sharedPref.isFirstExecute()){
                 startActivity(new Intent(this, InstructionSlideActivity.class));
             }
+
         }
     }
+
 
     private void checkIfAdminIsActive() {
         if(!mDPM.isAdminActive(mDeviceAdmin)){
@@ -349,6 +352,20 @@ public class MainActivity extends AppCompatActivity
         builder.show();
     }
 
+    private void blockUser(){
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String value = extras.getString("key");
+
+            if(value.equals("responsible")){
+                invibleForResponsible();
+            }
+            else if(value.equals("dependent")){
+                invibleForDependent();
+            }
+        }
+    }
+
     private void invibleForResponsible(){
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         Menu nav_Menu = navigationView.getMenu();
@@ -367,15 +384,13 @@ public class MainActivity extends AppCompatActivity
         nav_Menu.findItem(R.id.nav_access_for_life).setVisible(false);
     }
 
-//    private void teste(){
-//        Bundle extras = getIntent().getExtras();
-//        if (extras != null) {
-//            String value = extras.getString("key");
-//
-//            if(value.equals("teste")){
-//                invibleForDependent();
-//            }
-//        }
-//    }
+    public String msg(){
+        String user;
+
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("key");
+
+        return user;
+    }
 
 }
