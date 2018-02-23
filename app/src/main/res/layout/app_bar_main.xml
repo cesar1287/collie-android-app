@@ -71,35 +71,11 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/main_schedule"
+                android:id="@+id/main_tasks"
                 android:layout_width="109dp"
                 android:layout_height="109dp"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:background="@drawable/collie_rounded_line">
-                <ImageView
-                    android:id="@+id/main_icon2"
-                    android:layout_width="65dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/collie_icon_big_schedule"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true"
-                    android:tint="@color/colorAccent"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/main_icon2"
-                    android:text="@string/main_schedule"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"
-                    android:layout_centerHorizontal="true"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/main_tasks"
-                android:layout_width="109dp"
-                android:layout_height="109dp"
-                android:layout_alignParentBottom="true"
                 android:background="@drawable/collie_rounded_line">
                 <ImageView
                     android:id="@+id/main_icon3"
@@ -114,6 +90,30 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/main_icon3"
                     android:text="@string/main_tasks"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/main_schedule"
+                android:layout_width="109dp"
+                android:layout_height="109dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/collie_rounded_line">
+                <ImageView
+                    android:id="@+id/main_icon2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/collie_icon_big_schedule"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:tint="@color/colorAccent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/main_icon2"
+                    android:text="@string/main_schedule"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"
                     android:layout_centerHorizontal="true"/>
@@ -145,6 +145,7 @@
                     android:layout_centerHorizontal="true"/>
             </RelativeLayout>
         </RelativeLayout>
+
 
         <RelativeLayout
             android:id="@+id/main_alert"

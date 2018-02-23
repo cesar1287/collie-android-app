@@ -83,9 +83,11 @@ public class MainActivity extends AppCompatActivity
             //Toast.makeText(this, String.valueOf(mDPM.isAdminActive(mDeviceAdmin)), Toast.LENGTH_SHORT).show();
         }
 
-        verifyIfUserCompletedRegister();
+        blockUser();
         indicationTypeBlock();
     }
+
+
 
     private void verifyIfUserCompletedRegister() {
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity
                         .child(mAuth.getCurrentUser().getUid())
                         .exists()) {
                     rlMainAlert.setVisibility(View.VISIBLE);
-                }else{
+                } else{
                     rlMainAlert.setVisibility(View.GONE);
                 }
             }
@@ -206,10 +208,8 @@ public class MainActivity extends AppCompatActivity
             if(sharedPref.isFirstExecute()){
                 startActivity(new Intent(this, InstructionSlideActivity.class));
             }
-
         }
     }
-
 
     private void checkIfAdminIsActive() {
         if(!mDPM.isAdminActive(mDeviceAdmin)){
@@ -364,6 +364,9 @@ public class MainActivity extends AppCompatActivity
                 invibleForDependent();
             }
         }
+        else{
+            verifyIfUserCompletedRegister();
+        }
     }
 
     private void invibleForResponsible(){
@@ -382,15 +385,10 @@ public class MainActivity extends AppCompatActivity
         nav_Menu.findItem(R.id.nav_contact_us).setVisible(false);
         nav_Menu.findItem(R.id.nav_edit_profile).setVisible(false);
         nav_Menu.findItem(R.id.nav_access_for_life).setVisible(false);
-    }
 
-    public String msg(){
-        String user;
+        schedule.setVisibility(View.INVISIBLE);
+        localization.setVisibility(View.VISIBLE);
 
-        Bundle extras = getIntent().getExtras();
-        user = extras.getString("key");
-
-        return user;
     }
 
 }
