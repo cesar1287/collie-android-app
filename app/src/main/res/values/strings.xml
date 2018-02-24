@@ -34,7 +34,7 @@
     <string name="error_user_password_incorrect">Usuário e/ou senha incorreto(s).</string>
 
     <string name="category_register_title">Selecione a categoria correspondente ao aparelho</string>
-    <string name="category_register_btn_register">Configurar Aparelho</string>
+    <string name="category_register_btn_register">Cadastrar Aparelho</string>
     <string name="category_register_btn_responsible">Aparelho do Responsável</string>
     <string name="category_register_btn_dependent">Aparelho do Dependente</string>
 
@@ -43,7 +43,6 @@
     <string name="sign_with_btn_send">Entrar</string>
     <string name="sign_with_btn_title">Realize abaixo o seu login</string>
     <string name="sign_with_btn_forgat">Esqueci minha senha</string>
-    <string name="sign_with_btn_register">Realizar cadastro</string>
     <string name="processing_login">Processando login, por favor aguarde…</string>
 
     <string name="forgot_password_title">Esqueceu a sua senha?</string>
