@@ -45,6 +45,8 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
 
     private Boolean edit;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

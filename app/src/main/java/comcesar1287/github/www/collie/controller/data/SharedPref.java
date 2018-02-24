@@ -13,6 +13,7 @@ public class SharedPref {
     private static final String EMAIL_FATHER = "email_child";
     private static final String NAME_CHILD = "name_child";
     private static final String AGE_CHILD = "age_child";
+    public SharedPreferences.Editor edit;
 
     public SharedPref(Context context) {
         sharedPref = context.getSharedPreferences("MAIN_PREF", Context.MODE_PRIVATE);

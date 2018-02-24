@@ -1,15 +1,25 @@
 package comcesar1287.github.www.collie.view;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import comcesar1287.github.www.collie.R;
+import comcesar1287.github.www.collie.controller.data.SharedPref;
 
 public class CategoryRegisterActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+    private SharedPref sharedPref;
+    String typeUser="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +28,25 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
 
         initToolbar();
         initComponent();
+
+
+        sharedPref = new SharedPref(this);
+
+        verifyUserIsLogged();
+    }
+
+    private void verifyUserIsLogged() {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user != null) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        } else{
+            if(sharedPref.isFirstExecute()){
+                startActivity(new Intent(this, InstructionSlideActivity.class));
+            }
+        }
     }
 
     @Override
@@ -38,9 +67,12 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
                 finish();
                 break;
             case R.id.btn_dependent:
-                startActivity(new Intent(this, MainActivity.class));
+                i = new Intent(this, MainActivity.class);
+                i.putExtra("key", "dependent");
+                startActivity(i);
                 finish();
                 break;
+
         }
     }
 

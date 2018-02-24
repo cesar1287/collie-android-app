@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -52,25 +53,25 @@ public class MainActivity extends AppCompatActivity
 
     private RelativeLayout rlMainAlert, reports, schedule, tasks, localization;
 
-    private SharedPref sharedPref;
-
     private Boolean mLocationPermissionGranted;
 
     NavigationView navigationView;
+    private SharedPreferences prefs;
+
+    String typeUser ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        sharedPref = new SharedPref(this);
-
-        verifyUserIsLogged();
 
         setContentView(R.layout.activity_main);
 
         initToolbar();
         initDrawer();
         initComponent();
+
+        recordUser();
+        getData();
 
         blockUser();
 
@@ -193,20 +194,6 @@ public class MainActivity extends AppCompatActivity
                 }else{
                     Toast.makeText(this, "É necessário dar permissão para a localição para acessar essa opção", Toast.LENGTH_LONG).show();
                 }
-            }
-        }
-    }
-
-    private void verifyUserIsLogged() {
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-
-        if (user == null) {
-            startActivity(new Intent(this, CategoryRegisterActivity.class));
-            finish();
-        }else{
-            if(sharedPref.isFirstExecute()){
-                startActivity(new Intent(this, InstructionSlideActivity.class));
             }
         }
     }
@@ -353,14 +340,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void blockUser(){
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            String value = extras.getString("key");
+        if (!msg().equals("erro")) {
 
-            if(value.equals("responsible")){
+            if(msg().equals("responsible")){
                 invibleForResponsible();
             }
-            else if(value.equals("dependent")){
+            else if(msg().equals("dependent")){
                 invibleForDependent();
             }
         }
@@ -387,8 +372,42 @@ public class MainActivity extends AppCompatActivity
         nav_Menu.findItem(R.id.nav_access_for_life).setVisible(false);
 
         schedule.setVisibility(View.INVISIBLE);
-        localization.setVisibility(View.VISIBLE);
+        localization.setVisibility(View.INVISIBLE);
 
+    }
+
+    public String msg(){
+        String user;
+
+        prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+
+        user = prefs.getString("key", "erro");
+        return user;
+
+    }
+
+    private void recordUser(){
+
+        if (msg().equals("responsible") || msg().equals("dependet")) {
+            prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+            SharedPreferences.Editor ed = prefs.edit();
+            ed.putString(typeUser, msg());
+            ed.apply();
+        }
+
+    }
+
+    public String getData() {
+
+        if (prefs!= null) {
+            return prefs.getString(typeUser, "");
+        }
+
+        return "";
+    }
+
+    public void teste(){
+        Toast.makeText(getBaseContext(), getData() ,Toast.LENGTH_SHORT).show();
     }
 
 }
