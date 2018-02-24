@@ -75,7 +75,7 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
                 break;
             case R.id.btn_register:
                 i = new Intent(this, RegisterEditActivity.class);
-                i.putExtra("key", "dependent");
+                i.putExtra("key", "register");
                 startActivity(i);
                 finish();
                 break;

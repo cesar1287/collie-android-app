@@ -354,6 +354,9 @@ public class MainActivity extends AppCompatActivity
             else if(msg().equals("config")){
                 verifyIfUserCompletedRegister();
             }
+            else if(msg().equals("register")){
+                verifyIfUserCompletedRegister();
+            }
         }
         else{
             verifyIfUserCompletedRegister();

@@ -1,7 +1,9 @@
 package comcesar1287.github.www.collie.view;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
@@ -49,6 +51,7 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
 
     private Boolean edit;
 
+    private SharedPreferences prefs;
 
 
     @Override
@@ -236,8 +239,13 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                         }
                     }
                 });
-        startActivity(new Intent(RegisterEditActivity.this, SetupScreenActivity.class));
-        finish();
+                Intent i = new Intent(RegisterEditActivity.this, SetupScreenActivity.class);
+                prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+                SharedPreferences.Editor ed = prefs.edit();
+                ed.putString("key", msg());
+                ed.apply();
+                startActivity(i);
+                finish();
     }
 
     private void registerUser(String emailFather, String password) {
@@ -280,11 +288,25 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                                 sharedPref.setEmailFather(user.getEmail());
                                 sharedPref.setNameChild(nameChild);
                                 sharedPref.setAgeChild(ageChild);
-                                startActivity(new Intent(RegisterEditActivity.this, SetupScreenActivity.class));
+                                Intent i = new Intent(RegisterEditActivity.this, SetupScreenActivity.class);
+                                prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor ed = prefs.edit();
+                                ed.putString("key", msg());
+                                ed.apply();
+                                startActivity(i);
                                 finish();
                             }
                         }
                     }
                 });
+    }
+
+    public String msg(){
+        String user;
+
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("key");
+
+        return user;
     }
 }
