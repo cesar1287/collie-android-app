@@ -113,7 +113,7 @@
             android:theme="@style/AppTheme.Dialog" />
         <activity
             android:name=".view.InstructionSlideActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <receiver
             android:name=".controller.receiver.StartLockReceiver"
@@ -121,7 +121,8 @@
 
         <activity
             android:name=".view.RegisterEmailSonActivity"
-            android:theme="@style/AppTheme.Dialog"/>
+            android:theme="@style/AppTheme.Dialog" />
+        <activity android:name=".view.SonSignWithSActivityActivity"></activity>
     </application>
 
 </manifest>

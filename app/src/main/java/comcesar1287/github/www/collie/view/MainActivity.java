@@ -351,6 +351,9 @@ public class MainActivity extends AppCompatActivity
             else if(msg().equals("dependent")){
                 invibleForDependent();
             }
+            else if(msg().equals("config")){
+                verifyIfUserCompletedRegister();
+            }
         }
         else{
             verifyIfUserCompletedRegister();
@@ -370,13 +373,12 @@ public class MainActivity extends AppCompatActivity
         Menu nav_Menu = navigationView.getMenu();
         nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
         nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
-        nav_Menu.findItem(R.id.nav_exit).setVisible(false);
         nav_Menu.findItem(R.id.nav_contact_us).setVisible(false);
         nav_Menu.findItem(R.id.nav_edit_profile).setVisible(false);
         nav_Menu.findItem(R.id.nav_access_for_life).setVisible(false);
         nav_Menu.findItem(R.id.nav_register_son).setVisible(false);
 
-        schedule.setVisibility(View.INVISIBLE);
+        reports.setVisibility(View.INVISIBLE);
         localization.setVisibility(View.INVISIBLE);
 
     }
