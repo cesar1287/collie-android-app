@@ -1,8 +1,10 @@
 package comcesar1287.github.www.collie.view;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +25,9 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
 
     private SharedPref sharedPref;
 
+    private SharedPreferences prefs;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,10 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
     @Override
     public void onBackPressed() {
         Intent i = new Intent(SetupScreenActivity.this, MainActivity.class);
+        prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+        SharedPreferences.Editor ed = prefs.edit();
+        ed.putString("key", msg());
+        ed.apply();
         startActivity(i);
         finish();
     }
@@ -153,6 +162,15 @@ public class SetupScreenActivity extends AppCompatActivity implements View.OnCli
         Intent i = new Intent(SetupScreenActivity.this, MainActivity.class);
         startActivity(i);
         finish();
+    }
+
+    public String msg(){
+        String user;
+
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("key");
+
+        return user;
     }
 
 }

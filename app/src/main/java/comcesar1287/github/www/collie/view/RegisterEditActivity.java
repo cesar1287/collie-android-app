@@ -244,6 +244,7 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                 SharedPreferences.Editor ed = prefs.edit();
                 ed.putString("key", msg());
                 ed.apply();
+                i.putExtra("key", "register");
                 startActivity(i);
                 finish();
     }
@@ -293,6 +294,7 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                                 SharedPreferences.Editor ed = prefs.edit();
                                 ed.putString("key", msg());
                                 ed.apply();
+                                i.putExtra("key", "register");
                                 startActivity(i);
                                 finish();
                             }
