@@ -271,7 +271,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, RegisterEditActivity.class);
             intent.putExtra("edit", true);
             startActivity(intent);
-        } else if (id == R.id.nav_edit_config) {
+        } else if (id == R.id.nav_register_son) {
+            Intent intent = new Intent(this, RegisterEmailSonActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_edit_config) {
             SharedPref sharedPref = new SharedPref(this);
             String type = sharedPref.getTypeBlock();
 

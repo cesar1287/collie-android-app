@@ -13,6 +13,10 @@
             android:icon="@drawable/collie_icon_edit"
             android:title="@string/lateral_menu_edit_profile" />
         <item
+            android:id="@+id/nav_register_son"
+            android:icon="@drawable/collie_icon_edit"
+            android:title="@string/lateral_menu_register_son" />
+        <item
             android:id="@+id/nav_edit_config"
             android:icon="@drawable/collie_icon_config"
             android:title="@string/lateral_menu_edit_config" />
