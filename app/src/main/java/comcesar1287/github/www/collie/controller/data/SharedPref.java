@@ -13,6 +13,9 @@ public class SharedPref {
     private static final String EMAIL_FATHER = "email_child";
     private static final String NAME_CHILD = "name_child";
     private static final String AGE_CHILD = "age_child";
+    private static final String EMAIL_CHILDREN = "children_child";
+    private static final String LATITUDE = "latitude_child";
+    private static final String LONGITUDE = "longitude_child";
     public SharedPreferences.Editor edit;
 
     public SharedPref(Context context) {
@@ -68,5 +71,29 @@ public class SharedPref {
 
     public String getAgeChild() {
         return sharedPref.getString(AGE_CHILD, AGE_CHILD);
+    }
+
+    public void setEmailChildren(String emailChildren) {
+        sharedPref.edit().putString(EMAIL_CHILDREN, emailChildren).apply();
+    }
+
+    public String getEmailChildren() {
+        return sharedPref.getString(EMAIL_CHILDREN, EMAIL_CHILDREN);
+    }
+
+    public void setLatitude(String latitude) {
+        sharedPref.edit().putString(LATITUDE, latitude).apply();
+    }
+
+    public String getLatitude() {
+        return sharedPref.getString(LATITUDE, LATITUDE);
+    }
+
+    public void setLongitude(String longitude) {
+        sharedPref.edit().putString(LONGITUDE, longitude).apply();
+    }
+
+    public String getLongitude() {
+        return sharedPref.getString(LONGITUDE, LONGITUDE);
     }
 }

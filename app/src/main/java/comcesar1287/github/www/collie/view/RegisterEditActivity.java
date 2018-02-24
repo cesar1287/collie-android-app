@@ -236,7 +236,7 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                         }
                     }
                 });
-        startActivity(new Intent(RegisterEditActivity.this, SetupScreenActivity.class));
+        startActivity(new Intent(RegisterEditActivity.this, MainActivity.class));
         finish();
     }
 

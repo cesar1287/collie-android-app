@@ -29,9 +29,9 @@ public class FirebaseHelper {
     }
 
     public static void writeNewChildren(DatabaseReference mDatabase, String idChildren, String idFather,
-                                        String idActivity, String block, String latitude, String longitude) {
+                                        String block, String latitude, String longitude) {
 
-        Children children = new Children(idFather, idActivity, block, latitude, longitude);
+        Children children = new Children(idFather, block, latitude, longitude);
 
         mDatabase.child(FIREBASE_DATABASE_CHILDREN).child(idChildren).setValue(children);
     }
