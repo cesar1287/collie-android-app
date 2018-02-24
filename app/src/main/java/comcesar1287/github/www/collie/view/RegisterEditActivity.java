@@ -239,10 +239,10 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                         }
                     }
                 });
-<<<<<<< HEAD
+
         startActivity(new Intent(RegisterEditActivity.this, MainActivity.class));
         finish();
-=======
+
                 Intent i = new Intent(RegisterEditActivity.this, SetupScreenActivity.class);
                 prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
                 SharedPreferences.Editor ed = prefs.edit();
@@ -251,7 +251,6 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                 i.putExtra("key", "register");
                 startActivity(i);
                 finish();
->>>>>>> ef1354a1150f62eaf9a9da51fe36cd01ca1b3970
     }
 
     private void registerUser(String emailFather, String password) {
