@@ -77,7 +77,7 @@ public class RegisterEmailSonActivity extends AppCompatActivity implements View.
 
         email = etEmail.getEditText().getText().toString();
 
-          
+
         if (email.equals("")) {
             allFieldsFilled = false;
             etEmail.setError(getString(R.string.error_required_field));
