@@ -21,6 +21,7 @@
     <string name="register_button_send">Finalizar Cadastro</string>
     <string name="sign_up_user">Criando o usuário, por favor aguarde…</string>
     <string name="successfully_registered">Usuário criado com sucesso.</string>
+    <string name="edit_user">Editando o usuário, por favor aguarde...</string>
 
     <string name="error_required_field">Campo obrigatório</string>
     <string name="error_passwords_not_match">Senhas não conferem</string>

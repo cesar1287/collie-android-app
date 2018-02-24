@@ -7,6 +7,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,11 +19,14 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthRecentLoginRequiredException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.net.PasswordAuthentication;
 
 import comcesar1287.github.www.collie.controller.data.SharedPref;
 import comcesar1287.github.www.collie.controller.firebase.FirebaseHelper;
@@ -83,6 +87,9 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
     private void initComponents() {
         etNameFather = findViewById(R.id.register_name_father);
         etEmailFather = findViewById(R.id.register_email_father);
+        if(edit) {
+            etEmailFather.setEnabled(false);
+        }
         etNameChild = findViewById(R.id.register_name_child);
         etAgeChild = findViewById(R.id.register_age_child);
         etPassword = findViewById(R.id.register_password_father);
@@ -184,8 +191,53 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
         }
 
         if(allFieldsFilled && allFilledCorrectly){
-            registerUser(emailFather, password);
+            if(!edit) {
+                registerUser(emailFather, password);
+            }
+            else {
+                editUser(password, nameFather, nameChild, ageChild);
+            }
         }
+    }
+
+    private void editUser(final String password, String nameFather, String nameChild, String ageChild) {
+        user = mAuth.getCurrentUser();
+        FirebaseHelper.writeNewUser(mDatabase, mAuth.getCurrentUser().getUid(), nameFather, nameChild, ageChild);
+        SharedPref sharedPref = new SharedPref(RegisterEditActivity.this);
+        sharedPref.setNameFather(nameFather);
+        sharedPref.setEmailFather(user.getEmail());
+        sharedPref.setNameChild(nameChild);
+        sharedPref.setAgeChild(ageChild);
+        user.updatePassword(password)
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        if (e instanceof FirebaseAuthWeakPasswordException) {
+                            etPassword.setError(getString(R.string.error_password_too_small));
+                            etPassword.requestFocus();
+                        } else if (e instanceof FirebaseAuthRecentLoginRequiredException) {
+                            etPassword.setError(getString(R.string.error_passwords_not_match));
+                            etPassword.requestFocus();
+                        } else if (e instanceof FirebaseAuthInvalidCredentialsException) {
+                            etPassword.setError(getString(R.string.error_invalid_email));
+                            etPassword.requestFocus();
+                        } else {
+                            Toast.makeText(RegisterEditActivity.this,
+                                    getResources().getString(R.string.error_unknown_error),
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                })
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(RegisterEditActivity.this, getString(R.string.edit_user), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+        startActivity(new Intent(RegisterEditActivity.this, SetupScreenActivity.class));
+        finish();
     }
 
     private void registerUser(String emailFather, String password) {
