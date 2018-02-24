@@ -56,10 +56,10 @@
         android:layout_marginBottom="150dp">
 
         <Button
-            android:id="@+id/btn_register"
+            android:id="@+id/btn_config"
             android:layout_width="230dp"
             android:layout_height="47dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:text="@string/category_register_btn_register"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -73,8 +73,8 @@
             android:layout_height="47dp"
             android:layout_alignLeft="@+id/btn_dependent"
             android:layout_alignStart="@+id/btn_dependent"
-            android:layout_marginTop="15dp"
-            android:layout_below="@id/btn_register"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/btn_config"
             android:background="@drawable/collie_button_rounded"
             android:text="@string/category_register_btn_responsible"
             android:textAllCaps="false"
@@ -86,7 +86,7 @@
             android:layout_width="230dp"
             android:layout_height="47dp"
             android:layout_below="@id/btn_responsible"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:text="@string/category_register_btn_dependent"
             android:textAllCaps="false"
             android:textColor="@color/white"
@@ -94,7 +94,24 @@
             android:background="@drawable/collie_button_rounded"
             android:textSize="15sp"/>
 
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/btn_dependent"
+            android:textAllCaps="false"
+            android:text="@string/sign_with_btn_register"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:background="@null"/>
+
     </RelativeLayout>
+
+
 
     <ImageView
         android:id="@+id/category_register_image_footer"

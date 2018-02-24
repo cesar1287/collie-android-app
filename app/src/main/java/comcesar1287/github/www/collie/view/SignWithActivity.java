@@ -95,6 +95,7 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
 
         Button btForgot = findViewById(R.id.sign_with_btn_recover);
         btForgot.setOnClickListener(this);
+
     }
 
     private void attemptLogin() {

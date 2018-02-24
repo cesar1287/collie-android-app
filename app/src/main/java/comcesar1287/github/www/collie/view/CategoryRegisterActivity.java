@@ -56,8 +56,10 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
         Intent i;
 
         switch (id){
-            case R.id.btn_register:
-                startActivity(new Intent(this, RegisterEditActivity.class));
+            case R.id.btn_config:
+                i = new Intent(this, SignWithActivity.class);
+                i.putExtra("key", "config");
+                startActivity(i);
                 finish();
                 break;
             case R.id.btn_responsible:
@@ -72,7 +74,12 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
                 startActivity(i);
                 finish();
                 break;
-
+            case R.id.btn_register:
+                i = new Intent(this, RegisterEditActivity.class);
+                i.putExtra("key", "dependent");
+                startActivity(i);
+                finish();
+                break;
         }
     }
 
@@ -85,11 +92,13 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
     }
 
     private void initComponent() {
-        Button btRegister = findViewById(R.id.btn_register);
-        btRegister.setOnClickListener(this);
+        Button btnConfig = findViewById(R.id.btn_config);
+        btnConfig.setOnClickListener(this);
         Button btResponsible = findViewById(R.id.btn_responsible);
         btResponsible.setOnClickListener(this);
         Button btDependent = findViewById(R.id.btn_dependent);
         btDependent.setOnClickListener(this);
+        Button btRegister = findViewById(R.id.btn_register);
+        btRegister.setOnClickListener(this);
     }
 }
