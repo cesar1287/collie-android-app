@@ -47,24 +47,25 @@
             android:paddingTop="20dp"
             android:paddingBottom="20dp"
             android:layout_margin="20dp">
+
             <RelativeLayout
-                android:id="@+id/main_reports"
+                android:id="@+id/main_schedule"
                 android:layout_width="109dp"
                 android:layout_height="109dp"
                 android:background="@drawable/collie_rounded_line">
                 <ImageView
-                    android:id="@+id/main_icon1"
+                    android:id="@+id/main_icon2"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:src="@drawable/collie_icon_big_reports"
+                    android:src="@drawable/collie_icon_big_schedule"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:tint="@color/colorAccent"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/main_icon1"
-                    android:text="@string/main_reports"
+                    android:layout_below="@id/main_icon2"
+                    android:text="@string/main_schedule"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"
                     android:layout_centerHorizontal="true"/>
@@ -96,24 +97,24 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/main_schedule"
+                android:id="@+id/main_reports"
                 android:layout_width="109dp"
                 android:layout_height="109dp"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/collie_rounded_line">
                 <ImageView
-                    android:id="@+id/main_icon2"
+                    android:id="@+id/main_icon1"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
-                    android:src="@drawable/collie_icon_big_schedule"
+                    android:src="@drawable/collie_icon_big_reports"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
                     android:tint="@color/colorAccent"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/main_icon2"
-                    android:text="@string/main_schedule"
+                    android:layout_below="@id/main_icon1"
+                    android:text="@string/main_reports"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"
                     android:layout_centerHorizontal="true"/>

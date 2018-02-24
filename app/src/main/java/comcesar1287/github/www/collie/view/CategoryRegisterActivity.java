@@ -68,14 +68,14 @@ public class CategoryRegisterActivity extends AppCompatActivity implements View.
                 finish();
                 break;
             case R.id.btn_dependent:
-                i = new Intent(this, MainActivity.class);
+                i = new Intent(this, SonSignWithSActivityActivity.class);
                 i.putExtra("key", "dependent");
                 startActivity(i);
                 finish();
                 break;
             case R.id.btn_register:
                 i = new Intent(this, RegisterEditActivity.class);
-                i.putExtra("key", "dependent");
+                i.putExtra("key", "register");
                 startActivity(i);
                 finish();
                 break;
