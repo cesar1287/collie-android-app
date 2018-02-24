@@ -33,7 +33,7 @@ public class RegisterEmailSonActivity extends AppCompatActivity implements View.
 
     private void initComponents() {
 
-        EditText edtEmail = (findViewById(R.id.register_email_son_email))
+        EditText edtEmail = (findViewById(R.id.register_email_son_email));
 
         Button btSend = findViewById(R.id.forgot_password_button_send);
         btSend.setOnClickListener(this);
