@@ -26,7 +26,6 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -272,7 +271,7 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra("edit", true);
             startActivity(intent);
         } else if (id == R.id.nav_register_son) {
-            Intent intent = new Intent(this, RegisterEmailSonActivity.class);
+            Intent intent = new Intent(this, RegisterPhoneSonActivity.class);
             startActivity(intent);
         }else if (id == R.id.nav_edit_config) {
             SharedPref sharedPref = new SharedPref(this);

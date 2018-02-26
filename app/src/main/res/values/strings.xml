@@ -250,8 +250,8 @@
     <string name="tasks_list_not_done">Não Feito</string>
 
     <string name="register_email_son_title">Cadastrar filho</string>
-    <string name="register_email_son_subtitle">Insira o email do seu filho abaixo</string>
-    <string name="register_email_son_email">Email</string>
+    <string name="register_email_son_subtitle">Insira abaixo, o número do celular do dependente</string>
+    <string name="register_email_son_email">Telefone</string>
     <string name="register_email_son_confirmar">Confirmar</string>
     <string name="register_email_son_cancel">Cancelar</string>
 

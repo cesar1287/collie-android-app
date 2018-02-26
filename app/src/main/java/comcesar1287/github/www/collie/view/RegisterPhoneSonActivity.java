@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -18,9 +17,9 @@ import comcesar1287.github.www.collie.R;
 import comcesar1287.github.www.collie.controller.data.SharedPref;
 import comcesar1287.github.www.collie.controller.firebase.FirebaseHelper;
 
-public class RegisterEmailSonActivity extends AppCompatActivity implements View.OnClickListener {
+public class RegisterPhoneSonActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextInputLayout etEmail;
+    private TextInputLayout etPhone;
 
     private FirebaseAuth mAuth;
     private FirebaseUser user;
@@ -32,7 +31,7 @@ public class RegisterEmailSonActivity extends AppCompatActivity implements View.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_email_son);
+        setContentView(R.layout.activity_register_phone_son);
 
         initComponents();
         initFirebase();
@@ -43,10 +42,10 @@ public class RegisterEmailSonActivity extends AppCompatActivity implements View.
         int id = view.getId();
 
         switch (id){
-            case R.id.register_email_son_button_send:
+            case R.id.register_phone_son_button_send:
                 attemptRegister();
                 break;
-            case R.id.register_email_son_button_cancel:
+            case R.id.register_phone_son_button_cancel:
                 finish();
                 break;
         }
@@ -54,12 +53,12 @@ public class RegisterEmailSonActivity extends AppCompatActivity implements View.
 
     private void initComponents() {
 
-        etEmail = findViewById(R.id.register_email_son_email);
+        etPhone = findViewById(R.id.register_phone_son_email);
 
-        Button btSend = findViewById(R.id.register_email_son_button_send);
+        Button btSend = findViewById(R.id.register_phone_son_button_send);
         btSend.setOnClickListener(this);
 
-        Button btCancel = findViewById(R.id.register_email_son_button_cancel);
+        Button btCancel = findViewById(R.id.register_phone_son_button_cancel);
         btCancel.setOnClickListener(this);
 
     }
@@ -71,35 +70,35 @@ public class RegisterEmailSonActivity extends AppCompatActivity implements View.
     }
 
     private void attemptRegister() {
-        String email;
+        String phone;
 
         boolean allFieldsFilled = true;
 
-        email = etEmail.getEditText().getText().toString();
+        phone = etPhone.getEditText().getText().toString();
 
 
-        if (email.equals("")) {
+        if (phone.equals("")) {
             allFieldsFilled = false;
-            etEmail.setError(getString(R.string.error_required_field));
+            etPhone.setError(getString(R.string.error_required_field));
         } else {
-            etEmail.setErrorEnabled(false);
+            etPhone.setErrorEnabled(false);
         }
 
         if (allFieldsFilled) {
-            registerChild(email, "0", "0", "0");
+            registerChild(phone, "0", "0", "0");
         }
     }
 
     private void registerChild(String emailChild, String block, String latitude, String longitude) {
         user = mAuth.getCurrentUser();
         FirebaseHelper.writeNewChildren(mDatabase, emailChild, user.getUid(), block, latitude, longitude);
-        SharedPref sharedPref = new SharedPref(RegisterEmailSonActivity.this);
+        SharedPref sharedPref = new SharedPref(RegisterPhoneSonActivity.this);
         sharedPref.setEmailChildren(emailChild);
         sharedPref.setEmailFather(user.getUid());
         sharedPref.setTypeBlock(block);
         sharedPref.setLatitude(latitude);
         sharedPref.setLongitude(longitude);
-        startActivity(new Intent(RegisterEmailSonActivity.this, MainActivity.class));
+        startActivity(new Intent(RegisterPhoneSonActivity.this, MainActivity.class));
         finish();
     }
 }
