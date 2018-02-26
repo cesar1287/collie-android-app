@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
 
     private TextInputLayout tilName, tilDescription;
     private TextView tvHour, tvDate;
+    private Spinner spinnerSelectUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,8 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
 
         tilName = findViewById(R.id.add_schedule_name);
         tilDescription = findViewById(R.id.add_schedule_description);
+
+        spinnerSelectUser = (findViewById(R.id.add_schedule_select_user));
     }
 
     @Override
