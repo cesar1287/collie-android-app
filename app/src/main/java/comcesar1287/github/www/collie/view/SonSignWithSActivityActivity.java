@@ -32,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 import comcesar1287.github.www.collie.R;
 import comcesar1287.github.www.collie.controller.data.SharedPref;
 
-public class SonSignWithSActivityActivity extends AppCompatActivity implements View.OnClickListener{
+public class    SonSignWithSActivityActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextInputLayout etPasswordPhone;
 
