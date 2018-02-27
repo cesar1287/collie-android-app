@@ -211,6 +211,7 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
         sharedPref.setEmailFather(user.getEmail());
         sharedPref.setNameChild(nameChild);
         sharedPref.setAgeChild(ageChild);
+        sharedPref.setTypeBlock(sharedPref.getTypeBlock());
         user.updatePassword(password)
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
