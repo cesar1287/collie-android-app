@@ -46,7 +46,7 @@
     <string name="sign_with_btn_forgat">Esqueci minha senha</string>
     <string name="processing_login">Processando login, por favor aguarde…</string>
 
-    <string name="son_sign_with_phone">Telefone</string>
+    <string name="son_sign_with_phone">Telefone do dependente</string>
     <string name="son_sign_with_btn_send">Entrar</string>
     <string name="son_sign_with_btn_title">Realize abaixo o seu login</string>
 

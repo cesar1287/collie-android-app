@@ -74,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/son_sign_with_phone"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="number"/>
 
             </android.support.design.widget.TextInputLayout>
 
