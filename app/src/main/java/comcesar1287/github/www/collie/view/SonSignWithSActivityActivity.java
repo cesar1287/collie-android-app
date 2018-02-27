@@ -1,36 +1,21 @@
 package comcesar1287.github.www.collie.view;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
-import com.blankj.utilcode.util.EmptyUtils;
-import com.blankj.utilcode.util.NetworkUtils;
 import com.blankj.utilcode.util.Utils;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import comcesar1287.github.www.collie.R;
-import comcesar1287.github.www.collie.controller.data.SharedPref;
 
 public class SonSignWithSActivityActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -47,7 +32,7 @@ public class SonSignWithSActivityActivity extends AppCompatActivity implements V
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_phone_son);
+        setContentView(R.layout.activity_son_sign_with_activity);
 
         initToolbar();
         initComponents();
@@ -84,9 +69,9 @@ public class SonSignWithSActivityActivity extends AppCompatActivity implements V
         mAuth = FirebaseAuth.getInstance();
         Utils.init(getApplication());
 
-        etPasswordPhone = findViewById(R.id.son_sign_with_edit_phone);
+        etPasswordPhone = findViewById(R.id.son_sign_with_phone);
 
-        Button btContinue = findViewById(R.id.sign_with_btn_send);
+        Button btContinue = findViewById(R.id.son_sign_with_btn_send);
         btContinue.setOnClickListener(this);
 
     }
