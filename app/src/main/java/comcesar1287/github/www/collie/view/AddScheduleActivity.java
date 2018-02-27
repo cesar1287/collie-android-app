@@ -55,6 +55,10 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
         tilName = findViewById(R.id.add_schedule_name);
         tilDescription = findViewById(R.id.add_schedule_description);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a183a49a98ec58f7ad7335b82bd20d48f8898589
         initFirebase();
 
         spinnerSelectUser = (findViewById(R.id.add_schedule_select_user));

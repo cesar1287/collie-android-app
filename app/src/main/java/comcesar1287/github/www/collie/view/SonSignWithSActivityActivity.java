@@ -17,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import comcesar1287.github.www.collie.R;
 
-public class SonSignWithSActivityActivity extends AppCompatActivity implements View.OnClickListener{
+public class    SonSignWithSActivityActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextInputLayout etPasswordPhone;
 
