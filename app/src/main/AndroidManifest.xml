@@ -120,7 +120,7 @@
             android:enabled="true" />
 
         <activity
-            android:name=".view.RegisterEmailSonActivity"
+            android:name=".view.RegisterPhoneSonActivity"
             android:theme="@style/AppTheme.Dialog" />
         <activity android:name=".view.SonSignWithSActivityActivity"></activity>
     </application>

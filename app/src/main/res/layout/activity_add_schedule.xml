@@ -36,11 +36,19 @@
             android:textColor="@color/black_grey"
             android:textSize="17sp"/>
 
+        <Spinner
+            android:id="@+id/add_schedule_select_user"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@id/add_schedule_subtitle"></Spinner>
+
         <TextView
             android:id="@+id/add_schedule_button_date"
             android:layout_width="140dp"
             android:layout_height="40dp"
-            android:layout_below="@id/add_schedule_subtitle"
+            android:layout_below="@id/add_schedule_select_user"
             android:text="@string/add_schedule_date"
             android:gravity="center"
             android:textAllCaps="true"
@@ -51,7 +59,7 @@
             android:id="@+id/add_schedule_button_time"
             android:layout_width="140dp"
             android:layout_height="40dp"
-            android:layout_below="@id/add_schedule_subtitle"
+            android:layout_below="@id/add_schedule_select_user"
             android:layout_toRightOf="@id/add_schedule_button_date"
             android:layout_toEndOf="@id/add_schedule_button_date"
             android:layout_alignParentRight="true"

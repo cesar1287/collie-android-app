@@ -46,6 +46,10 @@
     <string name="sign_with_btn_forgat">Esqueci minha senha</string>
     <string name="processing_login">Processando login, por favor aguarde…</string>
 
+    <string name="son_sign_with_phone">Email</string>
+    <string name="son_sign_with_btn_send">Entrar</string>
+    <string name="son_sign_with_btn_title">Realize abaixo o seu login</string>
+
     <string name="forgot_password_title">Esqueceu a sua senha?</string>
     <string name="forgot_password_subtitle">Insira abaixo o seu email para recuperá-la.</string>
     <string name="forgot_password_email">Email</string>
@@ -249,9 +253,9 @@
     <string name="tasks_list_done">Feito</string>
     <string name="tasks_list_not_done">Não Feito</string>
 
-    <string name="register_email_son_title">Cadastrar filho</string>
-    <string name="register_email_son_subtitle">Insira o email do seu filho abaixo</string>
-    <string name="register_email_son_email">Email</string>
+    <string name="register_email_son_title">Cadastrar dependente</string>
+    <string name="register_email_son_subtitle">Insira abaixo, o número do celular do dependente</string>
+    <string name="register_email_son_email">Telefone</string>
     <string name="register_email_son_confirmar">Confirmar</string>
     <string name="register_email_son_cancel">Cancelar</string>
 
