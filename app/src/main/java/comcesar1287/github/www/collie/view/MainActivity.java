@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity
 
         blockUser();
 
+        checkIfAdminIsActive();
     }
 
     @Override

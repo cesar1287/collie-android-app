@@ -20,7 +20,6 @@ public class CollieDAO extends SQLiteOpenHelper{
     private static final int VERSAO = 2;
     private static final String TABELA_ATIVIDADE = "Atividade";
 
-
     public CollieDAO(Context context) {
         super(context, DATABASE, null, VERSAO);
     }
