@@ -6,6 +6,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,7 +26,6 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -52,25 +52,25 @@ public class MainActivity extends AppCompatActivity
 
     private RelativeLayout rlMainAlert, reports, schedule, tasks, localization;
 
-    private SharedPref sharedPref;
-
     private Boolean mLocationPermissionGranted;
 
     NavigationView navigationView;
+    private SharedPreferences prefs;
+
+    String typeUser ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        sharedPref = new SharedPref(this);
-
-        verifyUserIsLogged();
 
         setContentView(R.layout.activity_main);
 
         initToolbar();
         initDrawer();
         initComponent();
+
+        recordUser();
+        getData();
 
         blockUser();
 
@@ -198,20 +198,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void verifyUserIsLogged() {
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-
-        if (user == null) {
-            startActivity(new Intent(this, CategoryRegisterActivity.class));
-            finish();
-        }else{
-            if(sharedPref.isFirstExecute()){
-                startActivity(new Intent(this, InstructionSlideActivity.class));
-            }
-        }
-    }
-
     private void checkIfAdminIsActive() {
         if(!mDPM.isAdminActive(mDeviceAdmin)){
             Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
@@ -285,7 +271,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, RegisterEditActivity.class);
             intent.putExtra("edit", true);
             startActivity(intent);
-        } else if (id == R.id.nav_edit_config) {
+        } else if (id == R.id.nav_register_son) {
+            Intent intent = new Intent(this, RegisterPhoneSonActivity.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_edit_config) {
             SharedPref sharedPref = new SharedPref(this);
             String type = sharedPref.getTypeBlock();
 
@@ -354,15 +343,19 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void blockUser(){
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            String value = extras.getString("key");
+        if (!msg().equals("erro")) {
 
-            if(value.equals("responsible")){
+            if(msg().equals("responsible")){
                 invibleForResponsible();
             }
-            else if(value.equals("dependent")){
+            else if(msg().equals("dependent")){
                 invibleForDependent();
+            }
+            else if(msg().equals("config")){
+                verifyIfUserCompletedRegister();
+            }
+            else if(msg().equals("register")){
+                verifyIfUserCompletedRegister();
             }
         }
         else{
@@ -375,6 +368,7 @@ public class MainActivity extends AppCompatActivity
         Menu nav_Menu = navigationView.getMenu();
         nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
         nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
+        nav_Menu.findItem(R.id.nav_register_son).setVisible(false);
     }
 
     private void invibleForDependent(){
@@ -382,14 +376,48 @@ public class MainActivity extends AppCompatActivity
         Menu nav_Menu = navigationView.getMenu();
         nav_Menu.findItem(R.id.nav_edit_config).setVisible(false);
         nav_Menu.findItem(R.id.nav_change_block).setVisible(false);
-        nav_Menu.findItem(R.id.nav_exit).setVisible(false);
         nav_Menu.findItem(R.id.nav_contact_us).setVisible(false);
         nav_Menu.findItem(R.id.nav_edit_profile).setVisible(false);
         nav_Menu.findItem(R.id.nav_access_for_life).setVisible(false);
+        nav_Menu.findItem(R.id.nav_register_son).setVisible(false);
 
-        schedule.setVisibility(View.INVISIBLE);
-        localization.setVisibility(View.VISIBLE);
+        reports.setVisibility(View.INVISIBLE);
+        localization.setVisibility(View.INVISIBLE);
 
+    }
+
+    public String msg(){
+        String user;
+
+        prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+
+        user = prefs.getString("key", "erro");
+        return user;
+
+    }
+
+    private void recordUser(){
+
+        if (msg().equals("responsible") || msg().equals("dependet")) {
+            prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+            SharedPreferences.Editor ed = prefs.edit();
+            ed.putString(typeUser, msg());
+            ed.apply();
+        }
+
+    }
+
+    public String getData() {
+
+        if (prefs!= null) {
+            return prefs.getString(typeUser, "");
+        }
+
+        return "";
+    }
+
+    public void teste(){
+        Toast.makeText(getBaseContext(), getData() ,Toast.LENGTH_SHORT).show();
     }
 
 }

@@ -21,6 +21,7 @@
     <string name="register_button_send">Finalizar Cadastro</string>
     <string name="sign_up_user">Criando o usuário, por favor aguarde…</string>
     <string name="successfully_registered">Usuário criado com sucesso.</string>
+    <string name="edit_user">Editando o usuário, por favor aguarde...</string>
 
     <string name="error_required_field">Campo obrigatório</string>
     <string name="error_passwords_not_match">Senhas não conferem</string>
@@ -33,9 +34,10 @@
     <string name="error_user_password_incorrect">Usuário e/ou senha incorreto(s).</string>
 
     <string name="category_register_title">Selecione a categoria correspondente ao aparelho</string>
-    <string name="category_register_btn_register">Cadastrar Aparelho</string>
+    <string name="category_register_btn_config">Configurar Aparelho</string>
     <string name="category_register_btn_responsible">Aparelho do Responsável</string>
     <string name="category_register_btn_dependent">Aparelho do Dependente</string>
+    <string name="category_register_btn_register">Realizar Cadastro</string>
 
     <string name="sign_with_email">Email</string>
     <string name="sign_with_passord">Senha</string>
@@ -43,6 +45,10 @@
     <string name="sign_with_btn_title">Realize abaixo o seu login</string>
     <string name="sign_with_btn_forgat">Esqueci minha senha</string>
     <string name="processing_login">Processando login, por favor aguarde…</string>
+
+    <string name="son_sign_with_phone">Telefone do dependente</string>
+    <string name="son_sign_with_btn_send">Entrar</string>
+    <string name="son_sign_with_btn_title">Realize abaixo o seu login</string>
 
     <string name="forgot_password_title">Esqueceu a sua senha?</string>
     <string name="forgot_password_subtitle">Insira abaixo o seu email para recuperá-la.</string>
@@ -138,6 +144,7 @@
 
     <string name="lateral_menu_main_screen">Tela Principal</string>
     <string name="lateral_menu_edit_profile">Editar Meu Perfil</string>
+    <string name="lateral_menu_register_son">Cadastrar Filho</string>
     <string name="lateral_menu_edit_config">Configuração de Bloqueio</string>
     <string name="lateral_menu_change_block">Alterar Bloqueio</string>
     <string name="lateral_menu_list_reports">Relatórios</string>
@@ -245,6 +252,12 @@
     <string name="tasks_list_make">Fazer</string>
     <string name="tasks_list_done">Feito</string>
     <string name="tasks_list_not_done">Não Feito</string>
+
+    <string name="register_email_son_title">Cadastrar dependente</string>
+    <string name="register_email_son_subtitle">Insira abaixo, o número do celular do dependente</string>
+    <string name="register_email_son_email">Telefone</string>
+    <string name="register_email_son_confirmar">Confirmar</string>
+    <string name="register_email_son_cancel">Cancelar</string>
 
 
 </resources>

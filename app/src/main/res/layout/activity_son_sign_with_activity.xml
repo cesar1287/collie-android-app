@@ -13,20 +13,20 @@
         android:focusableInTouchMode="true">
 
         <RelativeLayout
-            android:id="@+id/sign_with_header"
+            android:id="@+id/son_sign_with_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark">
 
             <ImageView
-                android:id="@+id/sign_with_logo"
+                android:id="@+id/son_sign_with_logo"
                 android:layout_width="75dp"
                 android:layout_height="55dp"
                 android:src="@drawable/collie_image_logo"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
-                android:id="@+id/sign_with_title"
+                android:id="@+id/son_sign_with_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -34,19 +34,19 @@
                 android:layout_marginLeft="19dp"
                 android:layout_marginRight="19dp"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@id/sign_with_logo"
-                android:text="@string/sign_with_btn_title"
+                android:layout_below="@id/son_sign_with_logo"
+                android:text="@string/son_sign_with_btn_title"
                 android:textSize="19sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
         </RelativeLayout>
 
         <ImageView
-            android:id="@+id/sign_with_image_triangle"
+            android:id="@+id/son_sign_with_image_triangle"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@drawable/collie_image_triangle"
-            android:layout_below="@id/sign_with_header"
+            android:layout_below="@id/son_sign_with_header"
             android:layout_marginTop="-5dp"
             android:layout_centerHorizontal="true"
             android:tint="@color/colorPrimaryDark"/>
@@ -62,7 +62,7 @@
 
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/sign_with_email"
+                android:id="@+id/son_sign_with_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/TextLabel"
@@ -70,60 +70,27 @@
                 android:layout_marginRight="27dp">
 
                 <android.support.design.widget.TextInputEditText
-                    android:id="@+id/sign_with_edit_email"
+                    android:id="@+id/son_sign_with_edit_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/sign_with_email"
-                    android:inputType="textEmailAddress"/>
-
-                </android.support.design.widget.TextInputLayout>
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/sign_with_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/TextLabel"
-                android:layout_below="@id/sign_with_email"
-                android:layout_marginLeft="27dp"
-                android:layout_marginRight="27dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:id="@+id/sign_with_edit_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/sign_with_passord"
-                    android:inputType="textPassword"/>
+                    android:hint="@string/son_sign_with_phone"
+                    android:inputType="number"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/sign_with_btn_send"
+                android:id="@+id/son_sign_with_btn_send"
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
-                android:layout_marginTop="27dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginLeft="27dp"
                 android:layout_marginRight="27dp"
-                android:layout_below="@id/sign_with_password"
+                android:layout_below="@id/son_sign_with_phone"
                 android:layout_centerHorizontal="true"
-                android:text="@string/sign_with_btn_send"
+                android:text="@string/son_sign_with_btn_send"
                 android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:background="@drawable/collie_button_rounded"/>
-
-            <Button
-                android:id="@+id/sign_with_btn_recover"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@id/sign_with_btn_send"
-                android:textAllCaps="false"
-                android:text="@string/sign_with_btn_forgat"
-                android:textColor="@color/white"
-                android:background="@null"/>
-
 
         </RelativeLayout>
     </RelativeLayout>

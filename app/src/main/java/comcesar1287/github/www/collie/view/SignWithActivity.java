@@ -1,7 +1,9 @@
 package comcesar1287.github.www.collie.view;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.ActionBar;
@@ -39,6 +41,8 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
     private ProgressDialog dialog;
 
     private DatabaseReference mDatabase;
+
+    private SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,6 +95,7 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
 
         Button btForgot = findViewById(R.id.sign_with_btn_recover);
         btForgot.setOnClickListener(this);
+
     }
 
     private void attemptLogin() {
@@ -167,13 +172,19 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
                                                 .child("block").getValue());
 
                                         Intent i = new Intent(SignWithActivity.this, MainActivity.class);
-                                        i.putExtra("key", msg());
+                                        prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor ed = prefs.edit();
+                                        ed.putString("key", msg());
+                                        ed.apply();
                                         startActivity(i);
                                         finish();
 
                                     } else {
                                         Intent i = new Intent(SignWithActivity.this, SetupScreenActivity.class);
-                                        i.putExtra("key", msg());
+                                        prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor ed = prefs.edit();
+                                        ed.putString("key", msg());
+                                        ed.apply();
                                         startActivity(i);
                                         finish();
                                     }

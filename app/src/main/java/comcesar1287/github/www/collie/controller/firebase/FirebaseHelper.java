@@ -2,13 +2,17 @@ package comcesar1287.github.www.collie.controller.firebase;
 
 import com.google.firebase.database.DatabaseReference;
 
+import comcesar1287.github.www.collie.controller.domain.Atividade;
 import comcesar1287.github.www.collie.controller.domain.Block;
+import comcesar1287.github.www.collie.controller.domain.Children;
 import comcesar1287.github.www.collie.controller.domain.User;
 
 public class FirebaseHelper {
 
     private static final String FIREBASE_DATABASE_USERS = "users";
     private static final String FIREBASE_DATABASE_CONFIG = "config";
+    private static final String FIREBASE_DATABASE_CHILDREN = "children";
+    private static final String FIREBASE_DATABASE_ATIVIDADE = "atividade";
 
     public static void writeNewUser(DatabaseReference mDatabase, String userId, String nameFather,
                                     String nameChild, String ageChild) {
@@ -24,5 +28,21 @@ public class FirebaseHelper {
         Block block = new Block(type, options, nameTask1, bonusTask1, nameTask2, bonusTask2);
 
         mDatabase.child(FIREBASE_DATABASE_CONFIG).child(userId).setValue(block);
+    }
+
+    public static void writeNewChildren(DatabaseReference mDatabase, String idChildren, String idFather,
+                                        String block, String latitude, String longitude) {
+
+        Children children = new Children(idFather, block, latitude, longitude);
+
+        mDatabase.child(FIREBASE_DATABASE_CHILDREN).child(idChildren).setValue(children);
+    }
+
+    public static void writeNewActivity(DatabaseReference mDatabase, String idChild, String nome,
+                                        String data, String hora, String descricao, int concluida) {
+
+        Atividade atividade = new Atividade(idChild, nome, data, hora, descricao, concluida);
+
+        mDatabase.child(FIREBASE_DATABASE_ATIVIDADE).push().setValue(atividade);
     }
 }

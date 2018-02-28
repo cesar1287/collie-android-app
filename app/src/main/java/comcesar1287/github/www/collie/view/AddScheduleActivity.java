@@ -6,9 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import comcesar1287.github.www.collie.controller.firebase.FirebaseHelper;
 import comcesar1287.github.www.collie.model.CollieDAO;
 import comcesar1287.github.www.collie.R;
 import comcesar1287.github.www.collie.controller.domain.Atividade;
@@ -19,6 +26,14 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
 
     private TextInputLayout tilName, tilDescription;
     private TextView tvHour, tvDate;
+    private Spinner spinnerSelectUser;
+
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
+
+    private DatabaseReference mDatabase;
+
+    private String idChild;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +54,12 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
 
         tilName = findViewById(R.id.add_schedule_name);
         tilDescription = findViewById(R.id.add_schedule_description);
+
+
+        initFirebase();
+
+        spinnerSelectUser = (findViewById(R.id.add_schedule_select_user));
+
     }
 
     @Override
@@ -67,6 +88,12 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
                 finish();
                 break;
         }
+    }
+
+    private void initFirebase() {
+        mAuth = FirebaseAuth.getInstance();
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
     private void addSchedule() {
@@ -102,15 +129,17 @@ public class AddScheduleActivity extends AppCompatActivity implements View.OnCli
         }
 
         if(allFieldsFilled){
-            CollieDAO collieDAO = new CollieDAO(this);
-            Atividade atividade = new Atividade();
-            atividade.setId_usuario(1);
-            atividade.setNome(name);
-            atividade.setDescricao(description);
-            atividade.setData(date);
-            atividade.setHora(hour);
-            collieDAO.insert(atividade);
-            collieDAO.close();
+            user = mAuth.getCurrentUser();
+            FirebaseHelper.writeNewActivity(mDatabase, idChild, name, date, hour, description, 0);
+//            CollieDAO collieDAO = new CollieDAO(this);
+//            Atividade atividade = new Atividade();
+//            atividade.setId_usuario(1);
+//            atividade.setNome(name);
+//            atividade.setDescricao(description);
+//            atividade.setData(date);
+//            atividade.setHora(hour);
+//            collieDAO.insert(atividade);
+//            collieDAO.close();
             finish();
         }
     }
