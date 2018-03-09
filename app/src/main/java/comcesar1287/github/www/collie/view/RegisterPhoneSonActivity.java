@@ -94,7 +94,7 @@ public class RegisterPhoneSonActivity extends AppCompatActivity implements View.
         FirebaseHelper.writeNewChildren(mDatabase, emailChild, user.getUid(), block, latitude, longitude);
         SharedPref sharedPref = new SharedPref(RegisterPhoneSonActivity.this);
         sharedPref.setEmailChildren(emailChild);
-        sharedPref.setEmailFather(user.getUid());
+        sharedPref.setEmailFather(user.getEmail());
         sharedPref.setTypeBlock(block);
         sharedPref.setLatitude(latitude);
         sharedPref.setLongitude(longitude);

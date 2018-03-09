@@ -198,17 +198,17 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                 registerUser(emailFather, password);
             }
             else {
-                editUser(password, nameFather, nameChild, ageChild);
+                editUser(password, emailFather, nameFather, nameChild, ageChild);
             }
         }
     }
 
-    private void editUser(final String password, String nameFather, String nameChild, String ageChild) {
+    private void editUser(final String password, String emailFather, String nameFather, String nameChild, String ageChild) {
         user = mAuth.getCurrentUser();
         FirebaseHelper.writeNewUser(mDatabase, mAuth.getCurrentUser().getUid(), nameFather, nameChild, ageChild);
-        SharedPref sharedPref = new SharedPref(RegisterEditActivity.this);
+        final SharedPref sharedPref = new SharedPref(RegisterEditActivity.this);
         sharedPref.setNameFather(nameFather);
-        sharedPref.setEmailFather(user.getEmail());
+        sharedPref.setEmailFather(emailFather);
         sharedPref.setNameChild(nameChild);
         sharedPref.setAgeChild(ageChild);
         sharedPref.setTypeBlock(sharedPref.getTypeBlock());
@@ -236,6 +236,7 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
+                            sharedPref.setPass(password);
                             Toast.makeText(RegisterEditActivity.this, getString(R.string.edit_user), Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -254,7 +255,7 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                 finish();
     }
 
-    private void registerUser(String emailFather, String password) {
+    private void registerUser(final String emailFather, final String password) {
         dialog = ProgressDialog.show(this,"", getResources().getString(R.string.sign_up_user), true, false);
         mAuth.createUserWithEmailAndPassword(emailFather, password)
                 .addOnFailureListener(new OnFailureListener() {
@@ -291,9 +292,10 @@ public class RegisterEditActivity extends AppCompatActivity implements View.OnCl
                                 Toast.makeText(RegisterEditActivity.this, getString(R.string.successfully_registered), Toast.LENGTH_SHORT).show();
                                 SharedPref sharedPref = new SharedPref(RegisterEditActivity.this);
                                 sharedPref.setNameFather(nameFather);
-                                sharedPref.setEmailFather(user.getEmail());
+                                sharedPref.setEmailFather(emailFather);
                                 sharedPref.setNameChild(nameChild);
                                 sharedPref.setAgeChild(ageChild);
+                                sharedPref.setPass(password);
                                 Intent i = new Intent(RegisterEditActivity.this, SetupScreenActivity.class);
                                 prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor ed = prefs.edit();

@@ -127,7 +127,7 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    private void makeLoginRequest(String email, String password) {
+    private void makeLoginRequest(final String email, final String password) {
         dialog = ProgressDialog.show(SignWithActivity.this,"",
                 SignWithActivity.this.getResources().getString(R.string.processing_login), true, false);
         mAuth.signInWithEmailAndPassword(email, password)
@@ -171,6 +171,8 @@ public class SignWithActivity extends AppCompatActivity implements View.OnClickL
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .child("block").getValue());
 
+                                        sharedPref.setEmailFather(email);
+                                        sharedPref.setPass(password);
                                         Intent i = new Intent(SignWithActivity.this, MainActivity.class);
                                         prefs = getSharedPreferences("preferencias", Context.MODE_PRIVATE);
                                         SharedPreferences.Editor ed = prefs.edit();

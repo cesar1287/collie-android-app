@@ -16,6 +16,7 @@ public class SharedPref {
     private static final String EMAIL_CHILDREN = "children_child";
     private static final String LATITUDE = "latitude_child";
     private static final String LONGITUDE = "longitude_child";
+    private static final String PASS = "pass_child";
     public SharedPreferences.Editor edit;
 
     public SharedPref(Context context) {
@@ -95,5 +96,9 @@ public class SharedPref {
 
     public String getLongitude() {
         return sharedPref.getString(LONGITUDE, LONGITUDE);
+    }
+
+    public void setPass(String pass) {
+        sharedPref.edit().putString(PASS, pass).apply();
     }
 }

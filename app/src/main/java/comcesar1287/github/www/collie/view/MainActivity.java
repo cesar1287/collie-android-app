@@ -18,6 +18,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -322,6 +323,7 @@ public class MainActivity extends AppCompatActivity
 
     private void signOut() {
         // Use the Builder class for convenient dialog construction
+        final SharedPref sharedPref = new SharedPref(MainActivity.this);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Tem certeza que deseja sair?")
                 .setPositiveButton(R.string.main_dialog_yes, new DialogInterface.OnClickListener() {
